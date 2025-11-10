@@ -14,8 +14,8 @@ const Footer = () => {
 
   const contactInfo = [
     { icon: HiMail, text: 'ahammedmass24@gmail.com', href: 'mailto:ahammedmass24@gmail.com' },
-    { icon: HiPhone, text: '+91 8428957895', href: 'tel:+918428957895' },
-    { icon: HiLocationMarker, text: 'Bangalore, India', href: '#' },
+    { icon: HiPhone, text: '+971 588544698', href: 'tel:+971588544698' },
+    { icon: HiLocationMarker, text: 'Dubai, United Arab Emirates', href: '#' },
   ];
 
   const quickLinks = [
@@ -161,7 +161,7 @@ const Footer = () => {
             © {currentYear} Portfolio. All rights reserved.
           </p>
           <p className="text-gray-500 dark:text-gray-400 text-sm">
-            Made with ❤️ using React & Tailwind CSS
+            Crafted with passion ✨ by Ahammed • Powered by innovation 🚀
           </p>
         </motion.div>
       </div>

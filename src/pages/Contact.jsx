@@ -89,16 +89,16 @@ const Contact = () => {
     {
       icon: HiPhone,
       title: 'Phone',
-      value: '+91 8428957895',
-      href: 'tel:+918428957895',
+      value: '+971 588544698',
+      href: 'tel:+971588544698',
       description: 'Call me during business hours'
     },
     {
       icon: HiLocationMarker,
       title: 'Location',
-      value: 'Bangalore, India',
+      value: 'Dubai, United Arab Emirates',
       href: '#',
-      description: 'Electronic City, Bangalore'
+      description: 'Dubai, United Arab Emirates'
     }
   ];
 

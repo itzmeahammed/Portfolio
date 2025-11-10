@@ -154,7 +154,7 @@ const About = () => {
     {
       position: "Full Stack Developer",
       company: "WizzGeeks Technologies",
-      location: "Electronic City, Bangalore",
+      location: "Dubai, United Arab Emirates",
       duration: "MAY 2024 - AUGUST 2025",
       type: "Full-time",
       icon: FaRocket,
@@ -307,14 +307,14 @@ const About = () => {
                     </div>
                     <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
                       <HiLocationMarker className="w-5 h-5" />
-                      <span className="text-sm">Bangalore, India</span>
+                      <span className="text-sm">Dubai, United Arab Emirates</span>
                     </div>
                     <a 
-                      href="tel:+918428957895"
+                      href="tel:+971588544698"
                       className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
                     >
                       <HiPhone className="w-5 h-5" />
-                      <span className="text-sm">+91 8428957895</span>
+                      <span className="text-sm">+971 588544698</span>
                     </a>
                   </motion.div>
                 </motion.div>

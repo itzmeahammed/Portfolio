@@ -90,7 +90,7 @@ const Home = () => {
   const socialLinks = [
     { icon: FaGithub, href: "https://github.com/itzmeahammed", label: "GitHub" },
     { icon: FaLinkedin, href: "https://linkedin.com/in/ahammed", label: "LinkedIn" },
-    { icon: HiPhone, href: "tel:+918428957895", label: "Phone: 8428957895" }
+    { icon: HiPhone, href: "tel:+971588544698", label: "Phone: 588544698" }
   ];
 
   return (
@@ -162,7 +162,7 @@ const Home = () => {
               <motion.div variants={itemVariants} className="flex flex-wrap gap-6 text-sm text-gray-600 dark:text-gray-400">
                 <div className="flex items-center space-x-2">
                   <HiLocationMarker className="w-4 h-4" />
-                  <span>Bangalore, India</span>
+                  <span>Dubai, United Arab Emirates</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <HiMail className="w-4 h-4" />

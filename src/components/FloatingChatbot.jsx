@@ -36,9 +36,9 @@ const FloatingChatbot = () => {
     personal: {
       name: "Ahammed",
       title: "Full Stack Developer & AI Specialist",
-      location: "Electronic City, Bangalore, India",
+      location: "Dubai, United Arab Emirates",
       email: "ahammedmass24@gmail.com",
-      phone: "+91 8428957895",
+      phone: "+971 588544698",
       github: "https://github.com/itzmeahammed",
       linkedin: "https://www.linkedin.com/in/ahammed-s-5161b7288/",
       age: "22 years old",
@@ -232,7 +232,7 @@ const FloatingChatbot = () => {
 **🏢 Previous Experience:**
 • **Full Stack Developer at WizzGeeks Technologies**
 • Duration: May 2024 - August 2025 (Completed)
-• Location: Electronic City, Bangalore
+• Location: Dubai, United Arab Emirates
 • Key Projects: QuestionCloud, GUVI Zen Class, Medsy.ai
 • Contributed to AI-driven learning platforms
 
@@ -313,8 +313,8 @@ Started as a junior developer and quickly advanced to handling complex AI-integr
 
 **📧 Primary Contact:**
 • **Email:** ahammedmass24@gmail.com
-• **Phone:** +91 8428957895
-• **Location:** Electronic City, Bangalore, India
+• **Phone:** +971 588544698
+• **Location:** Dubai, United Arab Emirates
 
 **🌐 Professional Profiles:**
 • **GitHub:** https://github.com/itzmeahammed
@@ -500,23 +500,23 @@ I'm here to provide comprehensive information about Ahammed's professional backg
 • 50+ projects completed successfully
 • Expert in AI/ML integration
 • Available for freelance & full-time work
-• Based in Bangalore, India
+• Based in Dubai, United Arab Emirates
 
 *What specific information would you like to know about Ahammed?*`;
     }
     
-    if (message.includes('location') || message.includes('where') || message.includes('bangalore') || message.includes('availability')) {
+    if (message.includes('location') || message.includes('where') || message.includes('dubai') || message.includes('availability')) {
       return `📍 **Location & Availability Information:**
 
 **🏠 Current Location:**
-• **City:** Bangalore (Bengaluru), India
+• **City:** Dubai, United Arab Emirates
 • **Area:** Electronic City
 • **Time Zone:** IST (UTC+5:30)
 • **Work Setup:** Professional home office
 
 **💼 Work Arrangements:**
 • **Remote Work:** ✅ Preferred & experienced
-• **On-site (Bangalore):** ✅ Available for local clients
+• **On-site (Dubai):** ✅ Available for local clients
 • **Hybrid Model:** ✅ Flexible arrangements
 • **International Projects:** ✅ Global client experience
 
@@ -541,7 +541,7 @@ I'm here to provide comprehensive information about Ahammed's professional backg
 
 **📞 Communication Channels:**
 • **Email:** ahammedmass24@gmail.com (Primary)
-• **Phone:** +91 8428957895 (WhatsApp available)
+• **Phone:** +971 588544698 (WhatsApp available)
 • **Video Calls:** Google Meet, Zoom, Teams
 • **Project Management:** Slack, Jira, Trello
 

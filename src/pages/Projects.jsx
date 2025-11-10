@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { HiCode, HiEye, HiExternalLink, HiSearch, HiFilter, HiMail, HiPhone } from 'react-icons/hi';
+import ProjectCard from '../components/ProjectCard';
+
+
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -739,86 +742,11 @@ const Projects = () => {
             className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8"
           >
             {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                variants={itemVariants}
-                className="group bg-gray-50 dark:bg-gray-900 rounded-2xl border border-black/10 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 transition-all duration-500 overflow-hidden"
-                whileHover={{ scale: 1.02, y: -10 }}
-                layout
-              >
-                {/* Project Header */}
-                <div className="p-8 space-y-6">
-                  <div className="flex items-start justify-between">
-                    <div className="space-y-2">
-                      <div className="flex items-center space-x-2">
-                        <span className="px-3 py-1 bg-black dark:bg-white text-white dark:text-black rounded-full text-sm font-semibold">
-                          {project.category}
-                        </span>
-                        {bigProjects.includes(project) && (
-                          <span className="px-2 py-1 bg-gradient-to-r from-gray-700 to-black dark:from-gray-300 dark:to-white text-white dark:text-black rounded-full text-xs font-bold">
-                            BIG
-                          </span>
-                        )}
-                      </div>
-                      <h3 className="text-2xl font-bold text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
-                        {project.title}
-                      </h3>
-                    </div>
-                    <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium">
-                      {project.type}
-                    </span>
-                  </div>
-
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Technologies */}
-                  <div className="space-y-3">
-                    <h4 className="font-semibold text-black dark:text-white">Tech Stack:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-3 py-1 bg-white dark:bg-black text-black dark:text-white rounded-full text-xs border border-black/20 dark:border-white/20 hover:scale-105 transition-transform"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Status and Actions */}
-                  <div className="flex items-center justify-between pt-4 border-t border-black/10 dark:border-white/10">
-                    <span className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-sm font-medium text-gray-600 dark:text-gray-400">{project.status}</span>
-                    </span>
-                    
-                    <div className="flex space-x-3">
-                      <motion.a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        title="View on GitHub"
-                      >
-                        <HiExternalLink className="w-4 h-4" />
-                      </motion.a>
-                      <motion.button
-                        className="p-2 bg-gray-200 dark:bg-gray-800 text-black dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        title="View Details"
-                      >
-                        <HiEye className="w-4 h-4" />
-                      </motion.button>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+              <ProjectCard 
+                key={project.id} 
+                project={project} 
+                index={index}
+              />
             ))}
           </motion.div>
 
@@ -912,11 +840,11 @@ const Projects = () => {
                 <span>ahammedmass24@gmail.com</span>
               </a>
               <a 
-                href="tel:+918428957895"
+                href="tel:+971588544698"
                 className="flex items-center space-x-2 text-gray-300 dark:text-gray-700 hover:text-white dark:hover:text-black transition-colors duration-200"
               >
                 <HiPhone className="w-5 h-5" />
-                <span>+91 8428957895</span>
+                <span>+971 588544698</span>
               </a>
             </div>
             

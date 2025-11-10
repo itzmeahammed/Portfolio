@@ -34,7 +34,7 @@ const Navbar = ({ theme, toggleTheme }) => {
   const socialLinks = [
     { icon: FaGithub, href: "https://github.com/itzmeahammed", label: "GitHub" },
     { icon: FaLinkedin, href: "https://www.linkedin.com/in/ahammed-s-5161b7288/", label: "LinkedIn" },
-    { icon: HiPhone, href: "tel:+918428957895", label: "Phone: 8428957895" }
+    { icon: HiPhone, href: "tel:+971588544698", label: "Phone: 588544698" }
   ];
 
   return (
