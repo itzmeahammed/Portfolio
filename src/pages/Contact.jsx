@@ -162,10 +162,10 @@ const Contact = () => {
           >
             <motion.div variants={itemVariants}>
               <HiChat className="w-16 h-16 text-black dark:text-white mx-auto mb-6" />
-              <h1 className="text-5xl sm:text-7xl font-bold text-black dark:text-white mb-6">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-elegant-heading text-black dark:text-white mb-6">
                 Get In Touch
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed font-elegant-body">
                 Ready to bring your ideas to life? Let's discuss your next project and create 
                 something amazing together. I'm always excited to work on innovative solutions.
               </p>
@@ -209,8 +209,8 @@ const Contact = () => {
               className="space-y-8"
             >
               <motion.div variants={itemVariants}>
-                <h2 className="text-3xl font-bold text-black dark:text-white mb-4">Send Me a Message</h2>
-                <p className="text-gray-600 dark:text-gray-400">
+                <h2 className="text-3xl font-elegant-heading text-black dark:text-white mb-4">Send Me a Message</h2>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-elegant-body">
                   Fill out the form below and I'll get back to you as soon as possible.
                 </p>
               </motion.div>
@@ -233,7 +233,7 @@ const Contact = () => {
               <motion.form variants={itemVariants} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="block text-sm font-semibold text-black dark:text-white">
+                    <label htmlFor="name" className="block text-xs sm:text-sm font-elegant-caption text-black dark:text-white">
                       Full Name *
                     </label>
                     <div className="relative">
@@ -252,7 +252,7 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="email" className="block text-sm font-semibold text-black dark:text-white">
+                    <label htmlFor="email" className="block text-xs sm:text-sm font-elegant-caption text-black dark:text-white">
                       Email Address *
                     </label>
                     <div className="relative">
@@ -272,7 +272,7 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="block text-sm font-semibold text-black dark:text-white">
+                  <label htmlFor="subject" className="block text-xs sm:text-sm font-elegant-caption text-black dark:text-white">
                     Subject *
                   </label>
                   <input
@@ -288,7 +288,7 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="block text-sm font-semibold text-black dark:text-white">
+                  <label htmlFor="message" className="block text-xs sm:text-sm font-elegant-caption text-black dark:text-white">
                     Message *
                   </label>
                   <textarea
@@ -334,8 +334,8 @@ const Contact = () => {
               className="space-y-8"
             >
               <motion.div variants={itemVariants}>
-                <h2 className="text-3xl font-bold text-black dark:text-white mb-4">Contact Information</h2>
-                <p className="text-gray-600 dark:text-gray-400">
+                <h2 className="text-3xl font-elegant-heading text-black dark:text-white mb-4">Contact Information</h2>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-elegant-body">
                   Prefer direct contact? Reach out through any of these channels.
                 </p>
               </motion.div>

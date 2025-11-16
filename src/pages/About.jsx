@@ -222,7 +222,7 @@ const About = () => {
               className="inline-flex items-center space-x-2 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 px-6 py-3 rounded-full border border-gray-300 dark:border-gray-600 shadow-lg"
             >
               <HiSparkles className="w-5 h-5 text-gray-600 dark:text-gray-400" />
-              <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Professional Full Stack Developer</span>
+              <span className="text-xs sm:text-sm font-elegant-caption text-gray-700 dark:text-gray-300">Professional Full Stack Developer</span>
             </motion.div>
 
             {/* Profile Section */}
@@ -254,7 +254,7 @@ const About = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={heroInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.15 }}
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
+                  className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-elegant-heading leading-tight"
                 >
                   <span className="bg-gradient-to-r from-gray-800 via-black to-gray-700 dark:from-gray-200 dark:via-white dark:to-gray-300 bg-clip-text text-transparent">
                     Ahammed
@@ -267,12 +267,12 @@ const About = () => {
                   transition={{ duration: 0.3, delay: 0.2 }}
                   className="space-y-4"
                 >
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300">
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-elegant-subheading text-gray-700 dark:text-gray-300">
                     Full Stack Developer & AI Specialist
                   </h2>
                   
                   <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-xl">
-                    <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p className="text-sm sm:text-base md:text-base text-gray-600 dark:text-gray-400 leading-relaxed font-elegant-body">
                       <span className="font-semibold text-gray-800 dark:text-gray-200">1.5+ years industry experience</span> and <span className="font-semibold text-gray-800 dark:text-gray-200">2+ years freelancing</span>, 
                       specializing in <span className="font-semibold text-gray-800 dark:text-gray-200">AI-powered</span> and scalable web & mobile applications. 
                       Proficient in ReactJS, Next.js, Node.js, Python, with hands-on expertise in 
@@ -287,7 +287,7 @@ const About = () => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={heroInView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ duration: 0.2, delay: 0.25 + index * 0.05 }}
-                        className="px-4 py-2 bg-gradient-to-r from-gray-700 to-black dark:from-gray-300 dark:to-white text-white dark:text-black rounded-full text-sm font-medium shadow-lg"
+                        className="px-4 py-2 bg-gradient-to-r from-gray-700 to-black dark:from-gray-300 dark:to-white text-white dark:text-black rounded-full text-xs sm:text-sm font-elegant-caption shadow-lg"
                       >
                         {tech}
                       </motion.span>
@@ -301,20 +301,20 @@ const About = () => {
                     transition={{ duration: 0.3, delay: 0.4 }}
                     className="flex flex-wrap gap-3 sm:gap-4 pt-4"
                   >
-                    <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 font-elegant-caption">
                       <HiMail className="w-5 h-5" />
-                      <span className="text-sm">ahammedmass24@gmail.com</span>
+                      <span className="text-xs sm:text-sm">ahammedmass24@gmail.com</span>
                     </div>
-                    <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 font-elegant-caption">
                       <HiLocationMarker className="w-5 h-5" />
-                      <span className="text-sm">Dubai, United Arab Emirates</span>
+                      <span className="text-xs sm:text-sm">Dubai, United Arab Emirates</span>
                     </div>
                     <a 
                       href="tel:+971588544698"
-                      className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+                      className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-elegant-caption"
                     >
                       <HiPhone className="w-5 h-5" />
-                      <span className="text-sm">+971 588544698</span>
+                      <span className="text-xs sm:text-sm">+971 588544698</span>
                     </a>
                   </motion.div>
                 </motion.div>
@@ -368,8 +368,8 @@ const About = () => {
                 <div className={`mx-auto w-16 h-16 bg-gradient-to-r ${stat.color} dark:from-gray-300 dark:to-white rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300`}>
                   <stat.icon className="w-8 h-8 text-white dark:text-black" />
                 </div>
-                <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{stat.value}</h3>
-                <p className="text-gray-600 dark:text-gray-400">{stat.label}</p>
+                <h3 className="text-3xl font-elegant-heading text-gray-900 dark:text-white mb-2">{stat.value}</h3>
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-elegant-body">{stat.label}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -385,10 +385,10 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12 sm:mb-16 px-4 sm:px-0"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-elegant-heading text-gray-900 dark:text-white mb-4 sm:mb-6 leading-tight">
               Skills & Expertise
             </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed font-elegant-body">
               Proficient in modern technologies and frameworks for building scalable applications
             </p>
           </motion.div>

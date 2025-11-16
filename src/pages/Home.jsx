@@ -35,6 +35,7 @@ import {
 } from 'react-icons/si';
 import EnhancedBackground from '../components/EnhancedBackground';
 import HeroIllustration from '../components/HeroIllustration';
+import InteractiveProjectBrowser from '../components/InteractiveProjectBrowser';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -121,7 +122,7 @@ const Home = () => {
                 
                 <motion.h1 
                   variants={itemVariants}
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
+                  className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-elegant-heading leading-tight"
                 >
                   <span className="text-gray-900 dark:text-white">Hi, I'm </span>
                   <motion.span
@@ -144,14 +145,14 @@ const Home = () => {
 
                 <motion.h2 
                   variants={itemVariants}
-                  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300"
+                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-elegant-subheading text-gray-700 dark:text-gray-300"
                 >
                   Full Stack Developer
                 </motion.h2>
 
                 <motion.p 
                   variants={itemVariants}
-                  className="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl"
+                  className="text-sm sm:text-base md:text-base text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl font-elegant-body"
                 >
                   2+ years specializing in AI-powered web & mobile applications. Proficient in ReactJS, Next.js, Node.js, Python, with expertise in LLaMA, NLP, and ML automation.
                 </motion.p>
@@ -159,7 +160,7 @@ const Home = () => {
               </div>
 
               {/* Contact Info */}
-              <motion.div variants={itemVariants} className="flex flex-wrap gap-6 text-sm text-gray-600 dark:text-gray-400">
+              <motion.div variants={itemVariants} className="flex flex-wrap gap-6 text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-elegant-caption">
                 <div className="flex items-center space-x-2">
                   <HiLocationMarker className="w-4 h-4" />
                   <span>Dubai, United Arab Emirates</span>
@@ -236,6 +237,9 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Interactive Project Browser */}
+      <InteractiveProjectBrowser />
+
       {/* Tech Stack Section */}
       <section ref={techRef} className="py-20 relative">
         {/* Section Background */}
@@ -252,11 +256,11 @@ const Home = () => {
               <div className="inline-block px-4 py-2 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-full border border-gray-200 dark:border-gray-600">
                 <span className="text-sm font-medium text-gray-600 dark:text-gray-400">💻 Tech Stack</span>
               </div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-elegant-heading text-gray-900 dark:text-white">
                 Technologies I 
                 <span className="bg-gradient-to-r from-gray-700 via-black to-gray-600 dark:from-gray-300 dark:via-white dark:to-gray-400 bg-clip-text text-transparent"> Master</span>
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed font-elegant-body">
                 Building innovative solutions with cutting-edge technologies and modern frameworks
               </p>
             </motion.div>
@@ -294,7 +298,7 @@ const Home = () => {
                     </motion.div>
                   </div>
                   
-                  <span className="relative z-10 text-sm font-bold text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
+                  <span className="relative z-10 text-xs font-elegant-caption text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
                     {tech.name}
                   </span>
 
@@ -314,7 +318,7 @@ const Home = () => {
 
             {/* Tech Stack Footer */}
             <motion.div variants={itemVariants} className="text-center">
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-6 font-elegant-body">
                 Always learning and exploring new technologies to stay ahead of the curve
               </p>
               <motion.button
@@ -348,7 +352,7 @@ const Home = () => {
               <div className="inline-block px-4 py-2 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-full border border-gray-200 dark:border-gray-600">
                 <span className="text-sm font-medium text-gray-600 dark:text-gray-400">📊 My Journey</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+              <h2 className="text-3xl sm:text-4xl font-elegant-heading text-gray-900 dark:text-white">
                 Numbers That Tell My Story
               </h2>
             </motion.div>
@@ -462,7 +466,7 @@ const Home = () => {
               </motion.div>
               
               <motion.h2 
-                className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight"
+                className="text-5xl sm:text-6xl lg:text-7xl font-elegant-heading text-gray-900 dark:text-white leading-tight"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -475,7 +479,7 @@ const Home = () => {
               </motion.h2>
               
               <motion.p 
-                className="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed"
+                className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed font-elegant-body"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -549,10 +553,10 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: 0.35 }}
             >
-              <p className="text-gray-500 dark:text-gray-500 text-lg">
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-500 font-elegant-body">
                 ✨ Available for freelance projects and full-time opportunities
               </p>
-              <div className="flex items-center justify-center space-x-6 text-sm text-gray-400 dark:text-gray-600">
+              <div className="flex items-center justify-center space-x-6 text-xs sm:text-sm text-gray-400 dark:text-gray-600 font-elegant-caption">
                 <span className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   <span>Available Now</span>

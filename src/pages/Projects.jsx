@@ -124,16 +124,6 @@ const Projects = () => {
       githubUrl: "https://github.com/itzmeahammed"
     },
     {
-      id: 12,
-      title: "GiveGainz Project",
-      category: "Web Development",
-      type: "Web / Fitness",
-      description: "Fitness/social platform with activity tracking, progress monitoring, engagement features.",
-      technologies: ["ReactJS", "Node.js", "MongoDB"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
       id: 13,
       title: "FabFlow",
       category: "Web Development",
@@ -216,57 +206,7 @@ const Projects = () => {
   ];
 
   const smallProjects = [
-    {
-      id: 21,
-      title: "photographer-site-ui-master",
-      category: "UI/UX",
-      type: "UI / Web",
-      description: "Photographer portfolio UI design project.",
-      technologies: ["HTML", "CSS", "JS", "Figma"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 22,
-      title: "website design",
-      category: "Web Development",
-      type: "Web",
-      description: "Generic website design project.",
-      technologies: ["HTML", "CSS", "JS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 23,
-      title: "design",
-      category: "UI/UX",
-      type: "UI / Web",
-      description: "UI/UX design project.",
-      technologies: ["Figma", "HTML", "CSS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 24,
-      title: "project complete stage",
-      category: "Web Development",
-      type: "Web",
-      description: "Completed project showcase at a specific stage.",
-      technologies: ["HTML", "CSS", "JS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
 
-    {
-      id: 26,
-      title: "signSpeak",
-      category: "Mobile Development",
-      type: "App / Accessibility",
-      description: "Sign language communication app/tool.",
-      technologies: ["ReactJS", "Node.js"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
     {
       id: 27,
       title: "rockpaperscissor",
@@ -651,10 +591,10 @@ const Projects = () => {
           >
             <motion.div variants={itemVariants}>
               <HiCode className="w-16 h-16 text-black dark:text-white mx-auto mb-6" />
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black dark:text-white mb-6">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-elegant-heading text-black dark:text-white mb-6">
                 My Projects
               </h1>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed font-elegant-body">
                 A showcase of innovative solutions addressing real-world challenges in healthcare, 
                 education, agriculture, law enforcement, and more using cutting-edge technologies.
               </p>
@@ -777,7 +717,7 @@ const Projects = () => {
             transition={{ duration: 0.6 }}
             className="text-center space-y-12"
           >
-            <h2 className="text-4xl font-bold text-black dark:text-white">Project Statistics</h2>
+            <h2 className="text-4xl font-elegant-heading text-black dark:text-white">Project Statistics</h2>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
@@ -797,7 +737,7 @@ const Projects = () => {
                 >
                   <stat.icon className="w-12 h-12 text-black dark:text-white mx-auto mb-4" />
                   <motion.h3 
-                    className="text-4xl font-bold text-black dark:text-white mb-2"
+                    className="text-4xl font-elegant-heading text-black dark:text-white mb-2"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
@@ -823,10 +763,10 @@ const Projects = () => {
             transition={{ duration: 0.6 }}
             className="space-y-8"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-white dark:text-black">
+            <h2 className="text-4xl sm:text-5xl font-elegant-heading text-white dark:text-black">
               Have a Project in Mind?
             </h2>
-            <p className="text-xl text-gray-300 dark:text-gray-700 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-gray-300 dark:text-gray-700 max-w-3xl mx-auto font-elegant-body">
               Let's collaborate and bring your innovative ideas to life with cutting-edge technology.
             </p>
             

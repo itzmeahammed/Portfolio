@@ -14,6 +14,22 @@ const Layout = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
 
+  // Initialize Google Analytics
+  useEffect(() => {
+    // Add Google Analytics script
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-R6YZYCBC8E';
+    document.head.appendChild(script);
+
+    // Initialize gtag
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-R6YZYCBC8E');
+  }, []);
+
   useEffect(() => {
     // Check for saved theme preference or default to 'light'
     const savedTheme = localStorage.getItem('theme') || 'light';
@@ -24,10 +40,19 @@ const Layout = ({ children }) => {
     setTimeout(() => setIsLoading(false), 1500);
   }, []);
 
-  // Show loader for 1.5 seconds on each page change
+  // Show loader for 1.5 seconds on each page change and track page views
   useEffect(() => {
     setIsLoading(true);
     const timer = setTimeout(() => setIsLoading(false), 1500);
+    
+    // Track page view with Google Analytics
+    if (window.gtag) {
+      window.gtag('config', 'G-R6YZYCBC8E', {
+        page_path: location.pathname,
+        page_title: document.title
+      });
+    }
+    
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
