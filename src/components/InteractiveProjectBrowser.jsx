@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { HiArrowLeft, HiArrowRight, HiExternalLink, HiCode, HiStar, HiEye, HiSparkles, HiClock } from 'react-icons/hi';
+import { HiArrowLeft, HiArrowRight, HiExternalLink, HiCode, HiStar, HiEye, HiSparkles, HiClock, HiX, HiPhone, HiMail } from 'react-icons/hi';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const InteractiveProjectBrowser = () => {
   const [selectedProject, setSelectedProject] = useState(0);
@@ -8,6 +9,9 @@ const InteractiveProjectBrowser = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredProject, setHoveredProject] = useState(null);
   const [direction, setDirection] = useState(0);
+  const [showContactPopup, setShowContactPopup] = useState(false);
+  const [projectTimer, setProjectTimer] = useState(0);
+  const [showVisitPopup, setShowVisitPopup] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -31,6 +35,28 @@ const InteractiveProjectBrowser = () => {
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, []);
+
+  // Timer for 2 minutes on same project
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProjectTimer((prev) => {
+        const newTime = prev + 1;
+        // Show contact popup after 120 seconds (2 minutes)
+        if (newTime === 120) {
+          setShowContactPopup(true);
+        }
+        return newTime;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  // Reset timer when project changes
+  useEffect(() => {
+    setProjectTimer(0);
+    setShowContactPopup(false);
+  }, [selectedProject]);
 
   const projects = [
     {
@@ -470,10 +496,13 @@ const InteractiveProjectBrowser = () => {
                   </div>
 
                   {/* Visit Button */}
-                  <motion.a
-                    href={currentProject.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <motion.button
+                    onClick={() => {
+                      setShowVisitPopup(true);
+                      setTimeout(() => {
+                       
+                      }, 1500);
+                    }}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
@@ -483,7 +512,7 @@ const InteractiveProjectBrowser = () => {
                   >
                     <HiExternalLink className="w-4 h-4" />
                     <span>Visit Project</span>
-                  </motion.a>
+                  </motion.button>
                 </motion.div>
               </AnimatePresence>
             </motion.div>
@@ -556,6 +585,166 @@ const InteractiveProjectBrowser = () => {
             </motion.button>
           ))}
         </motion.div>
+
+        {/* Visit Website Popup */}
+        <AnimatePresence>
+          {showVisitPopup && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+              onClick={() => setShowVisitPopup(false)}
+            >
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0, y: 20 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.8, opacity: 0, y: 20 }}
+                transition={{ duration: 0.4 }}
+                onClick={(e) => e.stopPropagation()}
+                className="bg-white dark:bg-gray-900 rounded-2xl p-8 max-w-md shadow-2xl border border-gray-200 dark:border-gray-700"
+              >
+                <div className="text-center">
+                  <motion.div
+                    animate={{ rotate: [0, 360] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="inline-block p-3 bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-200 dark:to-gray-300 rounded-full mb-4"
+                  >
+                    <HiExternalLink className="w-6 h-6 text-white dark:text-black" />
+                  </motion.div>
+                  <h3 className="text-2xl font-elegant-heading text-gray-900 dark:text-white mb-2">
+                    Opening Project
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 font-elegant-body mb-6">
+                    Connect with me to explore this project completely and discuss collaboration opportunities!
+                  </p>
+
+                  {/* Contact Info */}
+                  <div className="space-y-2 mb-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+                    <motion.a
+                      href="tel:+971588544698"
+                      onClick={(e) => e.stopPropagation()}
+                      whileHover={{ scale: 1.05 }}
+                      className="flex items-center justify-center space-x-2 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    >
+                      <HiPhone className="w-4 h-4" />
+                      <span className="font-elegant-caption text-sm">+971 588 544 698</span>
+                    </motion.a>
+                    <motion.a
+                      href="mailto:ahammedmass24@gmail.com"
+                      onClick={(e) => e.stopPropagation()}
+                      whileHover={{ scale: 1.05 }}
+                      className="flex items-center justify-center space-x-2 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    >
+                      <HiMail className="w-4 h-4" />
+                      <span className="font-elegant-caption text-sm">ahammedmass24@gmail.com</span>
+                    </motion.a>
+                  </div>
+
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setShowVisitPopup(false)}
+                    className="px-6 py-2 bg-gray-800 dark:bg-gray-200 text-white dark:text-black rounded-lg font-elegant-caption font-semibold"
+                  >
+                    Got it!
+                  </motion.button>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Contact Popup - After 2 minutes */}
+        <AnimatePresence>
+          {showContactPopup && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+              onClick={() => setShowContactPopup(false)}
+            >
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0, y: 20 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.8, opacity: 0, y: 20 }}
+                transition={{ duration: 0.4 }}
+                onClick={(e) => e.stopPropagation()}
+                className="bg-white dark:bg-gray-900 rounded-2xl p-8 max-w-md shadow-2xl border border-gray-200 dark:border-gray-700"
+              >
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <h3 className="text-2xl font-elegant-heading text-gray-900 dark:text-white">
+                      Let's Connect!
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 font-elegant-body mt-1">
+                      Interested in this project? Get in touch!
+                    </p>
+                  </div>
+                  <motion.button
+                    whileHover={{ scale: 1.1, rotate: 90 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setShowContactPopup(false)}
+                    className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+                  >
+                    <HiX className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                  </motion.button>
+                </div>
+
+                <div className="space-y-3">
+                  {/* WhatsApp */}
+                  <motion.a
+                    href="https://wa.me/971588544698"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05, x: 5 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center space-x-3 p-4 rounded-xl bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 border border-green-200 dark:border-green-700 hover:shadow-lg transition-all"
+                  >
+                    <FaWhatsapp className="w-5 h-5 text-green-600 dark:text-green-400" />
+                    <div>
+                      <p className="font-elegant-caption font-semibold text-gray-900 dark:text-white">WhatsApp</p>
+                      <p className="text-xs text-gray-600 dark:text-gray-400">+971 588 544 698</p>
+                    </div>
+                  </motion.a>
+
+                  {/* Email */}
+                  <motion.a
+                    href="mailto:ahammedmass24@gmail.com"
+                    whileHover={{ scale: 1.05, x: 5 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center space-x-3 p-4 rounded-xl bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border border-blue-200 dark:border-blue-700 hover:shadow-lg transition-all"
+                  >
+                    <HiMail className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                    <div>
+                      <p className="font-elegant-caption font-semibold text-gray-900 dark:text-white">Email</p>
+                      <p className="text-xs text-gray-600 dark:text-gray-400">ahammedmass24@gmail.com</p>
+                    </div>
+                  </motion.a>
+
+                  {/* Phone */}
+                  <motion.a
+                    href="tel:+971588544698"
+                    whileHover={{ scale: 1.05, x: 5 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center space-x-3 p-4 rounded-xl bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 border border-purple-200 dark:border-purple-700 hover:shadow-lg transition-all"
+                  >
+                    <HiPhone className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                    <div>
+                      <p className="font-elegant-caption font-semibold text-gray-900 dark:text-white">Phone</p>
+                      <p className="text-xs text-gray-600 dark:text-gray-400">+971 588 544 698</p>
+                    </div>
+                  </motion.a>
+                </div>
+
+                <p className="text-xs text-center text-gray-500 dark:text-gray-500 mt-6 font-elegant-caption">
+                  ✨ Timer resets when you change projects
+                </p>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
