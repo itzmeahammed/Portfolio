@@ -36,6 +36,7 @@ import {
 import EnhancedBackground from '../components/EnhancedBackground';
 import HeroIllustration from '../components/HeroIllustration';
 import InteractiveProjectBrowser from '../components/InteractiveProjectBrowser';
+import { GravityStarsBackground } from '../components/animate-ui/components/backgrounds/gravity-stars';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -101,7 +102,12 @@ const Home = () => {
       
       {/* Hero Section */}
       <section ref={heroRef} className="min-h-screen flex items-center justify-center relative pt-20 pb-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        {/* GravityStarsBackground - Dark Mode Only */}
+        <div className="hidden dark:block absolute inset-0">
+          <GravityStarsBackground className="absolute inset-0" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
           <motion.div
             variants={containerVariants}
             initial="hidden"
