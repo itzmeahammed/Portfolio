@@ -9,6 +9,10 @@ import LoadingAnimation from './LoadingAnimation';
 import FlyingRocket from './FlyingRocket';
 import FloatingChatbot from './FloatingChatbot';
 import FirstVisitWelcomePopup from './FirstVisitWelcomePopup';
+import AdvancedAnalytics from './AdvancedAnalytics';
+import FormAnalytics from './FormAnalytics';
+import EmailCapture from './EmailCapture';
+import EngagementTracker from './EngagementTracker';
 
 const Layout = ({ children }) => {
   const [theme, setTheme] = useState('light');
@@ -71,10 +75,18 @@ const Layout = ({ children }) => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
+      {/* Analytics & Tracking Components */}
+      <AdvancedAnalytics />
+      <FormAnalytics />
+      <EmailCapture />
+      <EngagementTracker />
+
+      {/* UI Components */}
       <CustomCursor />
       <FlyingRocket />
       <FloatingChatbot />
       <FirstVisitWelcomePopup onPopupStateChange={setIsPopupOpen} />
+
       <motion.div
         animate={{ filter: isPopupOpen ? 'blur(8px)' : 'blur(0px)' }}
         transition={{ duration: 0.3 }}
