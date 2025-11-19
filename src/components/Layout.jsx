@@ -8,10 +8,12 @@ import ThemeToggle from './ThemeToggle';
 import LoadingAnimation from './LoadingAnimation';
 import FlyingRocket from './FlyingRocket';
 import FloatingChatbot from './FloatingChatbot';
+import FirstVisitWelcomePopup from './FirstVisitWelcomePopup';
 
 const Layout = ({ children }) => {
   const [theme, setTheme] = useState('light');
   const [isLoading, setIsLoading] = useState(true);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const location = useLocation();
 
   // Initialize Google Analytics
@@ -72,7 +74,14 @@ const Layout = ({ children }) => {
       <CustomCursor />
       <FlyingRocket />
       <FloatingChatbot />
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <FirstVisitWelcomePopup onPopupStateChange={setIsPopupOpen} />
+      <motion.div
+        animate={{ filter: isPopupOpen ? 'blur(8px)' : 'blur(0px)' }}
+        transition={{ duration: 0.3 }}
+        className="relative z-20"
+      >
+        <Navbar theme={theme} toggleTheme={toggleTheme} />
+      </motion.div>
       
       <AnimatePresence mode="wait">
         <motion.main
