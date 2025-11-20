@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import profileImage from '../assets/image.png';
 import cvFile from '../assets/Ahammed S.pdf (5) (1).pdf';
 import CVDownload from '../components/CVDownload';
-import { 
-  HiAcademicCap, 
-  HiBriefcase, 
+import {
+  HiAcademicCap,
+  HiBriefcase,
   HiCode,
   HiStar,
   HiSparkles,
@@ -26,11 +26,11 @@ import {
   HiDesktopComputer,
   HiDeviceMobile
 } from 'react-icons/hi';
-import { 
-  FaReact, 
-  FaNodeJs, 
-  FaPython, 
-  FaDatabase as FaDb, 
+import {
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaDatabase as FaDb,
   FaGithub,
   FaLinkedin,
   FaRocket,
@@ -44,10 +44,10 @@ import {
   FaFigma,
   FaBrain
 } from 'react-icons/fa';
-import { 
-  SiMongodb, 
-  SiTailwindcss, 
-  SiFlutter, 
+import {
+  SiMongodb,
+  SiTailwindcss,
+  SiFlutter,
   SiJavascript,
   SiTypescript,
   SiNextdotjs,
@@ -203,8 +203,8 @@ const About = () => {
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-50/50 via-white to-gray-100/50 dark:from-gray-900/50 dark:via-black dark:to-gray-800/50"></div>
           <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-gray-200/20 to-gray-300/20 dark:from-gray-700/20 dark:to-gray-600/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-gray-300/15 to-gray-400/15 dark:from-gray-600/15 dark:to-gray-500/15 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-gray-400/10 to-gray-500/10 dark:from-gray-500/10 dark:to-gray-400/10 rounded-full blur-xl animate-pulse" style={{animationDelay: '4s'}}></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-gray-300/15 to-gray-400/15 dark:from-gray-600/15 dark:to-gray-500/15 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-gray-400/10 to-gray-500/10 dark:from-gray-500/10 dark:to-gray-400/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '4s' }}></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -237,8 +237,8 @@ const About = () => {
                 <div className="relative w-64 h-64">
                   <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-black dark:from-gray-200 dark:to-white rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
                   <div className="relative w-full h-full rounded-3xl border-4 border-gray-300 dark:border-gray-600 shadow-lg overflow-hidden">
-                    <img 
-                      src={profileImage} 
+                    <img
+                      src={profileImage}
                       alt="Ahammed - Full Stack Developer"
                       className="w-full h-full object-cover object-center"
                     />
@@ -249,7 +249,7 @@ const About = () => {
               </motion.div>
 
               {/* Name and Description */}
-              <div className="flex-1 text-left lg:text-left space-y-6 max-w-3xl">
+              <div className="flex-1 text-center lg:text-left space-y-6 max-w-3xl flex flex-col items-center lg:items-start">
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   animate={heroInView ? { opacity: 1, y: 0 } : {}}
@@ -260,27 +260,27 @@ const About = () => {
                     Ahammed
                   </span>
                 </motion.h1>
-                
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={heroInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.3, delay: 0.2 }}
-                  className="space-y-4"
+                  className="space-y-4 w-full flex flex-col items-center lg:items-start"
                 >
                   <h2 className="text-lg sm:text-xl md:text-2xl font-elegant-subheading text-gray-700 dark:text-gray-300">
                     Full Stack Developer & AI Specialist
                   </h2>
-                  
-                  <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-xl">
-                    <p className="text-sm sm:text-base md:text-base text-gray-600 dark:text-gray-400 leading-relaxed font-elegant-body">
-                      <span className="font-semibold text-gray-800 dark:text-gray-200">1.5+ years industry experience</span> and <span className="font-semibold text-gray-800 dark:text-gray-200">2+ years freelancing</span>, 
-                      specializing in <span className="font-semibold text-gray-800 dark:text-gray-200">AI-powered</span> and scalable web & mobile applications. 
-                      Proficient in ReactJS, Next.js, Node.js, Python, with hands-on expertise in 
+
+                  <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-xl w-full max-w-2xl lg:max-w-none">
+                    <p className="text-sm sm:text-base md:text-base text-gray-600 dark:text-gray-400 leading-relaxed font-elegant-body text-center lg:text-left">
+                      <span className="font-semibold text-gray-800 dark:text-gray-200">1.5+ years industry experience</span> and <span className="font-semibold text-gray-800 dark:text-gray-200">2+ years freelancing</span>,
+                      specializing in <span className="font-semibold text-gray-800 dark:text-gray-200">AI-powered</span> and scalable web & mobile applications.
+                      Proficient in ReactJS, Next.js, Node.js, Python, with hands-on expertise in
                       <span className="font-semibold text-gray-800 dark:text-gray-200"> LLaMA, NLP, OCR, and ML-based automation</span>.
                     </p>
                   </div>
 
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                     {['ReactJS', 'Next.js', 'Node.js', 'Python', 'AI/ML', 'AWS'].map((tech, index) => (
                       <motion.span
                         key={tech}
@@ -299,7 +299,7 @@ const About = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={heroInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.3, delay: 0.4 }}
-                    className="flex flex-wrap gap-3 sm:gap-4 pt-4"
+                    className="flex flex-wrap gap-3 sm:gap-4 pt-4 justify-center lg:justify-start"
                   >
                     <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 font-elegant-caption">
                       <HiMail className="w-5 h-5" />
@@ -309,7 +309,7 @@ const About = () => {
                       <HiLocationMarker className="w-5 h-5" />
                       <span className="text-xs sm:text-sm">Dubai, United Arab Emirates</span>
                     </div>
-                    <a 
+                    <a
                       href="tel:+971588544698"
                       className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-elegant-caption"
                     >
@@ -329,7 +329,7 @@ const About = () => {
               className="pt-8"
             >
               <CVDownload className="mb-6" />
-              
+
               <div className="flex justify-center">
                 <motion.button
                   onClick={() => navigate('/contact')}
@@ -454,7 +454,7 @@ const About = () => {
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 leading-tight">Areas of Interest</h3>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">Passionate about diverse aspects of software development</p>
             </div>
-            
+
             <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
               {areasOfInterest.map((area, index) => (
                 <motion.div
@@ -509,7 +509,7 @@ const About = () => {
                       <div className={`w-16 h-16 bg-gradient-to-br ${experience.current ? 'from-gray-800 via-black to-gray-700 dark:from-gray-200 dark:via-white dark:to-gray-300' : 'from-gray-600 via-gray-700 to-gray-800 dark:from-gray-400 dark:via-gray-300 dark:to-gray-500'} rounded-2xl flex items-center justify-center shadow-md`}>
                         <experience.icon className="w-8 h-8 text-white dark:text-black" />
                       </div>
-                      
+
                       <div className="flex-1">
                         <div className="flex items-center space-x-3 mb-2">
                           <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{experience.position}</h3>
@@ -532,7 +532,7 @@ const About = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="mt-4 lg:mt-0">
                       <span className={`px-4 py-2 rounded-full text-sm font-semibold ${experience.type === 'Full-time' ? 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200' : 'bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300'}`}>
                         {experience.type}
@@ -546,7 +546,7 @@ const About = () => {
                       <HiStar className="w-5 h-5 text-gray-600 dark:text-gray-400" />
                       <span>Key Achievements</span>
                     </h4>
-                    
+
                     <div className="grid gap-4">
                       {experience.achievements.map((achievement, achievementIndex) => (
                         <motion.div
@@ -582,7 +582,7 @@ const About = () => {
             <div className="text-center">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Professional Summary</h3>
               <p className="text-lg text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">
-                I bring <span className="font-semibold text-gray-800 dark:text-gray-200">commitment, reliability, and leadership</span>, backed by a proven track record of delivering impactful projects for startups, businesses, and enterprise-level clients, including <span className="font-semibold text-gray-800 dark:text-gray-200">automation platforms, AI tools, and complex web applications</span>. 
+                I bring <span className="font-semibold text-gray-800 dark:text-gray-200">commitment, reliability, and leadership</span>, backed by a proven track record of delivering impactful projects for startups, businesses, and enterprise-level clients, including <span className="font-semibold text-gray-800 dark:text-gray-200">automation platforms, AI tools, and complex web applications</span>.
                 Experienced in designing RESTful APIs, managing databases, and deploying solutions on AWS, Heroku, and Docker, with strong focus on performance, testing, and clean code practices.
               </p>
             </div>
@@ -606,7 +606,7 @@ const About = () => {
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Ready to bring your ideas to life? Let's discuss your next project.
             </p>
-            
+
             <motion.button
               onClick={() => navigate('/contact')}
               className="group px-10 py-5 bg-gradient-to-r from-gray-800 to-black dark:from-gray-200 dark:to-white text-white dark:text-black rounded-2xl font-bold text-xl shadow-xl hover:shadow-2xl transition-all duration-300"

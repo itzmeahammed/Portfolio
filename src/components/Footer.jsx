@@ -44,7 +44,7 @@ const Footer = () => {
             className="md:col-span-2 space-y-6"
           >
             <div className="space-y-4">
-              <motion.h3 
+              <motion.h3
                 className="text-3xl font-bold bg-gradient-to-r from-gray-800 via-black to-gray-700 dark:from-gray-200 dark:via-white dark:to-gray-300 bg-clip-text text-transparent"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -53,7 +53,7 @@ const Footer = () => {
               >
                 Ahammed's Portfolio
               </motion.h3>
-              <motion.p 
+              <motion.p
                 className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-md"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -63,9 +63,9 @@ const Footer = () => {
                 Full Stack Developer passionate about creating innovative solutions and building exceptional digital experiences that make a difference.
               </motion.p>
             </div>
-            
+
             {/* Social Links */}
-            <motion.div 
+            <motion.div
               className="flex space-x-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -103,10 +103,10 @@ const Footer = () => {
           >
             <h4 className="text-lg font-semibold text-black dark:text-white">Quick Links</h4>
             <div className="space-y-2">
-              {['Home', 'About', 'Projects', 'Contact'].map((link, index) => (
+              {quickLinks.map((link, index) => (
                 <motion.a
-                  key={link}
-                  href={`/${link.toLowerCase()}`}
+                  key={link.name}
+                  href={link.href}
                   className="block text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
                   whileHover={{ x: 5 }}
                   initial={{ opacity: 0, x: -20 }}
@@ -114,7 +114,7 @@ const Footer = () => {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + index * 0.1 }}
                 >
-                  {link}
+                  {link.name}
                 </motion.a>
               ))}
             </div>
@@ -141,8 +141,10 @@ const Footer = () => {
                   viewport={{ once: true }}
                   transition={{ delay: 0.5 + index * 0.1 }}
                 >
-                  <contact.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  <span>{contact.text}</span>
+                  <div className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg group-hover:bg-gray-200 dark:group-hover:bg-gray-700 transition-colors">
+                    <contact.icon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                  </div>
+                  <span className="text-sm">{contact.text}</span>
                 </motion.a>
               ))}
             </div>

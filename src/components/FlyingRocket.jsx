@@ -1,17 +1,27 @@
 import { motion, useAnimation } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { FaRocket } from 'react-icons/fa';
 
 const FlyingRocket = () => {
   const controls = useAnimation();
   const [isVisible, setIsVisible] = useState(false);
 
+  const isFirstRun = useRef(true);
+
   useEffect(() => {
-    const startAnimation = () => {
-      setIsVisible(true);
-      
+    if (!isVisible) {
+      const delay = isFirstRun.current ? 2000 : Math.random() * 8000 + 5000;
+      const timer = setTimeout(() => {
+        isFirstRun.current = false;
+        setIsVisible(true);
+      }, delay);
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (isVisible) {
       // Simple left to right trajectory
-      const startX = -50;
       const startY = Math.random() * (window.innerHeight * 0.6) + 100;
       const endX = window.innerWidth + 50;
       const endY = startY + (Math.random() * 200 - 100); // Slight vertical variation
@@ -26,16 +36,9 @@ const FlyingRocket = () => {
         }
       }).then(() => {
         setIsVisible(false);
-        // Schedule next rocket after random delay
-        setTimeout(startAnimation, Math.random() * 8000 + 5000); // 5-13 seconds
       });
-    };
-
-    // Start first rocket after initial delay
-    const initialDelay = setTimeout(startAnimation, 2000);
-    
-    return () => clearTimeout(initialDelay);
-  }, [controls]);
+    }
+  }, [isVisible, controls]);
 
   if (!isVisible) return null;
 

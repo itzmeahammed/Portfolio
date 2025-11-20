@@ -19,7 +19,7 @@ const InteractiveProjectBrowser = () => {
 
   useEffect(() => {
     if (!isAutoPlay) return;
-    
+
     const interval = setInterval(() => {
       setSelectedProject((prev) => (prev + 1) % projects.length);
     }, 6000);
@@ -258,7 +258,7 @@ const InteractiveProjectBrowser = () => {
           >
             <span className="text-xs sm:text-sm font-elegant-caption text-gray-700 dark:text-gray-300">🚀 Live Projects Showcase</span>
           </motion.div>
-          
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -283,7 +283,7 @@ const InteractiveProjectBrowser = () => {
               Browser
             </motion.span>
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -360,7 +360,7 @@ const InteractiveProjectBrowser = () => {
                       >
                         <HiArrowLeft className="w-5 h-5 text-gray-700 dark:text-gray-300" />
                       </motion.button>
-                      
+
                       <div className="flex items-center space-x-2">
                         <span className="text-sm font-elegant-caption text-gray-700 dark:text-gray-300 font-semibold">
                           {selectedProject + 1}
@@ -370,7 +370,7 @@ const InteractiveProjectBrowser = () => {
                           {projects.length}
                         </span>
                       </div>
-                      
+
                       <motion.button
                         onClick={handleNext}
                         whileHover={{ scale: 1.15, backgroundColor: 'rgba(0,0,0,0.1)' }}
@@ -386,11 +386,10 @@ const InteractiveProjectBrowser = () => {
                       onClick={() => setIsAutoPlay(!isAutoPlay)}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className={`px-4 py-2 rounded-lg font-elegant-caption text-sm transition-all duration-300 flex items-center space-x-2 ${
-                        isAutoPlay
+                      className={`px-4 py-2 rounded-lg font-elegant-caption text-sm transition-all duration-300 flex items-center space-x-2 ${isAutoPlay
                           ? 'bg-gray-900 dark:bg-gray-200 text-white dark:text-black shadow-lg'
                           : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:shadow-md'
-                      }`}
+                        }`}
                     >
                       <span>{isAutoPlay ? '⏸' : '▶'}</span>
                       <span>{isAutoPlay ? 'Pause' : 'Play'}</span>
@@ -500,7 +499,7 @@ const InteractiveProjectBrowser = () => {
                     onClick={() => {
                       setShowVisitPopup(true);
                       setTimeout(() => {
-                       
+
                       }, 1500);
                     }}
                     initial={{ opacity: 0, y: 10 }}
@@ -563,11 +562,10 @@ const InteractiveProjectBrowser = () => {
               onMouseLeave={() => setHoveredProject(null)}
               whileHover={{ scale: 1.3 }}
               whileTap={{ scale: 0.85 }}
-              className={`transition-all duration-300 rounded-full group relative ${
-                index === selectedProject
+              className={`transition-all duration-300 rounded-full group relative ${index === selectedProject
                   ? 'w-4 h-4 bg-gray-800 dark:bg-gray-200 shadow-lg'
                   : 'w-3 h-3 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
-              }`}
+                }`}
             >
               {/* Tooltip */}
               <AnimatePresence>
@@ -738,9 +736,6 @@ const InteractiveProjectBrowser = () => {
                   </motion.a>
                 </div>
 
-                <p className="text-xs text-center text-gray-500 dark:text-gray-500 mt-6 font-elegant-caption">
-                  ✨ Timer resets when you change projects
-                </p>
               </motion.div>
             </motion.div>
           )}
