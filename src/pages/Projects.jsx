@@ -546,12 +546,12 @@ const Projects = () => {
 
   const filteredProjects = allProjects.filter(project => {
     const matchesCategory = selectedCategory === 'All' || project.category === selectedCategory;
-    const matchesSize = selectedSize === 'All' || 
-                       (selectedSize === 'Big Projects' && bigProjects.includes(project)) ||
-                       (selectedSize === 'Small Projects' && smallProjects.includes(project));
+    const matchesSize = selectedSize === 'All' ||
+      (selectedSize === 'Big Projects' && bigProjects.includes(project)) ||
+      (selectedSize === 'Small Projects' && smallProjects.includes(project));
     const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
+      project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
     return matchesCategory && matchesSize && matchesSearch;
   });
 
@@ -595,7 +595,7 @@ const Projects = () => {
                 My Projects
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed font-elegant-body">
-                A showcase of innovative solutions addressing real-world challenges in healthcare, 
+                A showcase of innovative solutions addressing real-world challenges in healthcare,
                 education, agriculture, law enforcement, and more using cutting-edge technologies.
               </p>
             </motion.div>
@@ -621,11 +621,10 @@ const Projects = () => {
                   <motion.button
                     key={size}
                     onClick={() => setSelectedSize(size)}
-                    className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                      selectedSize === size
-                        ? 'bg-black dark:bg-white text-white dark:text-black'
-                        : 'bg-gray-200 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700'
-                    }`}
+                    className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${selectedSize === size
+                      ? 'bg-black dark:bg-white text-white dark:text-black'
+                      : 'bg-gray-200 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700'
+                      }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -642,11 +641,10 @@ const Projects = () => {
                   <motion.button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                      selectedCategory === category
-                        ? 'bg-black dark:bg-white text-white dark:text-black'
-                        : 'bg-gray-200 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700'
-                    }`}
+                    className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${selectedCategory === category
+                      ? 'bg-black dark:bg-white text-white dark:text-black'
+                      : 'bg-gray-200 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700'
+                      }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -682,9 +680,9 @@ const Projects = () => {
             className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8"
           >
             {filteredProjects.map((project, index) => (
-              <ProjectCard 
-                key={project.id} 
-                project={project} 
+              <ProjectCard
+                key={project.id}
+                project={project}
                 index={index}
               />
             ))}
@@ -718,7 +716,7 @@ const Projects = () => {
             className="text-center space-y-12"
           >
             <h2 className="text-4xl font-elegant-heading text-black dark:text-white">Project Statistics</h2>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 { number: allProjects.length, label: 'Total Projects', icon: HiCode },
@@ -736,7 +734,7 @@ const Projects = () => {
                   transition={{ delay: index * 0.1 }}
                 >
                   <stat.icon className="w-12 h-12 text-black dark:text-white mx-auto mb-4" />
-                  <motion.h3 
+                  <motion.h3
                     className="text-4xl font-elegant-heading text-black dark:text-white mb-2"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
@@ -769,17 +767,17 @@ const Projects = () => {
             <p className="text-sm sm:text-base md:text-lg text-gray-300 dark:text-gray-700 max-w-3xl mx-auto font-elegant-body">
               Let's collaborate and bring your innovative ideas to life with cutting-edge technology.
             </p>
-            
+
             {/* Contact Information */}
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-8">
-              <a 
+              <a
                 href="mailto:ahammedmass24@gmail.com"
                 className="flex items-center space-x-2 text-gray-300 dark:text-gray-700 hover:text-white dark:hover:text-black transition-colors duration-200"
               >
                 <HiMail className="w-5 h-5" />
                 <span>ahammedmass24@gmail.com</span>
               </a>
-              <a 
+              <a
                 href="tel:+971588544698"
                 className="flex items-center space-x-2 text-gray-300 dark:text-gray-700 hover:text-white dark:hover:text-black transition-colors duration-200"
               >
@@ -787,7 +785,7 @@ const Projects = () => {
                 <span>+971 588544698</span>
               </a>
             </div>
-            
+
             <motion.button
               className="px-8 py-4 bg-white dark:bg-black text-black dark:text-white rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300"
               whileHover={{ scale: 1.05 }}

@@ -1,171 +1,79 @@
 import { motion } from 'framer-motion';
-import { HiMail, HiPhone, HiLocationMarker, HiHeart } from 'react-icons/hi';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { HiMail, HiHeart, HiPhone } from 'react-icons/hi';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: FaGithub, href: 'https://github.com/ahammed', label: 'GitHub', color: 'hover:text-gray-700 dark:hover:text-gray-300' },
-    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/ahammed-s-5161b7288/', label: 'LinkedIn', color: 'hover:text-gray-700 dark:hover:text-gray-300' },
-    { icon: FaTwitter, href: 'https://twitter.com/ahammed', label: 'Twitter', color: 'hover:text-gray-700 dark:hover:text-gray-300' },
-    { icon: FaInstagram, href: 'https://instagram.com/ahammed', label: 'Instagram', color: 'hover:text-gray-700 dark:hover:text-gray-300' },
-  ];
-
-  const contactInfo = [
-    { icon: HiMail, text: 'ahammedmass24@gmail.com', href: 'mailto:ahammedmass24@gmail.com' },
-    { icon: HiPhone, text: '+971 588544698', href: 'tel:+971588544698' },
-    { icon: HiLocationMarker, text: 'Dubai, United Arab Emirates', href: '#' },
-  ];
-
-  const quickLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Contact', href: '/contact' },
+    { icon: FaGithub, href: "https://github.com/itzmeahammed", label: "GitHub" },
+    { icon: FaLinkedin, href: "https://linkedin.com/in/ahammed", label: "LinkedIn" },
+    { icon: FaTwitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" }
   ];
 
   return (
-    <footer className="relative bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-black dark:to-gray-800 border-t border-gray-200 dark:border-gray-700 overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-64 h-64 bg-gradient-to-r from-gray-200/20 to-gray-300/20 dark:from-gray-700/20 dark:to-gray-600/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-gradient-to-r from-gray-300/15 to-gray-400/15 dark:from-gray-600/15 dark:to-gray-500/15 rounded-full blur-2xl"></div>
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="md:col-span-2 space-y-6"
-          >
-            <div className="space-y-4">
-              <motion.h3
-                className="text-3xl font-bold bg-gradient-to-r from-gray-800 via-black to-gray-700 dark:from-gray-200 dark:via-white dark:to-gray-300 bg-clip-text text-transparent"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                Ahammed's Portfolio
-              </motion.h3>
-              <motion.p
-                className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-md"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                Full Stack Developer passionate about creating innovative solutions and building exceptional digital experiences that make a difference.
-              </motion.p>
-            </div>
-
-            {/* Social Links */}
-            <motion.div
-              className="flex space-x-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group p-3 rounded-xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300 shadow-lg hover:shadow-xl`}
-                  whileHover={{ scale: 1.1, y: -3 }}
-                  whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 + 0.5 }}
-                >
-                  <social.icon className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
-                  <span className="sr-only">{social.label}</span>
-                </motion.a>
-              ))}
-            </motion.div>
-          </motion.div>
+    <footer className="bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          {/* Brand Column */}
+          <div className="col-span-1 md:col-span-2 space-y-4">
+            <h2 className="text-2xl font-bold tracking-tighter text-gray-900 dark:text-white">
+              Ahammed<span className="text-gray-400">.dev</span>
+            </h2>
+            <p className="text-gray-500 dark:text-gray-400 max-w-sm">
+              Crafting digital experiences with code and creativity.
+              Specializing in scalable web applications and AI integration.
+            </p>
+          </div>
 
           {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="space-y-4"
-          >
-            <h4 className="text-lg font-semibold text-black dark:text-white">Quick Links</h4>
-            <div className="space-y-2">
-              {quickLinks.map((link, index) => (
-                <motion.a
-                  key={link.name}
-                  href={link.href}
-                  className="block text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-                  whileHover={{ x: 5 }}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 + index * 0.1 }}
-                >
-                  {link.name}
-                </motion.a>
+          <div>
+            <h3 className="font-bold text-gray-900 dark:text-white mb-4">Navigation</h3>
+            <ul className="space-y-2">
+              {['Home', 'Projects', 'About', 'Contact'].map((item) => (
+                <li key={item}>
+                  <a href={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`} className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                    {item}
+                  </a>
+                </li>
               ))}
-            </div>
-          </motion.div>
+            </ul>
+          </div>
 
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="space-y-4"
-          >
-            <h4 className="text-lg font-semibold text-black dark:text-white">Get In Touch</h4>
-            <div className="space-y-3">
-              {contactInfo.map((contact, index) => (
-                <motion.a
-                  key={contact.text}
-                  href={contact.href}
-                  className="flex items-center space-x-3 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors group"
-                  whileHover={{ x: 5 }}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                >
-                  <div className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg group-hover:bg-gray-200 dark:group-hover:bg-gray-700 transition-colors">
-                    <contact.icon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-                  </div>
-                  <span className="text-sm">{contact.text}</span>
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
+          {/* Contact */}
+          <div>
+            <h3 className="font-bold text-gray-900 dark:text-white mb-4">Get in Touch</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="mailto:ahammedmass24@gmail.com" className="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                  <HiMail /> ahammedmass24@gmail.com
+                </a>
+              </li>
+              <li className="text-gray-500 dark:text-gray-400">
+                Dubai, United Arab Emirates
+              </li>
+            </ul>
+          </div>
         </div>
 
-        {/* Bottom Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.8 }}
-          className="mt-12 pt-8 border-t border-black/10 dark:border-white/10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
-        >
-          <p className="text-gray-500 dark:text-gray-400 text-sm">
-            © {currentYear} Portfolio. All rights reserved.
+        <div className="border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1">
+            © {currentYear} Ahammed. Made with <HiHeart className="text-red-500" /> and React.
           </p>
-          <p className="text-gray-500 dark:text-gray-400 text-sm">
-            Crafted with passion ✨ by Ahammed • Powered by innovation 🚀
-          </p>
-        </motion.div>
+
+          <div className="flex gap-6">
+            <a href="tel:+971588544698" className="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+              <HiPhone /> +971 588 544 698
+            </a>
+            <a href="https://github.com/itzmeahammed" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+              <FaGithub /> GitHub
+            </a>
+            <a href="https://linkedin.com/in/ahammed" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+              <FaLinkedin /> LinkedIn
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );

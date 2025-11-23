@@ -2,10 +2,8 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useNavigate } from 'react-router-dom';
 import profileImage from '../assets/image.png';
-import cvFile from '../assets/Ahammed S.pdf (5) (1).pdf';
 import CVDownload from '../components/CVDownload';
 import {
-  HiAcademicCap,
   HiBriefcase,
   HiCode,
   HiStar,
@@ -14,10 +12,8 @@ import {
   HiLocationMarker,
   HiMail,
   HiPhone,
-  HiDownload,
   HiClock,
   HiChartBar,
-  HiBadgeCheck,
   HiEye,
   HiLightBulb,
   HiGlobeAlt,
@@ -32,10 +28,8 @@ import {
   FaPython,
   FaDatabase as FaDb,
   FaGithub,
-  FaLinkedin,
   FaRocket,
   FaLaptopCode,
-  FaMobile,
   FaAws,
   FaDocker,
   FaJava,
@@ -46,16 +40,11 @@ import {
 } from 'react-icons/fa';
 import {
   SiMongodb,
-  SiTailwindcss,
   SiFlutter,
   SiJavascript,
-  SiTypescript,
   SiNextdotjs,
-  SiFirebase,
-  SiTensorflow,
   SiMysql,
   SiExpress,
-  SiReactos,
   SiOpencv,
   SiNginx,
   SiHeroku,
