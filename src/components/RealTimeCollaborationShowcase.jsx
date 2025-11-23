@@ -1,7 +1,7 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import {
-    HiUserGroup, HiServer, HiLightningBolt, HiCode, HiChatAlt2, HiGlobeAlt
+    HiServer, HiLightningBolt, HiCode, HiGlobeAlt
 } from 'react-icons/hi';
 
 const RealTimeCollaborationShowcase = () => {
@@ -78,17 +78,15 @@ const RealTimeCollaborationShowcase = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                     {/* Left: Interactive Visualization */}
-                    <div className="relative">
-                        {/* Server Core */}
-                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gray-900 dark:bg-gray-800 rounded-full flex items-center justify-center z-20 border-4 border-yellow-500 shadow-[0_0_50px_rgba(234,179,8,0.3)]">
-                            <HiServer className="w-16 h-16 text-white" />
-                            <div className="absolute -bottom-8 text-xs font-mono text-gray-500">Socket Server</div>
-                        </div>
+                    <div className="relative min-h-[400px] flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
 
                         {/* User A */}
                         <motion.div
-                            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-900 p-4 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 z-10 w-48"
-                            animate={{ x: activeStep === 1 ? 20 : 0 }}
+                            className="relative z-10 bg-white dark:bg-gray-900 p-4 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 w-48"
+                            animate={{
+                                x: activeStep === 1 ? (window.innerWidth >= 768 ? 20 : 0) : 0,
+                                y: activeStep === 1 ? (window.innerWidth < 768 ? 20 : 0) : 0
+                            }}
                         >
                             <div className="flex items-center gap-2 mb-2 border-b border-gray-100 dark:border-gray-800 pb-2">
                                 <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">A</div>
@@ -107,10 +105,19 @@ const RealTimeCollaborationShowcase = () => {
                             </div>
                         </motion.div>
 
+                        {/* Server Core */}
+                        <div className="relative z-20 w-32 h-32 bg-gray-900 dark:bg-gray-800 rounded-full flex items-center justify-center border-4 border-yellow-500 shadow-[0_0_50px_rgba(234,179,8,0.3)] shrink-0">
+                            <HiServer className="w-16 h-16 text-white" />
+                            <div className="absolute -bottom-8 text-xs font-mono text-gray-500 whitespace-nowrap">Socket Server</div>
+                        </div>
+
                         {/* User B */}
                         <motion.div
-                            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-900 p-4 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 z-10 w-48"
-                            animate={{ x: activeStep === 1 ? -20 : 0 }}
+                            className="relative z-10 bg-white dark:bg-gray-900 p-4 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 w-48"
+                            animate={{
+                                x: activeStep === 1 ? (window.innerWidth >= 768 ? -20 : 0) : 0,
+                                y: activeStep === 1 ? (window.innerWidth < 768 ? -20 : 0) : 0
+                            }}
                         >
                             <div className="flex items-center gap-2 mb-2 border-b border-gray-100 dark:border-gray-800 pb-2">
                                 <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">B</div>
@@ -129,34 +136,52 @@ const RealTimeCollaborationShowcase = () => {
                             </div>
                         </motion.div>
 
-                        {/* Data Packets */}
-                        <svg className="w-full h-[400px] visible">
-                            {/* Connection Lines */}
-                            <path d="M 100 200 L 300 200" stroke="currentColor" className="text-gray-200 dark:text-gray-800" strokeWidth="2" strokeDasharray="4 4" />
-                            <path d="M 500 200 L 300 200" stroke="currentColor" className="text-gray-200 dark:text-gray-800" strokeWidth="2" strokeDasharray="4 4" />
-
-                            {/* Moving Packet A -> Server */}
-                            {activeStep === 1 && (
-                                <motion.circle
-                                    r="6"
-                                    fill="#3B82F6"
-                                    initial={{ cx: 100, cy: 200 }}
-                                    animate={{ cx: 300, cy: 200 }}
-                                    transition={{ duration: 0.5, ease: "linear" }}
+                        {/* Connection Lines & Packets (Absolute Overlay) */}
+                        <div className="absolute inset-0 pointer-events-none">
+                            <svg className="w-full h-full">
+                                {/* Responsive Lines */}
+                                <line
+                                    x1="50%" y1="50%"
+                                    x2={window.innerWidth < 768 ? "50%" : "15%"}
+                                    y2={window.innerWidth < 768 ? "15%" : "50%"}
+                                    stroke="currentColor"
+                                    className="text-gray-200 dark:text-gray-800"
+                                    strokeWidth="2"
+                                    strokeDasharray="4 4"
                                 />
-                            )}
-
-                            {/* Moving Packet Server -> B */}
-                            {activeStep === 1 && (
-                                <motion.circle
-                                    r="6"
-                                    fill="#22C55E"
-                                    initial={{ cx: 300, cy: 200 }}
-                                    animate={{ cx: 500, cy: 200 }}
-                                    transition={{ duration: 0.5, delay: 0.5, ease: "linear" }}
+                                <line
+                                    x1="50%" y1="50%"
+                                    x2={window.innerWidth < 768 ? "50%" : "85%"}
+                                    y2={window.innerWidth < 768 ? "85%" : "50%"}
+                                    stroke="currentColor"
+                                    className="text-gray-200 dark:text-gray-800"
+                                    strokeWidth="2"
+                                    strokeDasharray="4 4"
                                 />
-                            )}
-                        </svg>
+
+                                {/* Moving Packet A -> Server */}
+                                {activeStep === 1 && (
+                                    <motion.circle
+                                        r="6"
+                                        fill="#3B82F6"
+                                        initial={window.innerWidth < 768 ? { cx: "50%", cy: "15%" } : { cx: "15%", cy: "50%" }}
+                                        animate={{ cx: "50%", cy: "50%" }}
+                                        transition={{ duration: 0.5, ease: "linear" }}
+                                    />
+                                )}
+
+                                {/* Moving Packet Server -> B */}
+                                {activeStep === 1 && (
+                                    <motion.circle
+                                        r="6"
+                                        fill="#22C55E"
+                                        initial={{ cx: "50%", cy: "50%" }}
+                                        animate={window.innerWidth < 768 ? { cx: "50%", cy: "85%" } : { cx: "85%", cy: "50%" }}
+                                        transition={{ duration: 0.5, delay: 0.5, ease: "linear" }}
+                                    />
+                                )}
+                            </svg>
+                        </div>
                     </div>
 
                     {/* Right: Steps & Code */}
@@ -168,8 +193,8 @@ const RealTimeCollaborationShowcase = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ delay: index * 0.1 }}
                                 className={`p-6 rounded-2xl border transition-all duration-300 ${activeStep === index
-                                        ? 'bg-gray-50 dark:bg-gray-900 border-yellow-500 shadow-lg scale-105'
-                                        : 'bg-transparent border-gray-100 dark:border-gray-800 opacity-50'
+                                    ? 'bg-gray-50 dark:bg-gray-900 border-yellow-500 shadow-lg scale-105'
+                                    : 'bg-transparent border-gray-100 dark:border-gray-800 opacity-50'
                                     }`}
                             >
                                 <div className="flex items-start gap-4">

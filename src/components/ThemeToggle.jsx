@@ -7,7 +7,7 @@ const ThemeToggle = ({ theme, toggleTheme }) => {
   return (
     <motion.button
       onClick={toggleTheme}
-      className={`fixed top-6 right-6 z-50 flex items-center p-1 rounded-full w-16 h-9 transition-colors duration-300 focus:outline-none shadow-lg ${isDark ? 'bg-gray-800 border border-gray-700' : 'bg-gray-200 border border-gray-300'
+      className={`relative flex items-center p-1 rounded-full w-16 h-9 transition-colors duration-300 focus:outline-none shadow-lg ${isDark ? 'bg-gray-800 border border-gray-700' : 'bg-gray-200 border border-gray-300'
         }`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}

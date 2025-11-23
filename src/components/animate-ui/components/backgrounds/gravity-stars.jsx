@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const GravityStarsBackground = ({
-  starsCount = 20,
+  starsCount = 0,
   starsSize = 0.3,
   starsOpacity = 1,
   glowIntensity = 7,

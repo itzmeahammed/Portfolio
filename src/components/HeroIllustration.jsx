@@ -1,214 +1,124 @@
 import { motion } from 'framer-motion';
-import { HiCode, HiSparkles, HiLightBulb, HiCube, HiStar } from 'react-icons/hi';
-import { FaReact, FaNodeJs, FaPython } from 'react-icons/fa';
-import { SiJavascript, SiMongodb } from 'react-icons/si';
-import profileImage from '../assets/image.png';
+import {
+  FaReact, FaNodeJs, FaPython, FaAws, FaDocker, FaGithub
+} from 'react-icons/fa';
+import {
+  SiNextdotjs, SiTypescript, SiTailwindcss, SiMongodb, SiGraphql
+} from 'react-icons/si';
+import { HiChip, HiCloud, HiDatabase, HiCode } from 'react-icons/hi';
 
 const HeroIllustration = () => {
+  const orbitDuration = 20;
+
+  const techIcons = [
+    { Icon: FaReact, color: "text-cyan-400", delay: 0, radius: 140 },
+    { Icon: FaNodeJs, color: "text-green-500", delay: 2, radius: 140 },
+    { Icon: SiTypescript, color: "text-blue-500", delay: 4, radius: 140 },
+    { Icon: FaAws, color: "text-orange-500", delay: 6, radius: 140 },
+    { Icon: SiNextdotjs, color: "text-white", delay: 1, radius: 220 },
+    { Icon: SiMongodb, color: "text-green-400", delay: 3, radius: 220 },
+    { Icon: FaDocker, color: "text-blue-400", delay: 5, radius: 220 },
+    { Icon: SiGraphql, color: "text-pink-500", delay: 7, radius: 220 },
+  ];
+
   return (
-    <div className="relative w-full max-w-lg mx-auto">
-      {/* Main Illustration Container */}
-      <div className="relative w-96 h-96 mx-auto">
-        
-        {/* Central Profile Card */}
+    <div className="relative w-[600px] h-[600px] flex items-center justify-center perspective-1000">
+
+      {/* Central Core */}
+      <div className="relative z-20">
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-800 dark:via-gray-700 dark:to-gray-900 rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-600 overflow-hidden"
-          animate={{
-            y: [0, -10, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          className="w-32 h-32 relative flex items-center justify-center"
         >
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-gray-100/50 to-gray-200/50 dark:from-transparent dark:via-gray-700/50 dark:to-gray-800/50"></div>
-          
-          {/* Content */}
-          <div className="relative z-10 p-8 h-full flex flex-col items-center justify-center text-center">
-            {/* Profile Image */}
-            <motion.div
-              className="w-32 h-32 rounded-full mb-6 overflow-hidden shadow-xl border-4 border-gray-300 dark:border-gray-600"
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img 
-                src={profileImage} 
-                alt="Ahammed - Full Stack Developer"
-                className="w-full h-full object-cover object-center"
-              />
-            </motion.div>
-            
-            {/* Name */}
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Ahammed</h3>
-            <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">Full Stack Developer</p>
-            
-            {/* Status Indicator */}
-            <div className="flex items-center space-x-2 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-xs text-gray-600 dark:text-gray-400">Available for work</span>
-            </div>
+          {/* Core Glow */}
+          <div className="absolute inset-0 bg-cyan-500/30 blur-3xl rounded-full animate-pulse"></div>
+
+          {/* Core Structure */}
+          <div className="relative w-24 h-24 bg-black/80 backdrop-blur-xl border border-cyan-500/50 rounded-2xl transform rotate-45 flex items-center justify-center shadow-[0_0_30px_rgba(6,182,212,0.5)]">
+            <HiCode className="text-4xl text-cyan-400 transform -rotate-45" />
           </div>
+          <div className="absolute w-24 h-24 border border-cyan-500/30 rounded-2xl transform rotate-[22.5deg]"></div>
+          <div className="absolute w-24 h-24 border border-cyan-500/30 rounded-2xl transform rotate-[67.5deg]"></div>
         </motion.div>
-
-        {/* Floating Tech Icons */}
-        <motion.div
-          className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg"
-          animate={{
-            rotate: [0, 10, -10, 0],
-            y: [0, -5, 0],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <FaReact className="w-8 h-8 text-white" />
-        </motion.div>
-
-        <motion.div
-          className="absolute -bottom-4 -left-4 w-14 h-14 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg"
-          animate={{
-            rotate: [0, -10, 10, 0],
-            y: [0, 5, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-        >
-          <FaNodeJs className="w-7 h-7 text-white" />
-        </motion.div>
-
-        <motion.div
-          className="absolute top-1/4 -left-6 w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center shadow-lg"
-          animate={{
-            x: [0, -5, 0],
-            rotate: [0, 15, 0],
-          }}
-          transition={{
-            duration: 2.5,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 0.5,
-          }}
-        >
-          <SiJavascript className="w-6 h-6 text-white" />
-        </motion.div>
-
-        <motion.div
-          className="absolute top-1/3 -right-6 w-10 h-10 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg"
-          animate={{
-            x: [0, 5, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 3.5,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1.5,
-          }}
-        >
-          <FaPython className="w-5 h-5 text-white" />
-        </motion.div>
-
-        <motion.div
-          className="absolute bottom-1/3 -right-8 w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-700 rounded-lg flex items-center justify-center shadow-lg"
-          animate={{
-            y: [0, -8, 0],
-            rotate: [0, -20, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-        >
-          <SiMongodb className="w-4 h-4 text-white" />
-        </motion.div>
-
-        {/* Decorative Elements */}
-        <motion.div
-          className="absolute top-8 left-8 w-6 h-6 bg-gradient-to-r from-pink-400 to-red-500 rounded-full opacity-70"
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.7, 1, 0.7],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-
-        <motion.div
-          className="absolute bottom-8 right-8 w-4 h-4 bg-gradient-to-r from-purple-400 to-indigo-500 rounded-full opacity-60"
-          animate={{
-            scale: [1, 1.4, 1],
-            opacity: [0.6, 1, 0.6],
-          }}
-          transition={{
-            duration: 2.5,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-        />
-
-        {/* Connection Lines */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20">
-          <motion.path
-            d="M 50 50 Q 150 100 250 50"
-            stroke="currentColor"
-            strokeWidth="2"
-            fill="none"
-            className="text-gray-400 dark:text-gray-600"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
-          />
-          <motion.path
-            d="M 100 200 Q 200 150 300 200"
-            stroke="currentColor"
-            strokeWidth="1"
-            fill="none"
-            className="text-gray-300 dark:text-gray-700"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", delay: 1 }}
-          />
-        </svg>
-
-        {/* Sparkle Effects */}
-        {Array.from({ length: 8 }).map((_, index) => (
-          <motion.div
-            key={index}
-            className="absolute w-1 h-1 bg-yellow-400 rounded-full"
-            style={{
-              left: `${20 + (index * 45)}%`,
-              top: `${15 + (index * 35)}%`,
-            }}
-            animate={{
-              scale: [0, 1, 0],
-              opacity: [0, 1, 0],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              delay: index * 0.3,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
       </div>
 
-      {/* Bottom Glow Effect */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-64 h-32 bg-gradient-to-t from-gray-200/50 to-transparent dark:from-gray-700/50 rounded-full blur-2xl -z-10"></div>
+      {/* Inner Orbit Ring */}
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{ duration: orbitDuration, repeat: Infinity, ease: "linear" }}
+        className="absolute w-[280px] h-[280px] rounded-full border border-dashed border-gray-700/50"
+      />
+
+      {/* Outer Orbit Ring */}
+      <motion.div
+        animate={{ rotate: -360 }}
+        transition={{ duration: orbitDuration * 1.5, repeat: Infinity, ease: "linear" }}
+        className="absolute w-[440px] h-[440px] rounded-full border border-dashed border-gray-700/30"
+      />
+
+      {/* Orbiting Tech Icons */}
+      {techIcons.map((tech, index) => (
+        <motion.div
+          key={index}
+          className="absolute top-1/2 left-1/2"
+          animate={{ rotate: 360 }}
+          transition={{
+            duration: tech.radius === 140 ? orbitDuration : orbitDuration * 1.5,
+            repeat: Infinity,
+            ease: "linear",
+            delay: -tech.delay * (tech.radius === 140 ? 2.5 : 3.75) // Offset start positions
+          }}
+          style={{
+            width: tech.radius * 2,
+            height: tech.radius * 2,
+            marginLeft: -tech.radius,
+            marginTop: -tech.radius
+          }}
+        >
+          <motion.div
+            className={`absolute top-0 left-1/2 -ml-6 -mt-6 w-12 h-12 bg-gray-900/90 backdrop-blur-md border border-gray-700 rounded-xl flex items-center justify-center shadow-lg ${tech.color}`}
+            style={{ transformOrigin: "center center" }}
+            animate={{ rotate: -360 }} // Counter-rotate to keep icon upright
+            transition={{
+              duration: tech.radius === 140 ? orbitDuration : orbitDuration * 1.5,
+              repeat: Infinity,
+              ease: "linear",
+              delay: -tech.delay * (tech.radius === 140 ? 2.5 : 3.75)
+            }}
+            whileHover={{ scale: 1.2, boxShadow: "0 0 20px rgba(255,255,255,0.2)" }}
+          >
+            <tech.Icon size={24} />
+          </motion.div>
+        </motion.div>
+      ))}
+
+      {/* Floating Particles */}
+      {[...Array(5)].map((_, i) => (
+        <motion.div
+          key={`particle-${i}`}
+          className="absolute w-2 h-2 bg-cyan-400 rounded-full opacity-50"
+          animate={{
+            y: [-20, 20, -20],
+            x: [-20, 20, -20],
+            opacity: [0.2, 0.8, 0.2],
+            scale: [0.8, 1.2, 0.8],
+          }}
+          transition={{
+            duration: 3 + i,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: i * 0.5,
+          }}
+          style={{
+            top: `${20 + Math.random() * 60}%`,
+            left: `${20 + Math.random() * 60}%`,
+          }}
+        />
+      ))}
+
+      {/* Background Glow */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 via-purple-500/10 to-pink-500/10 blur-[100px] rounded-full -z-10"></div>
     </div>
   );
 };

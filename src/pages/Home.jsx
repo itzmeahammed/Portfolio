@@ -42,6 +42,9 @@ import RealTimeCollaborationShowcase from '../components/RealTimeCollaborationSh
 import AlgorithmVisualizer from '../components/AlgorithmVisualizer';
 import TechStackGrid from '../components/TechStackGrid';
 
+import BlockchainNetworkShowcase from '../components/BlockchainNetworkShowcase';
+import DevOpsPipelineShowcase from '../components/DevOpsPipelineShowcase';
+
 const Home = () => {
   const navigate = useNavigate();
   const containerRef = useRef(null);
@@ -170,9 +173,11 @@ const Home = () => {
           <SystemDesignShowcase />
           <AIWorkflowShowcase />
           <CloudInfrastructureShowcase />
+          <DevOpsPipelineShowcase />
           <MobileEcosystemShowcase />
           <DesktopEcosystemShowcase />
           <SaaSProductShowcase />
+          <BlockchainNetworkShowcase />
           <RealTimeCollaborationShowcase />
           <AlgorithmVisualizer />
         </div>
@@ -202,42 +207,76 @@ const Home = () => {
       {/* Tech Arsenal - Grid Visualization */}
       <TechStackGrid />
 
-      {/* Impact Stats */}
-      <section className="py-24 relative overflow-hidden">
+      {/* Impact Stats - Premium Redesign */}
+      <section className="py-32 relative overflow-hidden">
+        {/* Background Gradients */}
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-[100px] -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-[100px]"></div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center p-8 rounded-3xl bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm"
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                className="group relative p-8 rounded-[2rem] bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl border border-white/20 dark:border-gray-800 shadow-xl hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300"
               >
-                <div className="inline-flex p-4 rounded-2xl bg-white dark:bg-black mb-4 shadow-lg">
-                  <stat.icon className="w-8 h-8 text-gray-900 dark:text-white" />
+                {/* Hover Gradient Border Effect */}
+                <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-amber-500/0 via-orange-500/0 to-yellow-500/0 group-hover:from-amber-500/10 group-hover:via-orange-500/10 group-hover:to-yellow-500/10 transition-all duration-500"></div>
+
+                <div className="relative z-10 flex flex-col items-center text-center">
+                  <div className="mb-6 p-4 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 shadow-inner group-hover:scale-110 transition-transform duration-300">
+                    <stat.icon className="w-8 h-8 text-gray-700 dark:text-gray-300 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors duration-300" />
+                  </div>
+
+                  <h3 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 mb-2">
+                    {stat.number}
+                  </h3>
+
+                  <p className="text-sm font-semibold tracking-wide text-gray-500 dark:text-gray-400 uppercase">
+                    {stat.label}
+                  </p>
                 </div>
-                <h3 className="text-4xl font-bold mb-2">{stat.number}</h3>
-                <p className="text-gray-500 dark:text-gray-400 font-medium">{stat.label}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - Ultra Modern */}
       <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gray-900 dark:bg-white transform -skew-y-3 origin-bottom-left scale-110"></div>
+        {/* Dynamic Background */}
+        <div className="absolute inset-0 bg-black dark:bg-white">
+          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-black to-amber-900/20 dark:from-gray-100/40 dark:via-white dark:to-amber-100/20"></div>
+        </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center space-y-8">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center space-y-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-block"
+          >
+            <span className="px-4 py-2 rounded-full border border-white/10 dark:border-black/10 bg-white/5 dark:bg-black/5 backdrop-blur-md text-sm font-medium text-amber-400 dark:text-amber-600">
+              🚀 Open for Opportunities
+            </span>
+          </motion.div>
+
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold text-white dark:text-black"
+            className="text-5xl md:text-7xl font-bold tracking-tight text-white dark:text-black"
           >
-            Ready to engineer the extraordinary?
+            Ready to engineer <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-orange-400 dark:from-amber-600 dark:to-orange-600">
+              the extraordinary?
+            </span>
           </motion.h2>
 
           <motion.p
@@ -245,19 +284,39 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-gray-300 dark:text-gray-600"
+            className="text-xl md:text-2xl text-gray-400 dark:text-gray-600 max-w-2xl mx-auto leading-relaxed"
           >
             Let's collaborate to transform your vision into a scalable, high-performance reality.
           </motion.p>
 
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => navigate('/contact')}
-            className="px-10 py-5 bg-white dark:bg-black text-black dark:text-white rounded-full font-bold text-xl shadow-2xl hover:shadow-white/20 dark:hover:shadow-black/20 transition-all"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8"
           >
-            Start Collaboration
-          </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/contact')}
+              className="group relative px-10 py-5 bg-white dark:bg-black text-black dark:text-white rounded-full font-bold text-xl overflow-hidden shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] dark:shadow-[0_0_40px_-10px_rgba(0,0,0,0.3)] transition-all"
+            >
+              <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-amber-200/50 dark:via-amber-700/50 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
+              <span className="relative flex items-center gap-3">
+                Start Collaboration <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
+              </span>
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => window.open('mailto:ahammedmass24@gmail.com')}
+              className="px-10 py-5 bg-transparent border-2 border-white/20 dark:border-black/20 text-white dark:text-black rounded-full font-bold text-xl hover:bg-white/10 dark:hover:bg-black/5 transition-colors backdrop-blur-sm"
+            >
+              Schedule a Call
+            </motion.button>
+          </motion.div>
         </div>
       </section>
     </div>

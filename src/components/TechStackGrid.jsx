@@ -67,7 +67,7 @@ const TechStackGrid = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6"
                     >
-                        Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Arsenal</span>
+                        Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">Arsenal</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

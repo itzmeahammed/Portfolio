@@ -24,9 +24,9 @@ const SaaSProductShowcase = () => {
             value: '$124,500',
             change: '+12.5%',
             icon: HiCurrencyDollar,
-            color: 'text-violet-600 dark:text-violet-400',
-            bg: 'bg-violet-100 dark:bg-violet-400/10',
-            chartColor: 'bg-violet-500'
+            color: 'text-blue-600 dark:text-blue-400',
+            bg: 'bg-blue-100 dark:bg-blue-400/10',
+            chartColor: 'bg-blue-500'
         },
         {
             id: 'users',
@@ -34,9 +34,9 @@ const SaaSProductShowcase = () => {
             value: '45.2k',
             change: '+8.2%',
             icon: HiUsers,
-            color: 'text-fuchsia-600 dark:text-fuchsia-400',
-            bg: 'bg-fuchsia-100 dark:bg-fuchsia-400/10',
-            chartColor: 'bg-fuchsia-500'
+            color: 'text-indigo-600 dark:text-indigo-400',
+            bg: 'bg-indigo-100 dark:bg-indigo-400/10',
+            chartColor: 'bg-indigo-500'
         },
         {
             id: 'growth',
@@ -44,9 +44,9 @@ const SaaSProductShowcase = () => {
             value: '24.8%',
             change: '+2.1%',
             icon: HiTrendingUp,
-            color: 'text-pink-600 dark:text-pink-400',
-            bg: 'bg-pink-100 dark:bg-pink-400/10',
-            chartColor: 'bg-pink-500'
+            color: 'text-cyan-600 dark:text-cyan-400',
+            bg: 'bg-cyan-100 dark:bg-cyan-400/10',
+            chartColor: 'bg-cyan-500'
         }
     ];
 
@@ -63,12 +63,12 @@ const SaaSProductShowcase = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white dark:bg-black border border-gray-200 dark:border-gray-700 mb-4 shadow-sm"
                             >
-                                <HiChartPie className="text-violet-500" />
+                                <HiChartPie className="text-blue-500" />
                                 <span className="text-xs font-medium text-gray-600 dark:text-gray-300">Enterprise Solutions</span>
                             </motion.div>
 
                             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                                SaaS <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600 dark:from-violet-400 dark:to-fuchsia-400">Analytics</span>
+                                SaaS <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Analytics</span>
                             </h2>
                             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                                 Empowering businesses with real-time data visualization and actionable insights through intuitive dashboard interfaces.
@@ -81,8 +81,8 @@ const SaaSProductShowcase = () => {
                                     key={metric.id}
                                     onClick={() => setActiveMetric(metric.id)}
                                     className={`p-4 rounded-2xl border text-left transition-all duration-300 ${activeMetric === metric.id
-                                            ? 'bg-white dark:bg-gray-800 border-violet-500 shadow-lg scale-105'
-                                            : 'bg-transparent border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
+                                        ? 'bg-white dark:bg-gray-800 border-blue-500 shadow-lg scale-105'
+                                        : 'bg-transparent border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
                                         }`}
                                 >
                                     <div className={`w-10 h-10 rounded-xl ${metric.bg} ${metric.color} flex items-center justify-center mb-3`}>
@@ -172,7 +172,7 @@ const SaaSProductShowcase = () => {
                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                             className="absolute top-20 -right-4 p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700"
                         >
-                            <HiChartBar className="text-violet-500 w-8 h-8" />
+                            <HiChartBar className="text-blue-500 w-8 h-8" />
                         </motion.div>
 
                         <motion.div
@@ -180,11 +180,11 @@ const SaaSProductShowcase = () => {
                             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                             className="absolute bottom-40 -left-4 p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700"
                         >
-                            <HiUsers className="text-fuchsia-500 w-8 h-8" />
+                            <HiUsers className="text-indigo-500 w-8 h-8" />
                         </motion.div>
 
                         {/* Ambient Glow */}
-                        <div className="absolute inset-0 bg-violet-500/20 blur-[100px] -z-10 rounded-full opacity-50"></div>
+                        <div className="absolute inset-0 bg-blue-500/20 blur-[100px] -z-10 rounded-full opacity-50"></div>
                     </div>
 
                 </div>
