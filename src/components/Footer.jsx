@@ -7,7 +7,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: FaGithub, href: "https://github.com/itzmeahammed", label: "GitHub" },
-    { icon: FaLinkedin, href: "https://linkedin.com/in/ahammed", label: "LinkedIn" },
+    { icon: FaLinkedin, href: "https://www.linkedin.com/in/ahammed-s-5161b7288/", label: "LinkedIn" },
     { icon: FaTwitter, href: "https://twitter.com", label: "Twitter" },
     { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" }
   ];
@@ -69,7 +69,7 @@ const Footer = () => {
             <a href="https://github.com/itzmeahammed" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
               <FaGithub /> GitHub
             </a>
-            <a href="https://linkedin.com/in/ahammed" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+            <a href="https://www.linkedin.com/in/ahammed-s-5161b7288/" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
               <FaLinkedin /> LinkedIn
             </a>
           </div>

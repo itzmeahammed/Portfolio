@@ -295,26 +295,18 @@ const InteractiveProjectBrowser = () => {
 
               {/* Action Buttons */}
               <div className="space-y-3 mt-6 pt-6 border-t border-gray-100 dark:border-gray-800">
-                <a
-                  href={currentProject.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-3 bg-gray-900 dark:bg-white text-white dark:text-black rounded-xl font-bold text-center hover:scale-105 transition-transform flex items-center justify-center gap-2 text-sm"
-                >
-                  <HiExternalLink className="w-4 h-4" /> Visit Live Site
-                </a>
-                <div className="flex gap-2">
+                <div className="flex gap-3">
                   <button
                     onClick={() => setSelectedProject((prev) => (prev - 1 + projects.length) % projects.length)}
-                    className="flex-1 py-3 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex justify-center"
+                    className="flex-1 py-3 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex items-center justify-center gap-2 font-semibold text-sm group"
                   >
-                    <HiArrowLeft />
+                    <HiArrowLeft className="group-hover:-translate-x-1 transition-transform" />
                   </button>
                   <button
                     onClick={() => setSelectedProject((prev) => (prev + 1) % projects.length)}
-                    className="flex-1 py-3 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex justify-center"
+                    className="flex-1 py-3 bg-gray-900 dark:bg-white text-white dark:text-black rounded-xl hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 font-semibold text-sm group"
                   >
-                    <HiArrowRight />
+                    <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
               </div>

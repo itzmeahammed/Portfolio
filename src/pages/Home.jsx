@@ -69,8 +69,8 @@ const Home = () => {
   };
 
   const stats = [
-    { icon: HiCode, number: "50+", label: "Projects Delivered" },
-    { icon: HiStar, number: "1.5+", label: "Years Experience" },
+    { icon: HiCode, number: "20+", label: "Projects Delivered" },
+    { icon: HiStar, number: "2.5+", label: "Years Experience" },
     { icon: HiUsers, number: "2+", label: "Happy Clients" },
     { icon: HiTrendingUp, number: "20+", label: "Tech Stack" }
   ];
@@ -135,7 +135,7 @@ const Home = () => {
 
             <motion.div variants={fadeInUp} className="flex items-center justify-center lg:justify-start gap-6 text-gray-500 dark:text-gray-400">
               <a href="https://github.com/itzmeahammed" target="_blank" rel="noreferrer" className="hover:text-black dark:hover:text-white transition-colors"><FaGithub size={24} /></a>
-              <a href="https://linkedin.com/in/ahammed" target="_blank" rel="noreferrer" className="hover:text-blue-600 transition-colors"><FaLinkedin size={24} /></a>
+              <a href="https://www.linkedin.com/in/ahammed-s-5161b7288/" target="_blank" rel="noreferrer" className="hover:text-blue-600 transition-colors"><FaLinkedin size={24} /></a>
               <a href="mailto:ahammedmass24@gmail.com" className="hover:text-red-500 transition-colors"><HiMail size={26} /></a>
             </motion.div>
           </motion.div>

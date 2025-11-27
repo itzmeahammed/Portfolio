@@ -1,10 +1,8 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useRef } from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { HiCode, HiEye, HiExternalLink, HiSearch, HiFilter, HiMail, HiPhone } from 'react-icons/hi';
+import { HiCode, HiEye, HiExternalLink, HiSearch, HiFilter, HiMail, HiPhone, HiSparkles, HiLightningBolt, HiCube } from 'react-icons/hi';
 import ProjectCard from '../components/ProjectCard';
-
-
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -12,7 +10,56 @@ const Projects = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [heroRef, heroInView] = useInView({ threshold: 0.3, triggerOnce: true });
 
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
   const bigProjects = [
+    {
+      id: 57,
+      title: "AiStudyPlanner-2",
+      category: "AI/ML",
+      type: "AI / Web",
+      description: "AI study planning project.",
+      technologies: ["Python", "AI", "ReactJS"],
+      status: "Completed",
+      githubUrl: "https://github.com/itzmeahammed"
+    },
+    {
+      id: 56,
+      title: "mediConnect-2",
+      category: "Web Development",
+      type: "Web / Healthcare",
+      description: "Healthcare communication platform.",
+      technologies: ["ReactJS", "Node.js", "MongoDB"],
+      status: "Completed",
+      githubUrl: "https://github.com/itzmeahammed"
+    },
+    {
+      id: 36,
+      title: "Multi tool website",
+      category: "Web Development",
+      type: "Web",
+      description: "Website integrating multiple small tools.",
+      technologies: ["ReactJS", "Node.js"],
+      status: "Completed",
+      githubUrl: "https://github.com/itzmeahammed"
+    },
+    {
+      id: 30,
+      title: "schemeSeeker",
+      category: "Web Development",
+      type: "Web / Utility",
+      description: "Tool to find government/business schemes.",
+      technologies: ["ReactJS", "Node.js"],
+      status: "Completed",
+      githubUrl: "https://github.com/itzmeahammed"
+    },
     {
       id: 1,
       title: "Traffic Violation Detection System",
@@ -206,17 +253,6 @@ const Projects = () => {
   ];
 
   const smallProjects = [
-
-    {
-      id: 27,
-      title: "rockpaperscissor",
-      category: "Games",
-      type: "Game",
-      description: "Rock Paper Scissor game project.",
-      technologies: ["JavaScript", "HTML", "CSS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
     {
       id: 28,
       title: "personal kg builder",
@@ -227,296 +263,7 @@ const Projects = () => {
       status: "Completed",
       githubUrl: "https://github.com/itzmeahammed"
     },
-    {
-      id: 29,
-      title: "AgriSmart",
-      category: "Mobile Development",
-      type: "Mobile / Agriculture",
-      description: "Agriculture/farming app for farmers.",
-      technologies: ["React Native", "Node.js"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 30,
-      title: "schemeSeeker",
-      category: "Web Development",
-      type: "Web / Utility",
-      description: "Tool to find government/business schemes.",
-      technologies: ["ReactJS", "Node.js"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 31,
-      title: "Agrismart-2",
-      category: "Mobile Development",
-      type: "Mobile / Agriculture",
-      description: "Iteration of AgriSmart app.",
-      technologies: ["React Native", "Node.js"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 32,
-      title: "app",
-      category: "Mobile Development",
-      type: "Mobile/Web",
-      description: "Small web/mobile app project.",
-      technologies: ["ReactJS", "Node.js"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 33,
-      title: "public",
-      category: "Web Development",
-      type: "Web",
-      description: "Public portal/project.",
-      technologies: ["ReactJS", "Node.js"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 34,
-      title: "image-caption",
-      category: "AI/ML",
-      type: "AI / Web",
-      description: "AI project for generating image captions.",
-      technologies: ["Python", "AI", "ReactJS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 35,
-      title: "location-finder",
-      category: "Web Development",
-      type: "Web / Utility",
-      description: "Tool/app for finding locations/services.",
-      technologies: ["ReactJS", "Node.js"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 36,
-      title: "Multi tool website",
-      category: "Web Development",
-      type: "Web",
-      description: "Website integrating multiple small tools.",
-      technologies: ["ReactJS", "Node.js"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 37,
-      title: "Parking",
-      category: "Web Development",
-      type: "Web / Utility",
-      description: "Parking management system.",
-      technologies: ["ReactJS", "Node.js", "MongoDB"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 38,
-      title: "auto-gen-bolt",
-      category: "AI/ML",
-      type: "AI / Web",
-      description: "AI/code automation tool.",
-      technologies: ["Python", "AI", "ReactJS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 39,
-      title: "text-to-speech",
-      category: "AI/ML",
-      type: "AI / Web",
-      description: "Voice synthesis tool.",
-      technologies: ["Python", "AI", "ReactJS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 40,
-      title: "dineSmart",
-      category: "Web Development",
-      type: "Web / Restaurant",
-      description: "Restaurant ordering management tool.",
-      technologies: ["ReactJS", "Node.js"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 41,
-      title: "shoping",
-      category: "Web Development",
-      type: "E-commerce / Web",
-      description: "Shopping/e-commerce project.",
-      technologies: ["ReactJS", "Node.js", "MongoDB"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 42,
-      title: "eldersync",
-      category: "Web Development",
-      type: "Web / Utility",
-      description: "App for elders' reminders and management.",
-      technologies: ["ReactJS", "Node.js"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 43,
-      title: "login page",
-      category: "Web Development",
-      type: "Web",
-      description: "Standalone login page project.",
-      technologies: ["ReactJS", "Node.js"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 44,
-      title: "image-caption - Copy",
-      category: "AI/ML",
-      type: "AI / Web",
-      description: "Another version of image captioning project.",
-      technologies: ["Python", "AI", "ReactJS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 45,
-      title: "chatbot",
-      category: "AI/ML",
-      type: "AI / Web",
-      description: "AI chat assistant project.",
-      technologies: ["Python", "AI", "ReactJS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 46,
-      title: "nutrition-detector",
-      category: "AI/ML",
-      type: "AI / Web",
-      description: "Nutrition analysis tool.",
-      technologies: ["Python", "AI", "ReactJS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 47,
-      title: "kyc_duplicate_detector",
-      category: "AI/ML",
-      type: "Web / AI",
-      description: "KYC validation/deduplication tool.",
-      technologies: ["Python", "AI", "ReactJS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 48,
-      title: "parking-phase2",
-      category: "Web Development",
-      type: "Web",
-      description: "Phase 2 of Parking management system.",
-      technologies: ["ReactJS", "Node.js"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 49,
-      title: "AI-Powered Study Assistant",
-      category: "AI/ML",
-      type: "AI / Web",
-      description: "AI tool for student guidance & study help.",
-      technologies: ["Python", "AI", "ReactJS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 50,
-      title: "documentAnalyzer",
-      category: "AI/ML",
-      type: "AI / Web",
-      description: "AI/NLP tool to analyze documents.",
-      technologies: ["Python", "AI", "ReactJS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 51,
-      title: "agentsflow-main",
-      category: "Web Development",
-      type: "Web / Utility",
-      description: "Workflow automation tool.",
-      technologies: ["ReactJS", "Node.js"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 52,
-      title: "Wedding photography website",
-      category: "Web Development",
-      type: "Web / UI",
-      description: "Wedding photography portfolio website.",
-      technologies: ["HTML", "CSS", "JS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 53,
-      title: "whatsapp_automation",
-      category: "Automation",
-      type: "Web / Automation",
-      description: "WhatsApp automation tool using scripts.",
-      technologies: ["Python", "Selenium"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 54,
-      title: "event-website",
-      category: "Web Development",
-      type: "Web",
-      description: "Event management website.",
-      technologies: ["HTML", "CSS", "JS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 55,
-      title: "Aistudyscheduler",
-      category: "AI/ML",
-      type: "AI / Web",
-      description: "AI-based study scheduling tool.",
-      technologies: ["Python", "AI", "ReactJS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 56,
-      title: "mediConnect-2",
-      category: "Web Development",
-      type: "Web / Healthcare",
-      description: "Healthcare communication platform.",
-      technologies: ["ReactJS", "Node.js", "MongoDB"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
-    {
-      id: 57,
-      title: "AiStudyPlanner-2",
-      category: "AI/ML",
-      type: "AI / Web",
-      description: "AI study planning project.",
-      technologies: ["Python", "AI", "ReactJS"],
-      status: "Completed",
-      githubUrl: "https://github.com/itzmeahammed"
-    },
+
     {
       id: 58,
       title: "automate-schedule",
@@ -536,10 +283,49 @@ const Projects = () => {
       technologies: ["Three.js", "ReactJS", "Node.js"],
       status: "Completed",
       githubUrl: "https://github.com/itzmeahammed"
+    },
+    {
+      id: 60,
+      title: "hand-gesture-detector",
+      category: "AI/ML",
+      type: "AI / Web",
+      description: "Real-time hand gesture recognition system using computer vision.",
+      technologies: ["Python", "Streamlit", "ML", "OpenCV"],
+      status: "Completed",
+      githubUrl: "https://github.com/itzmeahammed"
     }
   ];
 
-  const allProjects = [...bigProjects, ...smallProjects];
+  // Dynamic Image Import
+  const projectImagesGlob = import.meta.glob('/src/assets/projects/**/*.{png,jpg,jpeg,webp}', { eager: true, as: 'url' });
+
+  const getImagesForProject = (title) => {
+    const normalizedTitle = title.toLowerCase().trim();
+
+    return Object.keys(projectImagesGlob)
+      .filter(path => {
+        const parts = path.split('/');
+        const folderName = parts[parts.length - 2].toLowerCase().trim();
+
+        // Direct match or fuzzy match
+        return folderName === normalizedTitle ||
+          folderName === normalizedTitle.replace(/\s+/g, '-') ||
+          folderName.replace(/-/g, ' ') === normalizedTitle;
+      })
+      .map(path => projectImagesGlob[path]);
+  };
+
+  const allProjects = [...bigProjects, ...smallProjects].map(project => ({
+    ...project,
+    images: getImagesForProject(project.title)
+  })).sort((a, b) => {
+    // Sort projects with images first
+    const aHasImages = a.images && a.images.length > 0;
+    const bHasImages = b.images && b.images.length > 0;
+    if (aHasImages && !bHasImages) return -1;
+    if (!aHasImages && bHasImages) return 1;
+    return 0;
+  });
 
   const categories = ['All', 'AI/ML', 'Web Development', 'Mobile Development', 'UI/UX', 'Tools', 'Games', 'Automation'];
   const sizes = ['All', 'Big Projects', 'Small Projects'];
@@ -560,28 +346,38 @@ const Projects = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.03,
-        delayChildren: 0.05,
+        staggerChildren: 0.05,
+        delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 10 },
+    hidden: { opacity: 0, y: 30, rotateX: -10 },
     visible: {
       opacity: 1,
       y: 0,
+      rotateX: 0,
       transition: {
-        duration: 0.15,
-        ease: "easeOut",
+        type: "spring",
+        stiffness: 100,
+        damping: 15
       },
     },
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black pt-20">
+    <div ref={containerRef} className="min-h-screen bg-white dark:bg-black pt-20 relative overflow-hidden">
+      {/* Enhanced Animated Background */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+        <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-blue-500 opacity-20 blur-[100px] animate-pulse" />
+        <div className="absolute right-0 bottom-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-purple-500 opacity-20 blur-[100px] animate-pulse delay-1000" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-indigo-500/10 to-pink-500/10 rounded-full blur-[120px] animate-spin-slow" />
+      </div>
+
       {/* Hero Section */}
-      <section ref={heroRef} className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-black">
+      <section ref={heroRef} className="py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={containerVariants}
@@ -589,43 +385,47 @@ const Projects = () => {
             animate={heroInView ? "visible" : "hidden"}
             className="text-center space-y-8"
           >
-            <motion.div variants={itemVariants}>
-              <HiCode className="w-16 h-16 text-black dark:text-white mx-auto mb-6" />
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-elegant-heading text-black dark:text-white mb-6">
+            <motion.div variants={itemVariants} className="relative z-10">
+              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-elegant-heading text-black dark:text-white mb-8 tracking-tighter drop-shadow-sm">
                 My Projects
               </h1>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed font-elegant-body">
-                A showcase of innovative solutions addressing real-world challenges in healthcare,
-                education, agriculture, law enforcement, and more using cutting-edge technologies.
+
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed font-light">
+                Exploring the frontiers of <span className="text-blue-600 dark:text-blue-400 font-semibold">AI, Web, and Mobile</span> technology to build solutions that matter.
               </p>
             </motion.div>
 
             {/* Search and Filter */}
             <motion.div variants={itemVariants} className="max-w-6xl mx-auto space-y-8">
               {/* Search Bar */}
-              <div className="relative">
-                <HiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search projects by name, description, or technology..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 sm:py-4 bg-white dark:bg-black border-2 border-black/20 dark:border-white/20 rounded-2xl text-black dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:border-black dark:focus:border-white focus:outline-none transition-colors text-base sm:text-lg"
-                />
+              <div className="relative group max-w-2xl mx-auto">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500" />
+                <div className="relative transform transition-transform duration-300 group-hover:scale-[1.01]">
+                  <HiSearch className="absolute left-6 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400 group-focus-within:text-blue-500 transition-colors" />
+                  <input
+                    type="text"
+                    placeholder="Search projects..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-16 pr-6 py-5 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-gray-100 dark:border-gray-800 rounded-2xl text-black dark:text-white placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:ring-0 focus:outline-none transition-all text-lg shadow-xl"
+                  />
+                </div>
               </div>
 
               {/* Project Size Filter */}
               <div className="flex flex-wrap justify-center gap-4 mb-6">
-                <span className="text-black dark:text-white font-semibold mt-2">Project Size:</span>
+                <span className="text-black dark:text-white font-semibold mt-2 flex items-center gap-2">
+                  <HiFilter className="w-5 h-5" /> Filter by Size:
+                </span>
                 {sizes.map((size) => (
                   <motion.button
                     key={size}
                     onClick={() => setSelectedSize(size)}
                     className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${selectedSize === size
-                      ? 'bg-black dark:bg-white text-white dark:text-black'
-                      : 'bg-gray-200 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700'
+                      ? 'bg-black dark:bg-white text-white dark:text-black shadow-lg shadow-blue-500/20'
+                      : 'bg-gray-100 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'
                       }`}
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     {size}
@@ -634,18 +434,16 @@ const Projects = () => {
               </div>
 
               {/* Category Filter */}
-              <div className="flex flex-wrap justify-center gap-4">
-                <HiFilter className="w-6 h-6 text-black dark:text-white mt-2" />
-                <span className="text-black dark:text-white font-semibold mt-2">Category:</span>
+              <div className="flex flex-wrap justify-center gap-3">
                 {categories.map((category) => (
                   <motion.button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${selectedCategory === category
-                      ? 'bg-black dark:bg-white text-white dark:text-black'
-                      : 'bg-gray-200 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700'
+                    className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 border ${selectedCategory === category
+                      ? 'bg-blue-600 text-white border-transparent shadow-lg shadow-blue-600/30'
+                      : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-800 hover:border-blue-300 dark:hover:border-blue-700'
                       }`}
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     {category}
@@ -671,13 +469,13 @@ const Projects = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-20 bg-white dark:bg-black">
+      <section className="py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-12"
           >
             {filteredProjects.map((project, index) => (
               <ProjectCard
@@ -695,7 +493,9 @@ const Projects = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-center py-20"
             >
-              <HiSearch className="w-16 h-16 text-gray-400 mx-auto mb-6" />
+              <div className="w-24 h-24 mx-auto mb-6 bg-gray-100 dark:bg-gray-900 rounded-full flex items-center justify-center">
+                <HiSearch className="w-12 h-12 text-gray-400" />
+              </div>
               <h3 className="text-2xl font-bold text-black dark:text-white mb-4">No Projects Found</h3>
               <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto">
                 Try adjusting your search terms or category filter to find what you're looking for.
@@ -706,7 +506,7 @@ const Projects = () => {
       </section>
 
       {/* Project Stats */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-20 bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-3xl relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -719,31 +519,37 @@ const Projects = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { number: allProjects.length, label: 'Total Projects', icon: HiCode },
-                { number: bigProjects.length, label: 'Big Projects', icon: HiCode },
-                { number: smallProjects.length, label: 'Small Projects', icon: HiCode },
-                { number: allProjects.filter(p => p.category === 'AI/ML').length, label: 'AI/ML Projects', icon: HiCode },
+                { number: allProjects.length, label: 'Total Projects', icon: HiCode, color: 'blue' },
+                { number: bigProjects.length, label: 'Big Projects', icon: HiLightningBolt, color: 'yellow' },
+                { number: smallProjects.length, label: 'Small Projects', icon: HiSparkles, color: 'purple' },
+                { number: allProjects.filter(p => p.category === 'AI/ML').length, label: 'AI/ML Projects', icon: HiCube, color: 'green' },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
-                  className="p-8 bg-white dark:bg-black rounded-2xl border border-black/10 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="relative group p-8 bg-white dark:bg-black rounded-3xl border border-gray-100 dark:border-gray-800 hover:border-gray-200 dark:hover:border-gray-700 transition-all duration-500 overflow-hidden shadow-lg"
+                  whileHover={{ y: -10 }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <stat.icon className="w-12 h-12 text-black dark:text-white mx-auto mb-4" />
-                  <motion.h3
-                    className="text-4xl font-elegant-heading text-black dark:text-white mb-2"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.2, type: "spring", stiffness: 200 }}
-                  >
-                    {stat.number}
-                  </motion.h3>
-                  <p className="text-gray-600 dark:text-gray-400 font-medium">{stat.label}</p>
+                  <div className={`absolute inset-0 bg-gradient-to-br from-${stat.color}-500/5 to-${stat.color}-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+
+                  <div className="relative z-10 transform transition-transform duration-500 group-hover:translate-z-10">
+                    <div className={`w-16 h-16 mx-auto mb-6 bg-${stat.color}-50 dark:bg-${stat.color}-900/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
+                      <stat.icon className={`w-8 h-8 text-${stat.color}-600 dark:text-${stat.color}-400`} />
+                    </div>
+                    <motion.h3
+                      className="text-4xl sm:text-5xl font-elegant-heading text-black dark:text-white mb-3"
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.2, type: "spring", stiffness: 200 }}
+                    >
+                      {stat.number}
+                    </motion.h3>
+                    <p className="text-gray-500 dark:text-gray-400 font-medium tracking-wide uppercase text-sm">{stat.label}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -752,8 +558,9 @@ const Projects = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-black dark:bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-black dark:bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -787,7 +594,7 @@ const Projects = () => {
             </div>
 
             <motion.button
-              className="px-8 py-4 bg-white dark:bg-black text-black dark:text-white rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300"
+              className="px-8 py-4 bg-white dark:bg-black text-black dark:text-white rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-2xl shadow-white/20 dark:shadow-black/20"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

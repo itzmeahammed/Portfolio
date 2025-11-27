@@ -1,17 +1,17 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { 
-  HiMail, 
-  HiPhone, 
+import {
+  HiMail,
+  HiPhone,
   HiLocationMarker,
   HiClock,
   HiCheckCircle,
   HiArrowRight,
   HiSparkles
 } from 'react-icons/hi';
-import { 
-  FaGithub, 
-  FaLinkedin, 
+import {
+  FaGithub,
+  FaLinkedin,
   FaTwitter,
   FaWhatsapp,
   FaTelegram
@@ -41,7 +41,7 @@ const ProfessionalContact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
@@ -92,7 +92,7 @@ const ProfessionalContact = () => {
     {
       icon: FaLinkedin,
       name: "LinkedIn",
-      href: "https://linkedin.com/in/ahammed",
+      href: "https://www.linkedin.com/in/ahammed-s-5161b7288/",
       color: "hover:text-blue-600",
       followers: "500+"
     },
@@ -194,7 +194,7 @@ const ProfessionalContact = () => {
           >
             <span className="text-sm font-elegant-caption text-gray-700">💬 Let's Connect</span>
           </motion.div>
-          
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -219,14 +219,14 @@ const ProfessionalContact = () => {
               Work Together?
             </motion.span>
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl font-elegant-body text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            I'm always excited to discuss new opportunities, collaborate on innovative projects, 
+            I'm always excited to discuss new opportunities, collaborate on innovative projects,
             or simply have a conversation about technology and development.
           </motion.p>
         </motion.div>
@@ -407,7 +407,7 @@ const ProfessionalContact = () => {
                 </span>
               </div>
               <p className="text-green-700 font-elegant-body text-sm">
-                I'm currently accepting new freelance projects and full-time opportunities. 
+                I'm currently accepting new freelance projects and full-time opportunities.
                 Let's discuss how we can work together!
               </p>
             </motion.div>
