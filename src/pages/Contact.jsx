@@ -29,7 +29,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       // Validate form data using utility function
       const validation = validateContactForm(formData);
@@ -45,28 +45,28 @@ const Contact = () => {
 
       // Send email using the email service
       const result = await sendContactEmail(formData);
-      
+
       if (result.success) {
         // Success - show confirmation and reset form
         setIsSubmitting(false);
         setIsSubmitted(true);
         setFormData({ name: '', email: '', subject: '', message: '' });
-        
+
         // Reset success message after 5 seconds
         setTimeout(() => {
           setIsSubmitted(false);
         }, 5000);
-        
+
         // Show success message with method used
         console.log(`Email sent successfully using ${result.method}`);
       } else {
         throw new Error(result.error || 'Failed to send email');
       }
-      
+
     } catch (error) {
       console.error('Error sending message:', error);
       setIsSubmitting(false);
-      
+
       // Show user-friendly error message
       alert(
         'There was an error sending your message. Please try one of these alternatives:\n\n' +
@@ -103,9 +103,9 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: FaGithub, href: '#', label: 'GitHub', color: 'hover:text-gray-600' },
-    { icon: FaLinkedin, href: '#', label: 'LinkedIn', color: 'hover:text-gray-700' },
-    { icon: FaTwitter, href: '#', label: 'Twitter', color: 'hover:text-gray-800' },
+    { icon: FaGithub, href: 'https://github.com/itzmeahammed', label: 'GitHub', color: 'hover:text-gray-600' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/ahammed-s-b8a6a2267/', label: 'LinkedIn', color: 'hover:text-gray-700' },
+    { icon: FaTwitter, href: 'https://twitter.com/yourusername', label: 'Twitter', color: 'hover:text-gray-800' },
   ];
 
   const services = [
@@ -120,7 +120,7 @@ const Contact = () => {
   ];
 
   const quickFacts = [
-    { label: 'Experience', value: '2+ Years' },
+    { label: 'Experience', value: '3+ Years' },
     { label: 'Projects Completed', value: '10+' },
     { label: 'Current Role', value: 'Full Stack Developer' },
     { label: 'Specialization', value: 'AI-Integrated Solutions' }
@@ -166,7 +166,7 @@ const Contact = () => {
                 Get In Touch
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed font-elegant-body">
-                Ready to bring your ideas to life? Let's discuss your next project and create 
+                Ready to bring your ideas to life? Let's discuss your next project and create
                 something amazing together. I'm always excited to work on innovative solutions.
               </p>
             </motion.div>
@@ -174,7 +174,7 @@ const Contact = () => {
             {/* Quick Contact */}
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <motion.a
-                href="mailto:your.email@example.com"
+                href="mailto:ahammedmass24@gmail.com"
                 className="group px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300 flex items-center space-x-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -183,7 +183,7 @@ const Contact = () => {
                 <span>Send Email</span>
               </motion.a>
               <motion.a
-                href="tel:+91XXXXXXXXX"
+                href="tel:+971588544698"
                 className="group px-8 py-4 border-2 border-black dark:border-white text-black dark:text-white rounded-full font-semibold text-lg hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all duration-300 flex items-center space-x-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -460,7 +460,7 @@ const Contact = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <motion.a
-                href="mailto:your.email@example.com"
+                href="mailto:ahammedmass24@gmail.com"
                 className="px-8 py-4 bg-white dark:bg-black text-black dark:text-white rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

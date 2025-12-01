@@ -71,7 +71,7 @@ const Home = () => {
   const stats = [
     { icon: HiCode, number: "20+", label: "Projects Delivered" },
     { icon: HiStar, number: "2.5+", label: "Years Experience" },
-    { icon: HiUsers, number: "2+", label: "Happy Clients" },
+    { icon: HiUsers, number: "3+", label: "Happy Clients" },
     { icon: HiTrendingUp, number: "20+", label: "Tech Stack" }
   ];
 

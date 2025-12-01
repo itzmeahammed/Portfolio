@@ -53,36 +53,36 @@ const LoadingAnimation = () => {
           <motion.div
             className="w-32 h-32 border-2 border-gray-300 dark:border-gray-700 rounded-full relative"
             animate={{ rotate: 360 }}
-            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
           >
             {/* Progress Ring */}
             <motion.div
               className="absolute inset-0 border-2 border-transparent border-t-black dark:border-t-white rounded-full"
               animate={{ rotate: 360 }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
             />
-            
+
             {/* Tech Icons Orbiting */}
             <motion.div
               className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gray-900 dark:bg-white rounded-full flex items-center justify-center shadow-lg"
               animate={{ rotate: -360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
             >
               <FaReact className="w-3 h-3 text-white dark:text-black" />
             </motion.div>
-            
+
             <motion.div
               className="absolute top-1/2 -right-3 transform -translate-y-1/2 w-6 h-6 bg-gray-800 dark:bg-gray-200 rounded-full flex items-center justify-center shadow-lg"
               animate={{ rotate: -360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear", delay: 2.7 }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1 }}
             >
               <FaNodeJs className="w-3 h-3 text-white dark:text-black" />
             </motion.div>
-            
+
             <motion.div
               className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gray-700 dark:bg-gray-300 rounded-full flex items-center justify-center shadow-lg"
               animate={{ rotate: -360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear", delay: 5.3 }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 2 }}
             >
               <FaPython className="w-3 h-3 text-white dark:text-black" />
             </motion.div>
@@ -91,11 +91,11 @@ const LoadingAnimation = () => {
           {/* Center Profile Photo */}
           <motion.div
             className="absolute inset-0 flex items-center justify-center"
-            animate={{ 
+            animate={{
               scale: [1, 1.1, 1],
             }}
-            transition={{ 
-              scale: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+            transition={{
+              scale: { duration: 1, repeat: Infinity, ease: "easeInOut" },
             }}
           >
             <div className="w-16 h-16 rounded-full overflow-hidden shadow-2xl border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800">
@@ -103,15 +103,15 @@ const LoadingAnimation = () => {
                 src={profileImage}
                 alt="Ahammed"
                 className="w-full h-full object-cover"
-                animate={{ 
+                animate={{
                   rotate: [0, 360],
                 }}
-                transition={{ 
-                  rotate: { duration: 8, repeat: Infinity, ease: "linear" }
+                transition={{
+                  rotate: { duration: 3, repeat: Infinity, ease: "linear" }
                 }}
               />
             </div>
-            
+
             {/* Subtle glow effect around photo */}
             <motion.div
               className="absolute inset-0 w-16 h-16 rounded-full bg-gradient-to-r from-gray-400/20 to-gray-600/20 dark:from-gray-200/20 dark:to-gray-400/20 blur-md"
@@ -159,18 +159,18 @@ const LoadingAnimation = () => {
         >
           <motion.h1
             className="text-4xl font-bold text-black dark:text-white tracking-wide"
-            animate={{ 
+            animate={{
               opacity: [0.7, 1, 0.7],
             }}
-            transition={{ 
-              duration: 2, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
             }}
           >
             Ahammed
           </motion.h1>
-          
+
           <motion.div
             className="flex items-center justify-center space-x-2"
             initial={{ opacity: 0 }}
@@ -193,7 +193,7 @@ const LoadingAnimation = () => {
               transition={{ duration: 1, repeat: Infinity, delay: 0.4 }}
             />
           </motion.div>
-          
+
           <motion.p
             className="text-sm text-gray-600 dark:text-gray-400 font-medium tracking-wider uppercase"
             animate={{ opacity: [0.6, 1, 0.6] }}

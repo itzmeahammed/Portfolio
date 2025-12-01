@@ -12,132 +12,132 @@ import {
 } from 'react-icons/hi';
 import { FaGithub } from 'react-icons/fa';
 
+const projects = [
+  {
+    id: 1,
+    title: "3D Study Planner",
+    description: "Interactive 3D study planning tool with immersive learning experience",
+    url: "https://3d-study-planner.netlify.app/",
+    category: "EdTech",
+    technologies: ["React", "Three.js", "WebGL", "Animation"],
+    stats: { views: "2.1K", stars: "45", techs: 4 },
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
+    id: 8,
+    title: "MediConnect 3D",
+    description: "3D medical consultation platform with interactive health visualization",
+    url: "https://mediconnect-3d.netlify.app/",
+    category: "Healthcare",
+    technologies: ["React", "Three.js", "WebRTC", "3D"],
+    stats: { views: "2.7K", stars: "61", techs: 4 },
+    color: "from-emerald-500 to-teal-500"
+  },
+  {
+    id: 9,
+    title: "Multi-Tool AI",
+    description: "Comprehensive AI toolkit with multiple utility functions",
+    url: "https://multi-tool-ai.netlify.app/",
+    category: "AI/ML",
+    technologies: ["React", "AI", "Python", "APIs"],
+    stats: { views: "2.4K", stars: "51", techs: 4 },
+    color: "from-purple-500 to-pink-500"
+  },
+  {
+    id: 11,
+    title: "Scheme Seeker V2",
+    description: "Government and business scheme discovery platform",
+    url: "https://scheme-seeker-v2.netlify.app/",
+    category: "Web",
+    technologies: ["React", "Search", "MongoDB", "Analytics"],
+    stats: { views: "1.8K", stars: "36", techs: 4 },
+    color: "from-orange-500 to-amber-500"
+  },
+  {
+    id: 3,
+    title: "Smart Farming V1",
+    description: "Agricultural management platform with smart analytics and crop monitoring",
+    url: "https://smart-farming-v1.netlify.app/",
+    category: "Agriculture",
+    technologies: ["React", "Node.js", "MongoDB", "Analytics"],
+    stats: { views: "3.2K", stars: "68", techs: 4 },
+    color: "from-green-500 to-lime-500"
+  },
+  {
+    id: 4,
+    title: "Document Analyzer V1",
+    description: "Advanced document analysis with OCR and AI-powered insights",
+    url: "https://document-analyzer-v1.netlify.app/",
+    category: "AI/ML",
+    technologies: ["Python", "React", "OCR", "NLP"],
+    stats: { views: "1.9K", stars: "38", techs: 4 },
+    color: "from-indigo-500 to-violet-500"
+  },
+  {
+    id: 5,
+    title: "Dine Smart",
+    description: "Restaurant management and ordering system with real-time updates",
+    url: "https://dine-smart.netlify.app/",
+    category: "Web",
+    technologies: ["React", "Node.js", "MongoDB", "WebSocket"],
+    stats: { views: "2.5K", stars: "55", techs: 4 },
+    color: "from-red-500 to-rose-500"
+  },
+  {
+    id: 6,
+    title: "AutoDev Bolt",
+    description: "AI-powered code generation and automation platform",
+    url: "https://auto-gen-bolt.netlify.app/",
+    category: "AI/ML",
+    technologies: ["React", "AI", "CodeGen", "Automation"],
+    stats: { views: "3.5K", stars: "72", techs: 4 },
+    color: "from-violet-500 to-purple-500"
+  },
+  {
+    id: 7,
+    title: "Event AI",
+    description: "Intelligent event management with AI scheduling and recommendations",
+    url: "https://event-ai.netlify.app/",
+    category: "AI/ML",
+    technologies: ["React", "AI", "Node.js", "MongoDB"],
+    stats: { views: "2.3K", stars: "48", techs: 4 },
+    color: "from-pink-500 to-fuchsia-500"
+  },
+  {
+    id: 10,
+    title: "3D Parking Website",
+    description: "Interactive 3D parking management and reservation system",
+    url: "https://3d-parking-website.netlify.app/",
+    category: "Web",
+    technologies: ["React", "Three.js", "Node.js", "3D"],
+    stats: { views: "2.0K", stars: "42", techs: 4 },
+    color: "from-cyan-500 to-blue-500"
+  },
+  {
+    id: 12,
+    title: "Traffic Violation V1",
+    description: "AI-powered traffic violation detection and reporting system",
+    url: "https://traffic-violation-v1.netlify.app/",
+    category: "AI/ML",
+    technologies: ["Python", "OpenCV", "React", "Detection"],
+    stats: { views: "3.1K", stars: "65", techs: 4 },
+    color: "from-orange-500 to-red-500"
+  },
+  {
+    id: 2,
+    title: "3D Symptoms Analyzer",
+    description: "AI-powered 3D symptom diagnosis system with interactive visualization",
+    url: "https://3d-symptoms.netlify.app/",
+    category: "AI/ML",
+    technologies: ["React", "Three.js", "AI", "3D"],
+    stats: { views: "2.8K", stars: "52", techs: 4 },
+    color: "from-teal-500 to-emerald-500"
+  }
+];
+
 const InteractiveProjectBrowser = () => {
   const [selectedProject, setSelectedProject] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(false);
-
-  const projects = [
-    {
-      id: 1,
-      title: "3D Study Planner",
-      description: "Interactive 3D study planning tool with immersive learning experience",
-      url: "https://3d-study-planner.netlify.app/",
-      category: "EdTech",
-      technologies: ["React", "Three.js", "WebGL", "Animation"],
-      stats: { views: "2.1K", stars: "45", techs: 4 },
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      id: 8,
-      title: "MediConnect 3D",
-      description: "3D medical consultation platform with interactive health visualization",
-      url: "https://mediconnect-3d.netlify.app/",
-      category: "Healthcare",
-      technologies: ["React", "Three.js", "WebRTC", "3D"],
-      stats: { views: "2.7K", stars: "61", techs: 4 },
-      color: "from-emerald-500 to-teal-500"
-    },
-    {
-      id: 9,
-      title: "Multi-Tool AI",
-      description: "Comprehensive AI toolkit with multiple utility functions",
-      url: "https://multi-tool-ai.netlify.app/",
-      category: "AI/ML",
-      technologies: ["React", "AI", "Python", "APIs"],
-      stats: { views: "2.4K", stars: "51", techs: 4 },
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      id: 11,
-      title: "Scheme Seeker V2",
-      description: "Government and business scheme discovery platform",
-      url: "https://scheme-seeker-v2.netlify.app/",
-      category: "Web",
-      technologies: ["React", "Search", "MongoDB", "Analytics"],
-      stats: { views: "1.8K", stars: "36", techs: 4 },
-      color: "from-orange-500 to-amber-500"
-    },
-    {
-      id: 3,
-      title: "Smart Farming V1",
-      description: "Agricultural management platform with smart analytics and crop monitoring",
-      url: "https://smart-farming-v1.netlify.app/",
-      category: "Agriculture",
-      technologies: ["React", "Node.js", "MongoDB", "Analytics"],
-      stats: { views: "3.2K", stars: "68", techs: 4 },
-      color: "from-green-500 to-lime-500"
-    },
-    {
-      id: 4,
-      title: "Document Analyzer V1",
-      description: "Advanced document analysis with OCR and AI-powered insights",
-      url: "https://document-analyzer-v1.netlify.app/",
-      category: "AI/ML",
-      technologies: ["Python", "React", "OCR", "NLP"],
-      stats: { views: "1.9K", stars: "38", techs: 4 },
-      color: "from-indigo-500 to-violet-500"
-    },
-    {
-      id: 5,
-      title: "Dine Smart",
-      description: "Restaurant management and ordering system with real-time updates",
-      url: "https://dine-smart.netlify.app/",
-      category: "Web",
-      technologies: ["React", "Node.js", "MongoDB", "WebSocket"],
-      stats: { views: "2.5K", stars: "55", techs: 4 },
-      color: "from-red-500 to-rose-500"
-    },
-    {
-      id: 6,
-      title: "AutoDev Bolt",
-      description: "AI-powered code generation and automation platform",
-      url: "https://auto-gen-bolt.netlify.app/",
-      category: "AI/ML",
-      technologies: ["React", "AI", "CodeGen", "Automation"],
-      stats: { views: "3.5K", stars: "72", techs: 4 },
-      color: "from-violet-500 to-purple-500"
-    },
-    {
-      id: 7,
-      title: "Event AI",
-      description: "Intelligent event management with AI scheduling and recommendations",
-      url: "https://event-ai.netlify.app/",
-      category: "AI/ML",
-      technologies: ["React", "AI", "Node.js", "MongoDB"],
-      stats: { views: "2.3K", stars: "48", techs: 4 },
-      color: "from-pink-500 to-fuchsia-500"
-    },
-    {
-      id: 10,
-      title: "3D Parking Website",
-      description: "Interactive 3D parking management and reservation system",
-      url: "https://3d-parking-website.netlify.app/",
-      category: "Web",
-      technologies: ["React", "Three.js", "Node.js", "3D"],
-      stats: { views: "2.0K", stars: "42", techs: 4 },
-      color: "from-cyan-500 to-blue-500"
-    },
-    {
-      id: 12,
-      title: "Traffic Violation V1",
-      description: "AI-powered traffic violation detection and reporting system",
-      url: "https://traffic-violation-v1.netlify.app/",
-      category: "AI/ML",
-      technologies: ["Python", "OpenCV", "React", "Detection"],
-      stats: { views: "3.1K", stars: "65", techs: 4 },
-      color: "from-orange-500 to-red-500"
-    },
-    {
-      id: 2,
-      title: "3D Symptoms Analyzer",
-      description: "AI-powered 3D symptom diagnosis system with interactive visualization",
-      url: "https://3d-symptoms.netlify.app/",
-      category: "AI/ML",
-      technologies: ["React", "Three.js", "AI", "3D"],
-      stats: { views: "2.8K", stars: "52", techs: 4 },
-      color: "from-teal-500 to-emerald-500"
-    }
-  ];
 
   const currentProject = projects[selectedProject];
 

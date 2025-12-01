@@ -48,9 +48,9 @@ const FloatingChatbot = () => {
     experience: {
       current: "Freelance Full Stack Developer (April 2023 - Present) - CURRENT",
       previous: "Full Stack Developer at WizzGeeks Technologies (May 2024 - August 2025) - Completed",
-      totalExperience: "2+ years professional experience",
+      totalExperience: "3+ years professional experience",
       industryExperience: "1.5+ years",
-      freelanceExperience: "2+ years",
+      freelanceExperience: "3+ years",
       specialization: "AI-integrated solutions and full-stack development",
       projectsCompleted: "50+ projects delivered",
       clientSatisfaction: "100% client satisfaction rate"
@@ -74,7 +74,7 @@ const FloatingChatbot = () => {
           status: "Completed"
         },
         {
-          name: "Police Petition Management System", 
+          name: "Police Petition Management System",
           description: "Three-portal system for police petitions with AI-based severity classification using NLP",
           technologies: ["Python", "Django", "NLP", "MongoDB", "ReactJS"],
           category: "Web Development",
@@ -135,19 +135,19 @@ const FloatingChatbot = () => {
     },
     certifications: [
       "MERN Stack Development (Udemy) - Full Stack Web Development",
-      "Python Programming (GUVI) - Advanced Python & Data Science", 
+      "Python Programming (GUVI) - Advanced Python & Data Science",
       "MongoDB Database (Official) - Database Management",
       "Typing A+ Grade - Professional Typing Skills"
     ],
     internships: [
       "Web Development Internship (90 days) - Full Stack Development",
-      "Python Development Internship (20 days) - Backend Development", 
+      "Python Development Internship (20 days) - Backend Development",
       "Python Basics Internship (14 days) - Programming Fundamentals"
     ],
     services: [
       "Full Stack Web Development",
       "Mobile App Development (React Native & Flutter)",
-      "AI/ML Integration & Development", 
+      "AI/ML Integration & Development",
       "Database Design & Optimization",
       "API Development & Integration",
       "Cloud Deployment & DevOps",
@@ -163,7 +163,7 @@ const FloatingChatbot = () => {
       "100% client satisfaction rate",
       "Expert in AI/ML integration",
       "Proficient in 20+ technologies",
-      "2+ years freelance experience",
+      "3+ years freelance experience",
       "Multiple domain expertise",
       "Strong problem-solving skills",
       "Excellent communication abilities"
@@ -172,7 +172,7 @@ const FloatingChatbot = () => {
 
   const generateResponse = (userMessage) => {
     const message = userMessage.toLowerCase();
-    
+
     if (message.includes('skill') || message.includes('technology') || message.includes('tech stack') || message.includes('technologies')) {
       return `🛠️ **Technical Skills & Expertise:**
 
@@ -216,9 +216,9 @@ const FloatingChatbot = () => {
 • Problem Solving & Critical Thinking
 • Time Management & Project Planning
 
-*Proficient in 20+ technologies with 2+ years professional experience!*`;
+*Proficient in 20+ technologies with 3+ years professional experience!*`;
     }
-    
+
     if (message.includes('experience') || message.includes('work') || message.includes('job') || message.includes('career')) {
       return `💼 **Professional Experience & Career Journey:**
 
@@ -237,9 +237,9 @@ const FloatingChatbot = () => {
 • Contributed to AI-driven learning platforms
 
 **📊 Career Highlights:**
-• **Total Experience:** 2+ years professional
+• **Total Experience:** 3+ years professional
 • **Industry Experience:** 1.5+ years
-• **Freelance Experience:** 2+ years
+• **Freelance Experience:** 3+ years
 • **Projects Completed:** 50+ successful deliveries
 • **Client Satisfaction:** 100% positive feedback
 • **Specialization:** AI/ML integration & full-stack development
@@ -256,7 +256,7 @@ Started as a junior developer and quickly advanced to handling complex AI-integr
 
 *Available for both freelance projects and full-time positions!*`;
     }
-    
+
     if (message.includes('project') || message.includes('portfolio') || message.includes('work samples')) {
       return `🚀 **Major Projects & Portfolio Highlights:**
 
@@ -307,7 +307,7 @@ Started as a junior developer and quickly advanced to handling complex AI-integr
 
 *Each project demonstrates real-world problem-solving with cutting-edge technology!*`;
     }
-    
+
     if (message.includes('contact') || message.includes('reach') || message.includes('hire') || message.includes('email') || message.includes('phone') || message.includes('connect')) {
       return `📞 **Contact & Collaboration Information:**
 
@@ -350,7 +350,7 @@ Ready to bring your ideas to life with cutting-edge technology. Contact me to di
 
 *Available for immediate start on exciting projects!*`;
     }
-    
+
     if (message.includes('education') || message.includes('degree') || message.includes('college') || message.includes('study') || message.includes('certification')) {
       return `🎓 **Education & Professional Development:**
 
@@ -410,7 +410,7 @@ Ready to bring your ideas to life with cutting-edge technology. Contact me to di
 
 *Committed to lifelong learning and professional growth!*`;
     }
-    
+
     if (message.includes('ai') || message.includes('machine learning') || message.includes('ml') || message.includes('artificial intelligence') || message.includes('computer vision') || message.includes('nlp')) {
       return `🤖 **AI/ML Expertise & Specializations:**
 
@@ -472,7 +472,7 @@ Ready to bring your ideas to life with cutting-edge technology. Contact me to di
 
 *Passionate about creating AI solutions that solve real-world problems!*`;
     }
-    
+
     if (message.includes('hello') || message.includes('hi') || message.includes('hey') || message.includes('start')) {
       return `👋 **Welcome! I'm Ahammed's AI Portfolio Assistant!**
 
@@ -496,7 +496,7 @@ I'm here to provide comprehensive information about Ahammed's professional backg
 • "What services does he offer?"
 
 **🎯 Quick Facts:**
-• 2+ years professional experience
+• 3+ years professional experience
 • 50+ projects completed successfully
 • Expert in AI/ML integration
 • Available for freelance & full-time work
@@ -504,7 +504,7 @@ I'm here to provide comprehensive information about Ahammed's professional backg
 
 *What specific information would you like to know about Ahammed?*`;
     }
-    
+
     if (message.includes('location') || message.includes('where') || message.includes('dubai') || message.includes('availability')) {
       return `📍 **Location & Availability Information:**
 
@@ -635,7 +635,7 @@ I'm here to provide comprehensive information about Ahammed's professional backg
 
 *Ready to transform your ideas into powerful digital solutions!*`;
     }
-    
+
     // Default response with enhanced suggestions
     return `🤖 **I'm here to help! Ask me about Ahammed's:**
 
@@ -699,7 +699,7 @@ I'm here to provide comprehensive information about Ahammed's professional backg
         sender: 'bot',
         timestamp: new Date()
       };
-      
+
       setMessages(prev => [...prev, botResponse]);
       setIsTyping(false);
     }, 1500);
@@ -707,7 +707,7 @@ I'm here to provide comprehensive information about Ahammed's professional backg
 
   const updateQuickReplies = (userMessage) => {
     const message = userMessage.toLowerCase();
-    
+
     if (message.includes('skill') || message.includes('technology')) {
       setQuickReplies(["Show AI expertise", "Tell me about projects", "Contact info", "Services offered"]);
     } else if (message.includes('project') || message.includes('portfolio')) {
@@ -763,7 +763,7 @@ I'm here to provide comprehensive information about Ahammed's professional backg
             animate={{ rotate: 360 }}
             transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
           />
-          
+
           <AnimatePresence mode="wait">
             {isOpen ? (
               <motion.div
@@ -785,7 +785,7 @@ I'm here to provide comprehensive information about Ahammed's professional backg
                 className="relative z-10"
               >
                 <FaRobot className="w-5 h-5 sm:w-7 sm:h-7 text-white dark:text-black" />
-                
+
                 {/* Pulse indicator */}
                 <motion.div
                   className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full"
@@ -851,16 +851,15 @@ I'm here to provide comprehensive information about Ahammed's professional backg
                   transition={{ duration: 0.3 }}
                   className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
-                  <div className={`max-w-[85%] sm:max-w-[80%] p-2.5 sm:p-3 rounded-xl sm:rounded-2xl ${
-                    message.sender === 'user'
+                  <div className={`max-w-[85%] sm:max-w-[80%] p-2.5 sm:p-3 rounded-xl sm:rounded-2xl ${message.sender === 'user'
                       ? 'bg-gradient-to-r from-gray-700 to-black dark:from-gray-300 dark:to-white text-white dark:text-black'
                       : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700'
-                  }`}>
+                    }`}>
                     <p className="text-xs sm:text-sm whitespace-pre-line leading-relaxed">{message.text}</p>
                   </div>
                 </motion.div>
               ))}
-              
+
               {/* Typing Indicator */}
               {isTyping && (
                 <motion.div
