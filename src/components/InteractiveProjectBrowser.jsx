@@ -14,6 +14,26 @@ import { FaGithub } from 'react-icons/fa';
 
 const projects = [
   {
+    id: 102,
+    title: "APT.OS - Property Orchestrator",
+    description: "Premium SaaS ERP for real estate with immersive 3D command center",
+    url: "https://multi-tenant-erp.netlify.app/",
+    category: "SaaS",
+    technologies: ["React", "Three.js", "TypeScript", "Tailwind"],
+    stats: { views: "1.2K", stars: "45", techs: 5 },
+    color: "from-gray-800 to-zinc-900"
+  },
+  {
+    id: 101,
+    title: "Memory Rewriter AI",
+    description: "Privacy-first cognitive reframing tool running entirely in-browser",
+    url: "https://memory-rewriter-ai.netlify.app/",
+    category: "AI/ML",
+    technologies: ["WebLLM", "React", "TypeScript", "AI"],
+    stats: { views: "850", stars: "32", techs: 5 },
+    color: "from-indigo-900 to-slate-800"
+  },
+  {
     id: 1,
     title: "3D Study Planner",
     description: "Interactive 3D study planning tool with immersive learning experience",

@@ -4,6 +4,25 @@ import { useInView } from 'react-intersection-observer';
 import { HiCode, HiEye, HiExternalLink, HiSearch, HiFilter, HiMail, HiPhone, HiSparkles, HiLightningBolt, HiCube } from 'react-icons/hi';
 import ProjectCard from '../components/ProjectCard';
 
+// Memory Rewriter AI Images
+import memory1 from '../assets/projects/memory-rewriter-ai/Screenshot 2025-12-07 203057.png';
+import memory2 from '../assets/projects/memory-rewriter-ai/Screenshot 2025-12-07 203114.png';
+import memory3 from '../assets/projects/memory-rewriter-ai/Screenshot 2025-12-07 203127.png';
+import memory4 from '../assets/projects/memory-rewriter-ai/Screenshot 2025-12-07 203146.png';
+import memory5 from '../assets/projects/memory-rewriter-ai/Screenshot 2025-12-07 203220.png';
+import memory6 from '../assets/projects/memory-rewriter-ai/Screenshot 2025-12-07 203230.png';
+import memory7 from '../assets/projects/memory-rewriter-ai/Screenshot 2025-12-07 203250.png';
+
+// APT.OS Images
+import aptos1 from '../assets/projects/multi-tenant-erp/Screenshot 2025-12-07 203716.png';
+import aptos2 from '../assets/projects/multi-tenant-erp/Screenshot 2025-12-07 203742.png';
+import aptos3 from '../assets/projects/multi-tenant-erp/Screenshot 2025-12-07 203804.png';
+import aptos4 from '../assets/projects/multi-tenant-erp/Screenshot 2025-12-07 203819.png';
+import aptos5 from '../assets/projects/multi-tenant-erp/Screenshot 2025-12-07 203843.png';
+import aptos6 from '../assets/projects/multi-tenant-erp/Screenshot 2025-12-07 203859.png';
+import aptos7 from '../assets/projects/multi-tenant-erp/Screenshot 2025-12-07 203914.png';
+import aptos8 from '../assets/projects/multi-tenant-erp/Screenshot 2025-12-07 204737.png';
+
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedSize, setSelectedSize] = useState('All');
@@ -20,6 +39,30 @@ const Projects = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const bigProjects = [
+    {
+      id: 61,
+      title: "multi-tenant-erp",
+      category: "Web Development",
+      type: "SaaS / ERP",
+      description: "Premium, multi-tenant SaaS ERP for real estate with 'Luxe Noir' aesthetic and 3D visualization.",
+      technologies: ["React", "TypeScript", "TailwindCSS", "Three.js", "Framer Motion"],
+      status: "Completed",
+      githubUrl: "https://github.com/itzmeahammed/Multi-tenant-platform",
+      featured: true,
+      images: [aptos1, aptos2, aptos3, aptos4, aptos5, aptos6, aptos7, aptos8]
+    },
+    {
+      id: 62,
+      title: "Memory Rewriter AI",
+      category: "AI/ML",
+      type: "AI / Web",
+      description: "Privacy-first app to reframe negative thoughts using local-first AI (WebLLM) and Stoic principles.",
+      technologies: ["React", "TypeScript", "WebLLM", "TailwindCSS", "Three.js"],
+      status: "Completed",
+      githubUrl: "https://github.com/itzmeahammed/memory-rewrite-ai",
+      featured: true,
+      images: [memory1, memory2, memory3, memory4, memory5, memory6, memory7]
+    },
     {
       id: 57,
       title: "AiStudyPlanner-2",
@@ -319,6 +362,10 @@ const Projects = () => {
     ...project,
     images: getImagesForProject(project.title)
   })).sort((a, b) => {
+    // Prioritize featured projects
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+
     // Sort projects with images first
     const aHasImages = a.images && a.images.length > 0;
     const bHasImages = b.images && b.images.length > 0;
