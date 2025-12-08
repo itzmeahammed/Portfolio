@@ -164,10 +164,57 @@ const Home = () => {
         </motion.div>
       </section>
 
+      {/* Live Project Browser - Enhanced Placement */}
+      <section className="py-20 relative bg-gray-50/50 dark:bg-gray-900/50 border-y border-gray-200 dark:border-gray-800 backdrop-blur-sm">
+        <div className="absolute inset-0 bg-grid-slate-200/50 dark:bg-grid-slate-800/50 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))] pointer-events-none" />
+        <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="space-y-16"
+          >
+            <div className="text-center space-y-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800/50 text-gray-600 dark:text-gray-300 text-sm font-medium mb-2 border border-gray-200 dark:border-gray-700"
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-gray-500 dark:bg-gray-300"></span>
+                </span>
+                <span>Interactive Preview</span>
+              </motion.div>
+
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
+                Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-500 dark:from-white dark:to-gray-400">Applications</span>
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Explore fully functional deployments of my latest work. Test the interfaces, responsive designs, and interactive elements directly.
+              </p>
+            </div>
+
+            <InteractiveProjectBrowser />
+
+            <div className="flex justify-center">
+              <button
+                onClick={() => navigate('/projects')}
+                className="group flex items-center gap-2 text-sm font-semibold text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+              >
+                View All Projects <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          </motion.div >
+        </div >
+      </section >
+
       {/* Showcases Stream */}
-      <div className="relative">
+      < div className="relative" >
         {/* Connecting Line */}
-        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-300 dark:via-gray-700 to-transparent hidden md:block"></div>
+        < div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-300 dark:via-gray-700 to-transparent hidden md:block" ></div >
 
         <div className="space-y-0">
           <SystemDesignShowcase />
@@ -181,36 +228,17 @@ const Home = () => {
           <RealTimeCollaborationShowcase />
           <AlgorithmVisualizer />
         </div>
-      </div>
+      </div >
 
-      {/* Live Project Browser */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="space-y-12"
-          >
-            <div className="text-center space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold">Live Project <span className="text-gray-500">Explorer</span></h2>
-              <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Interact with my deployed applications directly from this portfolio.
-              </p>
-            </div>
-            <InteractiveProjectBrowser />
-          </motion.div>
-        </div>
-      </section>
+
 
       {/* Tech Arsenal - Grid Visualization */}
-      <TechStackGrid />
+      < TechStackGrid />
 
       {/* Impact Stats - Premium Redesign */}
-      <section className="py-32 relative overflow-hidden">
+      < section className="py-32 relative overflow-hidden" >
         {/* Background Gradients */}
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-[100px] -translate-y-1/2"></div>
+        < div className="absolute top-1/2 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-[100px] -translate-y-1/2" ></div >
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-[100px]"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -245,15 +273,15 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* CTA Section - Ultra Modern */}
-      <section className="py-32 relative overflow-hidden">
+      < section className="py-32 relative overflow-hidden" >
         {/* Dynamic Background */}
-        <div className="absolute inset-0 bg-black dark:bg-white">
+        < div className="absolute inset-0 bg-black dark:bg-white" >
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-black to-amber-900/20 dark:from-gray-100/40 dark:via-white dark:to-amber-100/20"></div>
-        </div>
+        </div >
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center space-y-10">
           <motion.div
@@ -318,8 +346,8 @@ const Home = () => {
             </motion.button>
           </motion.div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
 

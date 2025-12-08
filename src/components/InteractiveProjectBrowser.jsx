@@ -31,7 +31,7 @@ const projects = [
     category: "AI/ML",
     technologies: ["WebLLM", "React", "TypeScript", "AI"],
     stats: { views: "850", stars: "32", techs: 5 },
-    color: "from-indigo-900 to-slate-800"
+    color: "from-stone-800 to-neutral-900"
   },
   {
     id: 1,
@@ -41,7 +41,7 @@ const projects = [
     category: "EdTech",
     technologies: ["React", "Three.js", "WebGL", "Animation"],
     stats: { views: "2.1K", stars: "45", techs: 4 },
-    color: "from-blue-500 to-cyan-500"
+    color: "from-amber-600 to-orange-600"
   },
   {
     id: 8,
@@ -51,7 +51,7 @@ const projects = [
     category: "Healthcare",
     technologies: ["React", "Three.js", "WebRTC", "3D"],
     stats: { views: "2.7K", stars: "61", techs: 4 },
-    color: "from-emerald-500 to-teal-500"
+    color: "from-teal-600 to-emerald-600"
   },
   {
     id: 9,
@@ -61,7 +61,7 @@ const projects = [
     category: "AI/ML",
     technologies: ["React", "AI", "Python", "APIs"],
     stats: { views: "2.4K", stars: "51", techs: 4 },
-    color: "from-purple-500 to-pink-500"
+    color: "from-slate-600 to-gray-500"
   },
   {
     id: 11,
@@ -81,7 +81,7 @@ const projects = [
     category: "Agriculture",
     technologies: ["React", "Node.js", "MongoDB", "Analytics"],
     stats: { views: "3.2K", stars: "68", techs: 4 },
-    color: "from-green-500 to-lime-500"
+    color: "from-green-600 to-emerald-700"
   },
   {
     id: 4,
@@ -91,7 +91,7 @@ const projects = [
     category: "AI/ML",
     technologies: ["Python", "React", "OCR", "NLP"],
     stats: { views: "1.9K", stars: "38", techs: 4 },
-    color: "from-indigo-500 to-violet-500"
+    color: "from-zinc-600 to-stone-600"
   },
   {
     id: 5,
@@ -101,7 +101,7 @@ const projects = [
     category: "Web",
     technologies: ["React", "Node.js", "MongoDB", "WebSocket"],
     stats: { views: "2.5K", stars: "55", techs: 4 },
-    color: "from-red-500 to-rose-500"
+    color: "from-red-600 to-orange-700"
   },
   {
     id: 6,
@@ -111,7 +111,7 @@ const projects = [
     category: "AI/ML",
     technologies: ["React", "AI", "CodeGen", "Automation"],
     stats: { views: "3.5K", stars: "72", techs: 4 },
-    color: "from-violet-500 to-purple-500"
+    color: "from-slate-700 to-zinc-700"
   },
   {
     id: 7,
@@ -121,7 +121,7 @@ const projects = [
     category: "AI/ML",
     technologies: ["React", "AI", "Node.js", "MongoDB"],
     stats: { views: "2.3K", stars: "48", techs: 4 },
-    color: "from-pink-500 to-fuchsia-500"
+    color: "from-amber-700 to-yellow-600"
   },
   {
     id: 10,
@@ -131,7 +131,7 @@ const projects = [
     category: "Web",
     technologies: ["React", "Three.js", "Node.js", "3D"],
     stats: { views: "2.0K", stars: "42", techs: 4 },
-    color: "from-cyan-500 to-blue-500"
+    color: "from-blue-600 to-indigo-600"
   },
   {
     id: 12,
@@ -141,7 +141,7 @@ const projects = [
     category: "AI/ML",
     technologies: ["Python", "OpenCV", "React", "Detection"],
     stats: { views: "3.1K", stars: "65", techs: 4 },
-    color: "from-orange-500 to-red-500"
+    color: "from-orange-600 to-red-600"
   },
   {
     id: 2,
@@ -151,7 +151,7 @@ const projects = [
     category: "AI/ML",
     technologies: ["React", "Three.js", "AI", "3D"],
     stats: { views: "2.8K", stars: "52", techs: 4 },
-    color: "from-teal-500 to-emerald-500"
+    color: "from-teal-600 to-cyan-700"
   }
 ];
 
@@ -173,12 +173,12 @@ const InteractiveProjectBrowser = () => {
     <div className="w-full max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-8">
       {/* Control Bar */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-        <div className="flex items-center space-x-4 bg-white dark:bg-gray-900 p-2 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-800">
+        <div className="flex items-center space-x-4 bg-white/80 dark:bg-black/80 backdrop-blur-md p-2 rounded-2xl shadow-sm border border-gray-200/50 dark:border-gray-800/50">
           <button
             onClick={() => setIsAutoPlay(!isAutoPlay)}
             className={`px-6 py-2 rounded-xl text-sm font-bold transition-all flex items-center gap-2 ${isAutoPlay
               ? 'bg-red-500/10 text-red-600 dark:text-red-400'
-              : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white'
+              : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'
               }`}
           >
             {isAutoPlay ? <HiPause /> : <HiPlay />}
@@ -191,7 +191,7 @@ const InteractiveProjectBrowser = () => {
         </div>
 
         {/* Project Indicators */}
-        <div className="flex gap-1.5 flex-wrap justify-center max-w-xl">
+        <div className="flex gap-1.5 flex-wrap justify-center max-w-xl bg-white/50 dark:bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-100/50 dark:border-gray-800/50">
           {projects.map((_, idx) => (
             <button
               key={idx}
@@ -210,10 +210,10 @@ const InteractiveProjectBrowser = () => {
         <div className="lg:col-span-9 h-[400px] lg:h-full relative group order-2 lg:order-1">
           <motion.div
             layout
-            className="w-full h-full bg-gray-900 rounded-2xl shadow-2xl overflow-hidden border-[1px] border-gray-800 flex flex-col"
+            className="w-full h-full bg-[#050505] rounded-2xl shadow-2xl overflow-hidden border-[1px] border-gray-800 flex flex-col"
           >
             {/* Browser Header */}
-            <div className="bg-[#1a1b26] px-4 py-3 flex items-center gap-4 border-b border-gray-800 shrink-0">
+            <div className="bg-black px-4 py-3 flex items-center gap-4 border-b border-gray-800 shrink-0">
               <div className="flex gap-1.5">
                 <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
@@ -267,7 +267,7 @@ const InteractiveProjectBrowser = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.4 }}
-              className="bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 h-full flex flex-col shadow-xl"
+              className="bg-white/90 dark:bg-black/90 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 dark:border-gray-800 h-full flex flex-col shadow-xl"
             >
               {/* Header Info */}
               <div className="mb-6">
@@ -292,8 +292,8 @@ const InteractiveProjectBrowser = () => {
                   <HiStar className="w-4 h-4 mx-auto mb-1 text-yellow-500" />
                   <div className="font-bold text-gray-900 dark:text-white text-sm">{currentProject.stats.stars}</div>
                 </div>
-                <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl text-center border border-gray-100 dark:border-gray-700">
-                  <HiCode className="w-4 h-4 mx-auto mb-1 text-blue-500" />
+                <div className="p-3 bg-gray-50 dark:bg-gray-900/50 rounded-xl text-center border border-gray-100 dark:border-gray-800">
+                  <HiCode className="w-4 h-4 mx-auto mb-1 text-orange-500" />
                   <div className="font-bold text-gray-900 dark:text-white text-sm">{currentProject.stats.techs}</div>
                 </div>
               </div>

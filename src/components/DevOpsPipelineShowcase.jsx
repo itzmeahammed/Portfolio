@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-    FaGitAlt, FaDocker, FaCheckCircle, FaTerminal, FaCodeBranch, FaServer, FaRocket
+    FaGitAlt, FaDocker, FaCheckCircle, FaTerminal, FaRocket
 } from 'react-icons/fa';
-import { SiGithubactions, SiJest, SiKubernetes, SiTerraform, SiPrometheus } from 'react-icons/si';
+import { SiGithubactions, SiJest, SiKubernetes } from 'react-icons/si';
 import { HiLightningBolt, HiChip } from 'react-icons/hi';
 
 const DevOpsPipelineShowcase = () => {
@@ -13,25 +13,25 @@ const DevOpsPipelineShowcase = () => {
     const scrollRef = useRef(null);
 
     const stages = [
-        { id: 1, name: 'Source Control', icon: FaGitAlt, color: 'text-orange-500', bg: 'bg-orange-500/10 border-orange-500/50' },
-        { id: 2, name: 'CI Pipeline', icon: SiGithubactions, color: 'text-blue-500', bg: 'bg-blue-500/10 border-blue-500/50' },
-        { id: 3, name: 'Unit Testing', icon: SiJest, color: 'text-red-500', bg: 'bg-red-500/10 border-red-500/50' },
-        { id: 4, name: 'Containerization', icon: FaDocker, color: 'text-cyan-500', bg: 'bg-cyan-500/10 border-cyan-500/50' },
-        { id: 5, name: 'Orchestration', icon: SiKubernetes, color: 'text-indigo-500', bg: 'bg-indigo-500/10 border-indigo-500/50' },
+        { id: 1, name: 'Source Control', icon: FaGitAlt, color: 'text-orange-500', border: 'border-orange-500/50', shadow: 'shadow-orange-500/20' },
+        { id: 2, name: 'CI Pipeline', icon: SiGithubactions, color: 'text-amber-500', border: 'border-amber-500/50', shadow: 'shadow-amber-500/20' },
+        { id: 3, name: 'Unit Testing', icon: SiJest, color: 'text-green-500', border: 'border-green-500/50', shadow: 'shadow-green-500/20' },
+        { id: 4, name: 'Containerization', icon: FaDocker, color: 'text-blue-500', border: 'border-blue-500/50', shadow: 'shadow-blue-500/20' },
+        { id: 5, name: 'Orchestration', icon: SiKubernetes, color: 'text-purple-500', border: 'border-purple-500/50', shadow: 'shadow-purple-500/20' },
     ];
 
     const terminalLogs = [
-        { stage: 1, text: "git commit -m 'feat: optimized rendering engine'" },
-        { stage: 1, text: "git push origin main" },
-        { stage: 2, text: "Starting workflow: .github/workflows/deploy.yml" },
-        { stage: 2, text: "Installing dependencies (npm ci)..." },
-        { stage: 3, text: "Running tests (jest --coverage)..." },
-        { stage: 3, text: "PASS src/components/Engine.test.js" },
-        { stage: 4, text: "docker build -t app:latest ." },
-        { stage: 4, text: "Pushing to registry..." },
-        { stage: 5, text: "kubectl apply -f deployment.yaml" },
-        { stage: 5, text: "Scaling replicas: 3/3 ready" },
-        { stage: 6, text: "Deployment Successful! 🚀" },
+        { stage: 1, text: "> git commit -m 'feat: optimized rendering engine'", color: 'text-orange-400' },
+        { stage: 1, text: "> git push origin main", color: 'text-orange-400' },
+        { stage: 2, text: "> Starting workflow: .github/workflows/deploy.yml", color: 'text-amber-400' },
+        { stage: 2, text: "> Installing dependencies (npm ci)...", color: 'text-gray-400' },
+        { stage: 3, text: "> Running tests (jest --coverage)...", color: 'text-green-400' },
+        { stage: 3, text: "> PASS src/components/Engine.test.js", color: 'text-green-500 font-bold' },
+        { stage: 4, text: "> docker build -t app:latest .", color: 'text-blue-400' },
+        { stage: 4, text: "> Pushing to registry...", color: 'text-blue-400' },
+        { stage: 5, text: "> kubectl apply -f deployment.yaml", color: 'text-purple-400' },
+        { stage: 5, text: "> Scaling replicas: 3/3 ready", color: 'text-purple-400' },
+        { stage: 6, text: "> Deployment Successful! 🚀", color: 'text-green-500 font-bold' },
     ];
 
     useEffect(() => {
@@ -46,15 +46,13 @@ const DevOpsPipelineShowcase = () => {
         setActiveStage(0);
         setLogs([]);
 
-        let logIndex = 0;
-
         for (let i = 0; i < stages.length; i++) {
             setActiveStage(i + 1);
 
             // Add logs for this stage
             const stageLogs = terminalLogs.filter(l => l.stage === i + 1);
             for (let log of stageLogs) {
-                setLogs(prev => [...prev, log.text]);
+                setLogs(prev => [...prev, log]);
                 await new Promise(r => setTimeout(r, 400));
             }
 
@@ -62,7 +60,7 @@ const DevOpsPipelineShowcase = () => {
         }
 
         // Final success log
-        setLogs(prev => [...prev, terminalLogs[terminalLogs.length - 1].text]);
+        setLogs(prev => [...prev, terminalLogs[terminalLogs.length - 1]]);
         setStatus('success');
         setActiveStage(stages.length + 1);
 
@@ -74,34 +72,34 @@ const DevOpsPipelineShowcase = () => {
     };
 
     return (
-        <section className="py-24 bg-gray-50 dark:bg-black overflow-hidden relative">
-            {/* Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
-            </div>
+        <section className="py-32 bg-white dark:bg-black overflow-hidden relative border-y border-gray-100 dark:border-gray-900 transition-colors duration-300">
+            {/* Background Grid - "Awesome" Style */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white dark:via-black/50 dark:to-black"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
 
                     {/* Left Column: Narrative */}
-                    <div className="space-y-8">
+                    <div className="lg:w-1/2 space-y-10">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium border border-blue-200 dark:border-blue-800"
+                            viewport={{ once: true }}
+                            className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 backdrop-blur-sm"
                         >
-                            <HiChip className="w-4 h-4" />
-                            <span>DevOps Engineering</span>
+                            <HiChip className="w-4 h-4 text-orange-500" />
+                            <span className="text-sm font-medium text-orange-600 dark:text-orange-400">DevOps Architecture</span>
                         </motion.div>
 
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white"
+                            viewport={{ once: true }}
+                            className="text-5xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white"
                         >
-                            Automated <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">
+                            Intelligent <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
                                 Delivery Pipelines
                             </span>
                         </motion.h2>
@@ -109,161 +107,147 @@ const DevOpsPipelineShowcase = () => {
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
+                            className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl"
                         >
-                            Architecting robust CI/CD workflows that accelerate development cycles.
-                            From code commit to production deployment, ensuring reliability, scalability, and zero-downtime updates.
+                            Orchestrating complex deployment workflows with precision. From automated testing to containerized orchestration, ensuring scalable and resilient infrastructure.
                         </motion.p>
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 }}
-                            className="flex flex-wrap gap-3"
-                        >
-                            {['GitHub Actions', 'Docker', 'Kubernetes', 'Terraform', 'Prometheus'].map((tech, i) => (
-                                <span key={i} className="px-3 py-1 text-xs font-semibold bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-md border border-gray-200 dark:border-gray-700">
-                                    {tech}
-                                </span>
-                            ))}
-                        </motion.div>
-
                         <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
                             onClick={runPipeline}
                             disabled={status === 'running'}
-                            className={`px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-3 shadow-lg shadow-blue-500/20 transition-all ${status === 'running'
-                                    ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
-                                    : 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:shadow-cyan-500/30'
+                            className={`px-8 py-4 rounded-full font-bold text-sm tracking-wide flex items-center gap-3 transition-all border ${status === 'running'
+                                ? 'bg-gray-100 dark:bg-gray-900 text-gray-400 border-transparent cursor-wait'
+                                : 'bg-black dark:bg-white text-white dark:text-black border-transparent hover:shadow-[0_0_30px_-5px_orange] dark:hover:shadow-[0_0_30px_-5px_orange]'
                                 }`}
                         >
                             {status === 'running' ? (
                                 <>
-                                    <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin" />
-                                    Deploying...
+                                    <HiLightningBolt className="animate-pulse text-amber-500" />
+                                    <span>EXECUTING PIPELINE...</span>
                                 </>
                             ) : (
                                 <>
-                                    <FaRocket /> Trigger Deploy
+                                    <FaRocket className="text-orange-500" /> <span>INITIATE DEPLOYMENT</span>
                                 </>
                             )}
                         </motion.button>
                     </div>
 
-                    {/* Right Column: Interactive Visualization */}
-                    <div className="relative">
-                        <div className="relative bg-white dark:bg-gray-900/80 backdrop-blur-xl border border-gray-200 dark:border-gray-800 rounded-3xl p-6 shadow-2xl overflow-hidden">
+                    {/* Right Column: Visualization */}
+                    <div className="lg:w-1/2 w-full">
+                        <div className="relative">
+                            {/* Circuit Board Container */}
+                            <div className="relative bg-gray-50/50 dark:bg-black/50 border border-gray-200 dark:border-gray-800 rounded-[2rem] p-8 shadow-2xl overflow-hidden min-h-[500px] flex flex-col justify-between backdrop-blur-xl">
 
-                            {/* Header Bar */}
-                            <div className="flex items-center justify-between mb-8 border-b border-gray-200 dark:border-gray-800 pb-4">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-3 h-3 rounded-full bg-red-500" />
-                                    <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                                    <div className="w-3 h-3 rounded-full bg-green-500" />
+                                {/* Header Status */}
+                                <div className="flex justify-between items-start relative z-10 mb-10">
+                                    <div className="flex items-center gap-2">
+                                        <div className={`w-2 h-2 rounded-full ${status === 'running' ? 'bg-amber-400 animate-pulse' : status === 'success' ? 'bg-green-400' : 'bg-gray-300 dark:bg-gray-700'}`}></div>
+                                        <span className="text-xs font-mono uppercase text-gray-400 tracking-widest">
+                                            {status === 'idle' ? 'System Ready' : status === 'running' ? 'Processing...' : 'Deployed'}
+                                        </span>
+                                    </div>
+                                    <FaTerminal className="text-gray-300 dark:text-gray-700" />
                                 </div>
-                                <div className="text-xs font-mono text-gray-400">pipeline-visualizer</div>
-                            </div>
 
-                            {/* Pipeline Stages */}
-                            <div className="space-y-4 relative">
-                                {/* Vertical Connecting Line */}
-                                <div className="absolute left-[27px] top-4 bottom-4 w-0.5 bg-gray-200 dark:bg-gray-800 -z-10"></div>
+                                {/* Central active stage display */}
+                                <div className="relative z-10 flex-1 flex flex-col items-center justify-center space-y-8">
+                                    <div className="flex justify-center items-center gap-4 md:gap-8 w-full max-w-sm">
+                                        {stages.map((stage, index) => {
+                                            const isActive = activeStage === index + 1;
+                                            const isPast = activeStage > index + 1;
 
-                                {stages.map((stage, index) => {
-                                    const isActive = activeStage === index + 1;
-                                    const isCompleted = activeStage > index + 1;
+                                            // Dynamic Colors based on stage state
+                                            const activeColorClass = stage.color;
+                                            const activeBorderClass = stage.border;
+                                            const activeShadowClass = stage.shadow;
 
-                                    return (
-                                        <motion.div
-                                            key={stage.id}
-                                            initial={{ opacity: 0, x: 20 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            transition={{ delay: index * 0.1 }}
-                                            className={`relative flex items-center gap-4 p-3 rounded-xl border transition-all duration-500 ${isActive
-                                                    ? `bg-gray-50 dark:bg-gray-800 ${stage.color.replace('text-', 'border-')} shadow-lg scale-[1.02]`
-                                                    : 'bg-transparent border-transparent opacity-60'
-                                                }`}
-                                        >
-                                            {/* Icon Node */}
-                                            <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-xl transition-all duration-500 z-10 ${isActive || isCompleted
-                                                    ? `${stage.bg} ${stage.color} shadow-[0_0_15px_rgba(0,0,0,0.2)]`
-                                                    : 'bg-gray-100 dark:bg-gray-800 text-gray-400'
-                                                }`}>
-                                                {isCompleted ? <FaCheckCircle /> : <stage.icon />}
-                                            </div>
-
-                                            {/* Content */}
-                                            <div className="flex-1">
-                                                <div className="flex justify-between items-center mb-1">
-                                                    <h3 className={`font-bold text-sm ${isActive ? 'text-gray-900 dark:text-white' : 'text-gray-500'}`}>
-                                                        {stage.name}
-                                                    </h3>
-                                                    {isActive && (
-                                                        <span className="text-[10px] font-mono text-blue-500 animate-pulse">
-                                                            IN PROGRESS
-                                                        </span>
+                                            return (
+                                                <div key={stage.id} className="relative group">
+                                                    {/* Connector Line */}
+                                                    {index < stages.length - 1 && (
+                                                        <div className="absolute top-1/2 left-full w-4 md:w-8 h-[2px] -translate-y-1/2 bg-gray-200 dark:bg-gray-800 z-0">
+                                                            <motion.div
+                                                                initial={{ width: "0%" }}
+                                                                animate={{ width: isPast ? "100%" : "0%" }}
+                                                                className="h-full bg-green-500"
+                                                                transition={{ duration: 0.5 }}
+                                                            />
+                                                        </div>
                                                     )}
-                                                </div>
 
-                                                {/* Progress Bar for Active Stage */}
-                                                <div className="h-1.5 w-full bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                                                    {/* Node */}
                                                     <motion.div
-                                                        className={`h-full ${stage.color.replace('text-', 'bg-')}`}
-                                                        initial={{ width: "0%" }}
-                                                        animate={{ width: isActive ? "100%" : isCompleted ? "100%" : "0%" }}
-                                                        transition={{ duration: isActive ? 1.5 : 0.3 }}
-                                                    />
+                                                        animate={{
+                                                            scale: isActive ? 1.15 : 1,
+                                                            borderColor: isActive ? 'var(--border-active)' : 'var(--border-inactive)',
+                                                        }}
+                                                        className={`relative z-10 w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center border-2 bg-white dark:bg-black transition-all duration-500
+                                                            ${isActive
+                                                                ? `${activeBorderClass} ${activeColorClass} ${activeShadowClass} shadow-lg ring-2 ring-offset-2 ring-offset-white dark:ring-offset-black ring-transparent`
+                                                                : isPast
+                                                                    ? 'border-green-500 text-green-500 dark:border-green-500 dark:text-green-500'
+                                                                    : 'border-gray-200 dark:border-gray-800 text-gray-300 dark:text-gray-700'
+                                                            }`}
+                                                    >
+                                                        {isPast ? <FaCheckCircle className="text-sm" /> : <stage.icon className="text-sm md:text-base" />}
+                                                    </motion.div>
+
+                                                    {/* Tooltip Label */}
+                                                    <div className={`absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] font-mono whitespace-nowrap transition-opacity duration-300 ${isActive ? `opacity-100 ${stage.color}` : 'opacity-0'}`}>
+                                                        {stage.name}
+                                                    </div>
                                                 </div>
+                                            );
+                                        })}
+                                    </div>
+
+                                    {/* Terminal Window */}
+                                    <motion.div
+                                        layout
+                                        className="w-full mt-8"
+                                    >
+                                        <div className="bg-[#1e1e1e] rounded-xl p-4 font-mono text-xs h-32 overflow-hidden border border-gray-800 shadow-2xl relative">
+                                            {/* Terminal Header */}
+                                            <div className="absolute top-0 left-0 right-0 h-6 bg-[#252526] border-b border-gray-800 flex items-center px-2 space-x-1.5">
+                                                <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></div>
+                                                <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></div>
+                                                <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></div>
                                             </div>
 
-                                            {/* Active Glow Effect */}
-                                            {isActive && (
-                                                <motion.div
-                                                    layoutId="activeGlow"
-                                                    className={`absolute inset-0 rounded-xl ${stage.color.replace('text-', 'bg-')}/5 -z-10`}
-                                                    transition={{ duration: 0.3 }}
-                                                />
-                                            )}
-                                        </motion.div>
-                                    );
-                                })}
-                            </div>
-
-                            {/* Terminal Output */}
-                            <div className="mt-8 bg-[#0d1117] rounded-xl border border-gray-800 p-4 font-mono text-xs h-40 overflow-hidden flex flex-col shadow-inner">
-                                <div className="flex items-center gap-2 text-gray-500 border-b border-gray-800 pb-2 mb-2">
-                                    <FaTerminal />
-                                    <span>console output</span>
-                                </div>
-                                <div
-                                    ref={scrollRef}
-                                    className="flex-1 overflow-y-auto space-y-1 scrollbar-hide"
-                                >
-                                    <AnimatePresence>
-                                        {logs.map((log, i) => (
-                                            <motion.div
-                                                key={i}
-                                                initial={{ opacity: 0, x: -10 }}
-                                                animate={{ opacity: 1, x: 0 }}
-                                                className={`${log.includes('Error') ? 'text-red-400' : log.includes('Success') ? 'text-green-400' : 'text-gray-300'}`}
+                                            <div
+                                                ref={scrollRef}
+                                                className="h-full pt-6 overflow-y-auto space-y-1 scrollbar-none"
                                             >
-                                                <span className="text-gray-600 mr-2">$</span>
-                                                {log}
-                                            </motion.div>
-                                        ))}
-                                    </AnimatePresence>
-                                    {status === 'running' && (
-                                        <motion.div
-                                            animate={{ opacity: [0, 1, 0] }}
-                                            transition={{ repeat: Infinity, duration: 0.8 }}
-                                            className="w-2 h-4 bg-blue-500 inline-block align-middle ml-1"
-                                        />
-                                    )}
+                                                <AnimatePresence mode="popLayout">
+                                                    {logs.map((log, i) => (
+                                                        <motion.div
+                                                            key={i}
+                                                            initial={{ opacity: 0, x: -10 }}
+                                                            animate={{ opacity: 1, x: 0 }}
+                                                            className={`${log.color || 'text-gray-300'}`}
+                                                        >
+                                                            {log.text}
+                                                        </motion.div>
+                                                    ))}
+                                                </AnimatePresence>
+                                                {status === 'running' && (
+                                                    <motion.span
+                                                        animate={{ opacity: [0, 1, 0] }}
+                                                        transition={{ repeat: Infinity, duration: 1 }}
+                                                        className="inline-block w-2 h-4 bg-orange-500 align-middle ml-1"
+                                                    />
+                                                )}
+                                            </div>
+                                        </div>
+                                    </motion.div>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
                     </div>
 
