@@ -23,6 +23,12 @@ import aptos6 from '../assets/projects/multi-tenant-erp/Screenshot 2025-12-07 20
 import aptos7 from '../assets/projects/multi-tenant-erp/Screenshot 2025-12-07 203914.png';
 import aptos8 from '../assets/projects/multi-tenant-erp/Screenshot 2025-12-07 204737.png';
 
+// Learn Anything AI Images
+import learn1 from '../assets/projects/learn-anything-with-ai/Screenshot 2025-12-08 212225.png';
+import learn2 from '../assets/projects/learn-anything-with-ai/Screenshot 2025-12-08 214512.png';
+import learn3 from '../assets/projects/learn-anything-with-ai/Screenshot 2025-12-08 214525.png';
+import learn4 from '../assets/projects/learn-anything-with-ai/Screenshot 2025-12-08 214454.png';
+
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedSize, setSelectedSize] = useState('All');
@@ -62,6 +68,18 @@ const Projects = () => {
       githubUrl: "https://github.com/itzmeahammed/memory-rewrite-ai",
       featured: true,
       images: [memory1, memory2, memory3, memory4, memory5, memory6, memory7]
+    },
+    {
+      id: 103,
+      title: "Learn-Anything-with-AI",
+      category: "AI/ML",
+      type: "AI / EdTech",
+      description: "Interactive AI-powered learning platform using 3D roadmaps and Socratic tutoring to visualize and master any topic.",
+      technologies: ["React", "Three.js", "AI", "TailwindCSS", "Zustand"],
+      status: "Production",
+      githubUrl: "https://github.com/itzmeahammed/learn-anything-with-ai",
+      featured: true,
+      images: [learn1, learn2, learn3, learn4]
     },
     {
       id: 57,

@@ -165,7 +165,7 @@ const Home = () => {
       </section>
 
       {/* Live Project Browser - Enhanced Placement */}
-      <section className="py-20 relative bg-gray-50/50 dark:bg-gray-900/50 border-y border-gray-200 dark:border-gray-800 backdrop-blur-sm">
+      <section className="py-20 relative bg-gray-50/50 dark:bg-black border-y border-gray-200 dark:border-gray-800 backdrop-blur-sm">
         <div className="absolute inset-0 bg-grid-slate-200/50 dark:bg-grid-slate-800/50 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))] pointer-events-none" />
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div

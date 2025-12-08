@@ -34,6 +34,16 @@ const projects = [
     color: "from-stone-800 to-neutral-900"
   },
   {
+    id: 103,
+    title: "Learn Anything with AI 🧠✨",
+    description: "Interactive AI-powered learning platform with 3D knowledge roadmaps and Socratic tutoring.",
+    url: "https://learn-anything-with-ai.netlify.app/",
+    category: "AI/EdTech",
+    technologies: ["React", "Three.js", "AI", "Tailwind"],
+    stats: { views: "900+", stars: "40", techs: 5 },
+    color: "from-indigo-600 to-purple-600"
+  },
+  {
     id: 1,
     title: "3D Study Planner",
     description: "Interactive 3D study planning tool with immersive learning experience",
@@ -173,7 +183,7 @@ const InteractiveProjectBrowser = () => {
     <div className="w-full max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-8">
       {/* Control Bar */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-        <div className="flex items-center space-x-4 bg-white/80 dark:bg-black/80 backdrop-blur-md p-2 rounded-2xl shadow-sm border border-gray-200/50 dark:border-gray-800/50">
+        <div className="flex items-center space-x-4 bg-white/80 dark:bg-black backdrop-blur-md p-2 rounded-2xl shadow-sm border border-gray-200/50 dark:border-gray-800/50">
           <button
             onClick={() => setIsAutoPlay(!isAutoPlay)}
             className={`px-6 py-2 rounded-xl text-sm font-bold transition-all flex items-center gap-2 ${isAutoPlay
@@ -191,7 +201,7 @@ const InteractiveProjectBrowser = () => {
         </div>
 
         {/* Project Indicators */}
-        <div className="flex gap-1.5 flex-wrap justify-center max-w-xl bg-white/50 dark:bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-100/50 dark:border-gray-800/50">
+        <div className="flex gap-1.5 flex-wrap justify-center max-w-xl bg-white/50 dark:bg-black backdrop-blur-sm px-4 py-2 rounded-full border border-gray-100/50 dark:border-gray-800/50">
           {projects.map((_, idx) => (
             <button
               key={idx}
@@ -210,7 +220,7 @@ const InteractiveProjectBrowser = () => {
         <div className="lg:col-span-9 h-[400px] lg:h-full relative group order-2 lg:order-1">
           <motion.div
             layout
-            className="w-full h-full bg-[#050505] rounded-2xl shadow-2xl overflow-hidden border-[1px] border-gray-800 flex flex-col"
+            className="w-full h-full bg-gray-900 dark:bg-black rounded-2xl shadow-2xl overflow-hidden border-[1px] border-gray-800 flex flex-col"
           >
             {/* Browser Header */}
             <div className="bg-black px-4 py-3 flex items-center gap-4 border-b border-gray-800 shrink-0">
@@ -267,7 +277,7 @@ const InteractiveProjectBrowser = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.4 }}
-              className="bg-white/90 dark:bg-black/90 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 dark:border-gray-800 h-full flex flex-col shadow-xl"
+              className="bg-white/90 dark:bg-black backdrop-blur-xl rounded-2xl p-6 border border-gray-200 dark:border-gray-800 h-full flex flex-col shadow-xl"
             >
               {/* Header Info */}
               <div className="mb-6">
