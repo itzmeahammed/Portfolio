@@ -46,6 +46,30 @@ const Projects = () => {
 
   const bigProjects = [
     {
+      id: 110,
+      title: "Climo Group",
+      category: "Web Development",
+      type: "Agency / Corporate",
+      description: "Modern corporate agency platform with immersive animations, detailed service portfolio showcase, and interactive UI elements.",
+      technologies: ["React", "Framer Motion", "TailwindCSS", "Vite"],
+      status: "Live",
+      githubUrl: "https://github.com/itzmeahammed",
+      featured: true,
+      // Images will be auto-loaded by getImagesForProject('Climo Group') matching 'climo-group' folder
+    },
+    {
+      id: 111,
+      title: "Nova Stream",
+      category: "Web Development",
+      type: "Entertainment / Streaming",
+      description: "Next-generation video streaming interface featuring high-performance content delivery, responsive design, and premium user experience.",
+      technologies: ["React", "API Integration", "TailwindCSS", "Media Player"],
+      status: "Live",
+      githubUrl: "https://github.com/itzmeahammed",
+      featured: true,
+      // Images will be auto-loaded by getImagesForProject('Nova Stream') matching 'nova-stream' folder
+    },
+    {
       id: 61,
       title: "multi-tenant-erp",
       category: "Web Development",

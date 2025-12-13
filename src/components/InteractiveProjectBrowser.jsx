@@ -14,6 +14,26 @@ import { FaGithub } from 'react-icons/fa';
 
 const projects = [
   {
+    id: 110,
+    title: "Climo Group",
+    description: "Modern corporate agency platform with immersive animations and detailed service portfolio showcase",
+    url: "https://climo-group.netlify.app/",
+    category: "Agency",
+    technologies: ["React", "Framer Motion", "Tailwind", "Vite"],
+    stats: { views: "1.5K+", stars: "45", techs: 4 },
+    color: "from-blue-600 to-cyan-600"
+  },
+  {
+    id: 111,
+    title: "Nova Stream",
+    description: "Next-generation video streaming interface with high-performance content delivery and premium UI",
+    url: "https://nova-stream-v1.netlify.app/",
+    category: "Entertainment",
+    technologies: ["React", "API Integration", "Tailwind", "Media Player"],
+    stats: { views: "2.1K", stars: "52", techs: 4 },
+    color: "from-red-600 to-pink-600"
+  },
+  {
     id: 102,
     title: "APT.OS - Property Orchestrator",
     description: "Premium SaaS ERP for real estate with immersive 3D command center",
