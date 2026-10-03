@@ -13,111 +13,105 @@ import {
     FaReact,
     FaNodeJs,
     FaPython,
-    FaDatabase as FaDb,
-    FaGithub,
     FaLaptopCode,
     FaAws,
     FaDocker,
-    FaJava,
     FaHtml5,
     FaCss3Alt,
-    FaFigma,
     FaBrain
 } from 'react-icons/fa';
 import {
     SiMongodb,
-    SiFlutter,
     SiJavascript,
     SiNextdotjs,
     SiMysql,
     SiExpress,
     SiOpencv,
     SiNginx,
-    SiHeroku,
     SiJira,
-    SiBitbucket,
     SiGit
 } from 'react-icons/si';
 
 const skillCategories = [
     {
-        title: "Front-End Development",
-        icon: HiDesktopComputer,
-        description: "Modern UI/UX with responsive design",
+        title: "AI Automation & Agents",
+        icon: FaBrain,
+        description: "LLM-powered workflows & chatbots",
         skills: [
-            { name: "ReactJS", icon: FaReact, level: 95 },
-            { name: "Next.js", icon: SiNextdotjs, level: 90 },
-            { name: "React Native", icon: FaReact, level: 88 },
-            { name: "Flutter", icon: SiFlutter, level: 85 },
-            { name: "HTML5", icon: FaHtml5, level: 95 },
-            { name: "CSS3", icon: FaCss3Alt, level: 92 },
-            { name: "JavaScript", icon: SiJavascript, level: 95 }
+            { name: "LLM Integrations (OpenAI, LLaMA)", icon: HiLightBulb, level: 90 },
+            { name: "AI Agents & Chatbots", icon: FaBrain, level: 88 },
+            { name: "RAG, LangChain & LlamaIndex", icon: HiDatabase, level: 85 },
+            { name: "NLP & Tesseract OCR", icon: HiEye, level: 88 },
+            { name: "Computer Vision (OpenCV)", icon: SiOpencv, level: 80 }
         ]
     },
     {
-        title: "Back-End Development",
+        title: "Automation & Integration",
+        icon: HiCog,
+        description: "Connecting business systems end to end",
+        skills: [
+            { name: "n8n & Zapier Workflows", icon: HiCog, level: 90 },
+            { name: "REST APIs & Webhooks", icon: HiCode, level: 92 },
+            { name: "WhatsApp Cloud / Business API", icon: HiDeviceMobile, level: 88 },
+            { name: "Scripts, Bots & Cron Jobs", icon: FaLaptopCode, level: 88 }
+        ]
+    },
+    {
+        title: "CRM & ERP Automation",
+        icon: HiGlobeAlt,
+        description: "Lead, sales & operations workflows",
+        skills: [
+            { name: "Bitrix24 CRM Customization", icon: HiCog, level: 90 },
+            { name: "Odoo ERP Customization", icon: HiCog, level: 85 },
+            { name: "Lead Management & Source Tracking", icon: HiGlobeAlt, level: 88 },
+            { name: "Booking & Follow-up Automation", icon: HiLightBulb, level: 85 }
+        ]
+    },
+    {
+        title: "Backend & Databases",
         icon: HiDatabase,
         description: "Scalable server-side solutions",
         skills: [
-            { name: "Java", icon: FaJava, level: 88 },
-            { name: "Python", icon: FaPython, level: 90 },
             { name: "Node.js", icon: FaNodeJs, level: 92 },
-            { name: "Express.js", icon: SiExpress, level: 88 }
+            { name: "Express.js", icon: SiExpress, level: 88 },
+            { name: "Python (FastAPI, Django)", icon: FaPython, level: 90 },
+            { name: "MySQL & PostgreSQL", icon: SiMysql, level: 90 },
+            { name: "MongoDB", icon: SiMongodb, level: 90 }
         ]
     },
     {
-        title: "Database Management",
-        icon: FaDb,
-        description: "Efficient data storage & retrieval",
+        title: "Front-End Development",
+        icon: HiDesktopComputer,
+        description: "Responsive, SEO-friendly UI",
         skills: [
-            { name: "MySQL", icon: SiMysql, level: 90 },
-            { name: "MongoDB", icon: SiMongodb, level: 92 }
+            { name: "Next.js", icon: SiNextdotjs, level: 90 },
+            { name: "ReactJS", icon: FaReact, level: 95 },
+            { name: "JavaScript & TypeScript", icon: SiJavascript, level: 92 },
+            { name: "HTML5", icon: FaHtml5, level: 95 },
+            { name: "CSS3", icon: FaCss3Alt, level: 92 }
         ]
     },
     {
-        title: "AI/ML & Computer Vision",
-        icon: FaBrain,
-        description: "Intelligent automation solutions",
+        title: "Cloud, DevOps & Tools",
+        icon: FaAws,
+        description: "Deployment & development workflow",
         skills: [
-            { name: "LLM Implementation", icon: HiLightBulb, level: 85 },
-            { name: "OpenCV", icon: SiOpencv, level: 80 },
-            { name: "Tesseract OCR", icon: HiEye, level: 85 },
-            { name: "LLaMA", icon: FaBrain, level: 82 },
-            { name: "NLP", icon: HiGlobeAlt, level: 88 }
-        ]
-    },
-    {
-        title: "Design & Tools",
-        icon: HiCog,
-        description: "Development workflow & design",
-        skills: [
-            { name: "Figma", icon: FaFigma, level: 85 },
-            { name: "Git", icon: SiGit, level: 95 },
-            { name: "GitHub", icon: FaGithub, level: 92 },
-            { name: "Bitbucket", icon: SiBitbucket, level: 88 },
-            { name: "Jira", icon: SiJira, level: 85 }
-        ]
-    },
-    {
-        title: "Deployment & DevOps",
-        icon: HiGlobeAlt,
-        description: "Cloud deployment & infrastructure",
-        skills: [
-            { name: "AWS", icon: FaAws, level: 85 },
+            { name: "AWS (EC2, Lambda, RDS, S3)", icon: FaAws, level: 85 },
             { name: "Docker", icon: FaDocker, level: 80 },
-            { name: "NGINX", icon: SiNginx, level: 78 },
-            { name: "Heroku", icon: SiHeroku, level: 85 }
+            { name: "NGINX & CI/CD", icon: SiNginx, level: 78 },
+            { name: "Git, GitHub & Bitbucket", icon: SiGit, level: 95 },
+            { name: "Jira & Figma", icon: SiJira, level: 85 }
         ]
     }
 ];
 
 const areasOfInterest = [
-    { name: "Mobile Development", icon: HiDeviceMobile, description: "Cross-platform mobile apps" },
-    { name: "Web Development", icon: HiDesktopComputer, description: "Modern web applications" },
-    { name: "Front-End Development", icon: FaLaptopCode, description: "Interactive user interfaces" },
-    { name: "Back-End Development", icon: HiDatabase, description: "Server-side architecture" },
-    { name: "Full Stack Development", icon: HiCode, description: "End-to-end solutions" },
-    { name: "Software Development", icon: HiCog, description: "Custom software solutions" }
+    { name: "AI Automation", icon: FaBrain, description: "AI agents & LLM workflows" },
+    { name: "CRM Automation", icon: HiCog, description: "Bitrix24 & Odoo workflows" },
+    { name: "WhatsApp Automation", icon: HiDeviceMobile, description: "Customer enquiry & follow-up" },
+    { name: "Process Automation", icon: HiLightBulb, description: "Removing manual business work" },
+    { name: "API Integrations", icon: HiCode, description: "APIs, webhooks & third parties" },
+    { name: "Full Stack AI Development", icon: HiDesktopComputer, description: "End-to-end AI products" }
 ];
 
 const AboutSkills = () => {
@@ -140,7 +134,7 @@ const AboutSkills = () => {
                         transition={{ delay: 0.1 }}
                         className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
                     >
-                        Proficient in modern technologies and frameworks for building scalable applications
+                        AI automation, CRM integration and full-stack engineering for production business systems
                     </motion.p>
                 </div>
 

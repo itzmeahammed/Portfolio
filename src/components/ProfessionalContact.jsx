@@ -62,7 +62,7 @@ const ProfessionalContact = () => {
       icon: HiPhone,
       label: "Phone",
       value: "+971 588 544 698",
-      href: "tel:+971588544698",
+      href: "tel:+971521352484",
       color: "from-green-400 to-green-600"
     },
     {
@@ -106,7 +106,7 @@ const ProfessionalContact = () => {
     {
       icon: FaWhatsapp,
       name: "WhatsApp",
-      href: "https://wa.me/971588544698",
+      href: "https://wa.me/971521352484",
       color: "hover:text-green-500",
       followers: "Direct"
     },

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiDownload, HiDocument, HiCheck, HiEye } from 'react-icons/hi';
 import { FaFilePdf, FaFileWord, FaSpinner } from 'react-icons/fa';
-import cvFile from '../assets/Ahammed S.pdf (5) (1).pdf';
+import cvFile from '../assets/Ahammed_CV.pdf';
 
 const CVDownload = ({ className = "" }) => {
   const [isDownloading, setIsDownloading] = useState(false);

@@ -177,7 +177,7 @@ const AnimatedHero = () => {
             </div>
             <div className="flex items-center gap-2">
               <HiPhone className="text-teal-500" />
-              <span>+971588544698</span>
+              <span>+971521352484</span>
             </div>
           </motion.div>
         </motion.div>

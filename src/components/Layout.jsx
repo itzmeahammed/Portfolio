@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import CustomCursor from './CustomCursor';
 import ThemeToggle from './ThemeToggle';
 import LoadingAnimation from './LoadingAnimation';
 import FlyingRocket from './FlyingRocket';
@@ -82,7 +81,6 @@ const Layout = ({ children }) => {
       <EngagementTracker />
 
       {/* UI Components */}
-      <CustomCursor />
       <FlyingRocket />
       <FloatingChatbot />
       <FirstVisitWelcomePopup onPopupStateChange={setIsPopupOpen} />

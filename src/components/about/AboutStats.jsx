@@ -24,7 +24,7 @@ const AboutStats = () => {
 
                             <div className="space-y-2">
                                 <h2 className="text-6xl md:text-7xl font-bold font-elegant-heading text-gray-900 dark:text-white tracking-tight">
-                                    3.5+ <span className="text-2xl md:text-3xl text-gray-400 font-light">Years</span>
+                                    4+ <span className="text-2xl md:text-3xl text-gray-400 font-light">Years</span>
                                 </h2>
                                 <p className="text-xl text-amber-600 dark:text-amber-500 font-medium tracking-wide uppercase">
                                     Total Professional Experience
@@ -32,7 +32,7 @@ const AboutStats = () => {
                             </div>
 
                             <p className="max-w-xl mx-auto text-gray-600 dark:text-gray-400 leading-relaxed">
-                                Combining <span className="font-semibold text-gray-900 dark:text-white">1.5+ years</span> of corporate industry expertise with <span className="font-semibold text-gray-900 dark:text-white">3+ years</span> of high-level freelance projects.
+                                Spanning <span className="font-semibold text-gray-900 dark:text-white">full-time roles</span> at WizzGeeks Technologies and Travnook, alongside <span className="font-semibold text-gray-900 dark:text-white">freelance AI and automation projects</span> since 2023.
                             </p>
                         </div>
                     </div>

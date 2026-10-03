@@ -14,6 +14,46 @@ import { FaGithub } from 'react-icons/fa';
 
 const projects = [
   {
+    id: 201,
+    title: "ATTICARCH",
+    description: "Luxury interior design and architectural consultation website for a Bangalore-based studio",
+    url: "https://atticarch.com/",
+    category: "Interior Design",
+    technologies: ["Web Design", "Responsive UI", "SEO", "Netlify"],
+    stats: { views: "Live", viewsLabel: "Status", stars: "Client", starsLabel: "Project", techs: 4 },
+    color: "from-zinc-900 to-black"
+  },
+  {
+    id: 202,
+    title: "OzoBath",
+    description: "Premium shower enclosures and bathroom fittings storefront for India with catalog, cart and B2B enquiries",
+    url: "https://ozobath.in/",
+    category: "E-commerce",
+    technologies: ["Product Catalog", "Responsive UI", "SEO", "NGINX"],
+    stats: { views: "Live", viewsLabel: "Status", stars: "Client", starsLabel: "Project", techs: 4 },
+    color: "from-neutral-900 to-zinc-900"
+  },
+  {
+    id: 203,
+    title: "Travnook - South Korea",
+    description: "South Korea appointment assistance landing page for UAE residents with enquiry capture",
+    url: "https://travnook.com/southkorea/",
+    category: "Travel",
+    technologies: ["Landing Page", "Lead Capture", "WhatsApp Enquiries", "SEO"],
+    stats: { views: "Live", viewsLabel: "Status", stars: "Client", starsLabel: "Project", techs: 4 },
+    color: "from-stone-900 to-black"
+  },
+  {
+    id: 204,
+    title: "Travnook - China",
+    description: "China visa assistance landing page for UAE residents with appointment booking and enquiry capture",
+    url: "https://travnook.com/china/",
+    category: "Travel",
+    technologies: ["Landing Page", "Lead Capture", "WhatsApp Enquiries", "SEO"],
+    stats: { views: "Live", viewsLabel: "Status", stars: "Client", starsLabel: "Project", techs: 4 },
+    color: "from-gray-900 to-slate-900"
+  },
+  {
     id: 110,
     title: "Climo Group",
     description: "Modern corporate agency platform with immersive animations and detailed service portfolio showcase",
@@ -325,8 +365,8 @@ const InteractiveProjectBrowser = () => {
             {/* Stats Row - Light Cards for Contrast */}
             <div className="grid grid-cols-3 gap-3 flex-1">
               {[
-                { icon: HiEye, val: currentProject.stats.views, label: "Views" },
-                { icon: HiStar, val: currentProject.stats.stars, label: "Stars" },
+                { icon: HiEye, val: currentProject.stats.views, label: currentProject.stats.viewsLabel || "Views" },
+                { icon: HiStar, val: currentProject.stats.stars, label: currentProject.stats.starsLabel || "Stars" },
                 { icon: HiCode, val: currentProject.stats.techs, label: "Stack" },
               ].map((stat, i) => (
                 <div key={i} className="bg-white border border-zinc-200 p-4 rounded-3xl flex flex-col items-center justify-center text-center shadow-sm h-full min-h-[120px]">

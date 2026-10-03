@@ -348,7 +348,7 @@ const ProjectCard = ({ project, index }) => {
                 </a>
 
                 <a
-                  href={`https://wa.me/971588544698?text=Hi Ahammed! I'm interested in your ${project.title} project.`}
+                  href={`https://wa.me/971521352484?text=Hi Ahammed! I'm interested in your ${project.title} project.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center p-4 bg-gray-900 rounded-2xl hover:bg-gray-800 group transition-colors duration-300 border border-gray-800 hover:border-gray-700"
@@ -531,13 +531,13 @@ const ProjectCard = ({ project, index }) => {
         {/* Action Buttons */}
         <div className="flex gap-3 mt-2 pt-4 border-t border-gray-200 dark:border-gray-800">
           <a
-            href={project.githubUrl || "#"}
+            href={project.liveUrl || project.githubUrl || "#"}
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-gray-900 dark:bg-white text-white dark:text-black font-semibold text-sm hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
           >
-            <HiCode className="w-4 h-4" />
-            Source Code
+            {project.liveUrl ? <HiExternalLink className="w-4 h-4" /> : <HiCode className="w-4 h-4" />}
+            {project.liveUrl ? 'Visit Site' : 'Source Code'}
           </a>
           <button
             onClick={() => setShowContactModal(true)}

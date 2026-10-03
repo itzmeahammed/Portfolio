@@ -135,7 +135,7 @@ const ScrollTriggeredPopup = () => {
 
                 <div className="space-y-2">
                   <motion.a
-                    href="https://wa.me/971588544698"
+                    href="https://wa.me/971521352484"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => {

@@ -35,10 +35,10 @@ const FloatingChatbot = () => {
   const portfolioData = {
     personal: {
       name: "Ahammed",
-      title: "Full Stack Developer & AI Specialist",
+      title: "AI Automation Specialist & Full Stack Developer",
       location: "Dubai, United Arab Emirates",
       email: "ahammedmass24@gmail.com",
-      phone: "+971 588544698",
+      phone: "+971 521352484",
       github: "https://github.com/itzmeahammed",
       linkedin: "https://www.linkedin.com/in/ahammed-s-5161b7288/",
       age: "22 years old",
@@ -46,12 +46,12 @@ const FloatingChatbot = () => {
       availability: "Available for freelance projects and full-time opportunities"
     },
     experience: {
-      current: "Freelance Full Stack Developer (April 2023 - Present) - CURRENT",
-      previous: "Full Stack Developer at WizzGeeks Technologies (May 2024 - August 2025) - Completed",
-      totalExperience: "3+ years professional experience",
-      industryExperience: "1.5+ years",
-      freelanceExperience: "3+ years",
-      specialization: "AI-integrated solutions and full-stack development",
+      current: "AI Automation & Full Stack Developer at Travnook, Dubai (Nov 2025 - Present) - CURRENT; also freelancing since April 2023",
+      previous: "Full Stack Developer at WizzGeeks Technologies (May 2022 - August 2025) - Completed",
+      totalExperience: "4+ years professional experience",
+      industryExperience: "3.5+ years",
+      freelanceExperience: "Since April 2023",
+      specialization: "AI automation, CRM workflows and full-stack development",
       projectsCompleted: "50+ projects delivered",
       clientSatisfaction: "100% client satisfaction rate"
     },
@@ -163,7 +163,7 @@ const FloatingChatbot = () => {
       "100% client satisfaction rate",
       "Expert in AI/ML integration",
       "Proficient in 20+ technologies",
-      "3+ years freelance experience",
+      "4+ years professional experience",
       "Multiple domain expertise",
       "Strong problem-solving skills",
       "Excellent communication abilities"
@@ -177,7 +177,7 @@ const FloatingChatbot = () => {
       return `🛠️ **Technical Skills & Expertise:**
 
 **🎨 Frontend Development:**
-• ReactJS (Expert) - 3+ years experience
+• ReactJS (Expert) - 4+ years experience
 • Next.js (Advanced) - Server-side rendering
 • React Native (Advanced) - Cross-platform mobile
 • Flutter (Advanced) - Mobile app development
@@ -216,33 +216,40 @@ const FloatingChatbot = () => {
 • Problem Solving & Critical Thinking
 • Time Management & Project Planning
 
-*Proficient in 20+ technologies with 3+ years professional experience!*`;
+*Proficient in 20+ technologies with 4+ years professional experience!*`;
     }
 
     if (message.includes('experience') || message.includes('work') || message.includes('job') || message.includes('career')) {
       return `💼 **Professional Experience & Career Journey:**
 
 **🚀 Current Position:**
-• **Freelance Full Stack Developer** (April 2023 - Present)
-• Status: **CURRENTLY ACTIVE**
-• 50+ projects delivered with 100% client satisfaction
-• Specializing in AI-integrated solutions
-• Serving clients globally with remote work
+• **AI Automation & Full Stack Developer at Travnook** (Nov 2025 - Present)
+• Location: Dubai, United Arab Emirates
+• End-to-end AI automation for customer communication, lead management and CRM
+• Bitrix24 CRM and Odoo ERP customization and workflow automation
+• WhatsApp, website and CRM automation with API and webhook integrations
+• AWS deployments (EC2, Lambda, S3) and custom AI-integrated ERP
+• Team Lead managing 3 assistant engineers
+
+**💻 Freelance (April 2023 - Present):**
+• **Freelance AI Automation & Full Stack Developer**
+• LLM features, chatbots, RAG pipelines and n8n automation workflows
+• End-to-end delivery from PoC to deployment
 
 **🏢 Previous Experience:**
 • **Full Stack Developer at WizzGeeks Technologies**
-• Duration: May 2024 - August 2025 (Completed)
-• Location: Dubai, United Arab Emirates
+• Duration: May 2022 - August 2025 (Completed)
+• Location: Electronic City, Bangalore
 • Key Projects: QuestionCloud, GUVI Zen Class, Medsy.ai
-• Contributed to AI-driven learning platforms
+• Contributed to AI-driven learning and medical platforms
 
 **📊 Career Highlights:**
-• **Total Experience:** 3+ years professional
-• **Industry Experience:** 1.5+ years
-• **Freelance Experience:** 3+ years
+• **Total Experience:** 4+ years professional
+• **Industry Experience:** 3.5+ years (WizzGeeks + Travnook)
+• **Freelance Experience:** Since April 2023
 • **Projects Completed:** 50+ successful deliveries
 • **Client Satisfaction:** 100% positive feedback
-• **Specialization:** AI/ML integration & full-stack development
+• **Specialization:** AI automation, CRM workflows & full-stack development
 
 **🎯 Expertise Areas:**
 • Healthcare Technology Solutions
@@ -313,7 +320,7 @@ Started as a junior developer and quickly advanced to handling complex AI-integr
 
 **📧 Primary Contact:**
 • **Email:** ahammedmass24@gmail.com
-• **Phone:** +971 588544698
+• **Phone:** +971 521352484
 • **Location:** Dubai, United Arab Emirates
 
 **🌐 Professional Profiles:**
@@ -496,7 +503,7 @@ I'm here to provide comprehensive information about Ahammed's professional backg
 • "What services does he offer?"
 
 **🎯 Quick Facts:**
-• 3+ years professional experience
+• 4+ years professional experience
 • 50+ projects completed successfully
 • Expert in AI/ML integration
 • Available for freelance & full-time work
@@ -510,8 +517,7 @@ I'm here to provide comprehensive information about Ahammed's professional backg
 
 **🏠 Current Location:**
 • **City:** Dubai, United Arab Emirates
-• **Area:** Electronic City
-• **Time Zone:** IST (UTC+5:30)
+• **Time Zone:** GST (UTC+4)
 • **Work Setup:** Professional home office
 
 **💼 Work Arrangements:**
@@ -529,7 +535,7 @@ I'm here to provide comprehensive information about Ahammed's professional backg
 **⏰ Availability Status:**
 • **Current Status:** Available for new projects
 • **Response Time:** Within 24 hours
-• **Working Hours:** Flexible (IST timezone)
+• **Working Hours:** Flexible (GST timezone)
 • **Project Start:** Immediate availability
 • **Commitment:** Long-term & short-term projects
 
@@ -541,7 +547,7 @@ I'm here to provide comprehensive information about Ahammed's professional backg
 
 **📞 Communication Channels:**
 • **Email:** ahammedmass24@gmail.com (Primary)
-• **Phone:** +971 588544698 (WhatsApp available)
+• **Phone:** +971 521352484 (WhatsApp available)
 • **Video Calls:** Google Meet, Zoom, Teams
 • **Project Management:** Slack, Jira, Trello
 

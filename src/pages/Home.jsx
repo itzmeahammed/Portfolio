@@ -70,7 +70,7 @@ const Home = () => {
 
   const stats = [
     { icon: HiCode, number: "20+", label: "Projects Delivered" },
-    { icon: HiStar, number: "2.5+", label: "Years Experience" },
+    { icon: HiStar, number: "4+", label: "Years Experience" },
     { icon: HiUsers, number: "3+", label: "Happy Clients" },
     { icon: HiTrendingUp, number: "20+", label: "Tech Stack" }
   ];
@@ -114,8 +114,8 @@ const Home = () => {
             </motion.h1>
 
             <motion.p variants={fadeInUp} className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              I am Ahammed, a Full Stack Developer architecting scalable digital solutions.
-              Specializing in AI integration, Cloud Infrastructure, and Modern Web Technologies.
+              I am Ahammed, an AI Automation Specialist and Full Stack Developer building end-to-end automation systems.
+              Specializing in AI agents, CRM and WhatsApp automation, API integrations, and modern web technologies.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

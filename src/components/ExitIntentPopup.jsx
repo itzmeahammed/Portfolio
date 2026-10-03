@@ -34,7 +34,7 @@ const ExitIntentPopup = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/src/assets/Ahammed S.pdf (5) (1).pdf';
+    link.href = '/src/assets/Ahammed_CV.pdf';
     link.download = 'Ahammed-Portfolio-CV.pdf';
     link.target = '_blank';
     document.body.appendChild(link);
@@ -104,7 +104,7 @@ const ExitIntentPopup = () => {
 
               {/* WhatsApp */}
               <motion.a
-                href="https://wa.me/971588544698"
+                href="https://wa.me/971521352484"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {
@@ -144,7 +144,7 @@ const ExitIntentPopup = () => {
 
               {/* Phone */}
               <motion.a
-                href="tel:+971588544698"
+                href="tel:+971521352484"
                 onClick={() => {
                   if (window.gtag) {
                     window.gtag('event', 'phone_click_exit_popup');

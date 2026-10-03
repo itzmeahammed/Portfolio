@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { HiMail, HiLocationMarker, HiPhone, HiArrowRight, HiDownload } from 'react-icons/hi';
+import { HiMail, HiLocationMarker, HiPhone, HiArrowRight } from 'react-icons/hi';
 import profileImage from '../../assets/image.png';
-import cvFile from '../../assets/Ahammed S.pdf (5) (1).pdf';
 import CVDownload from '../CVDownload';
 
 const AboutHero = () => {
@@ -48,13 +47,13 @@ const AboutHero = () => {
                             </h1>
 
                             <h2 className="text-2xl sm:text-3xl font-light text-gray-500 dark:text-gray-400">
-                                Full Stack Developer <span className="mx-2 text-gray-300 dark:text-gray-700">|</span> AI Specialist
+                                AI Automation Specialist <span className="mx-2 text-gray-300 dark:text-gray-700">|</span> Full Stack Developer
                             </h2>
                         </div>
 
                         <p className="text-gray-600 dark:text-gray-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light border-l-0 lg:border-l-2 border-gray-200 dark:border-gray-800 lg:pl-6">
-                            Architecting <span className="font-medium text-gray-900 dark:text-white">intelligent digital ecosystems</span>.
-                            I merge robust engineering with cutting-edge AI to build scalable solutions that define the future of web technology.
+                            Building <span className="font-medium text-gray-900 dark:text-white">end-to-end AI automation systems</span>.
+                            I connect CRM, WhatsApp, websites, APIs and LLMs into automated workflows, backed by strong full-stack engineering from architecture to production.
                         </p>
 
                         {/* Minimalist Contact Grid */}
@@ -65,8 +64,8 @@ const AboutHero = () => {
                             <div className="flex items-center gap-2">
                                 <HiLocationMarker className="text-lg" /> Dubai, UAE
                             </div>
-                            <a href="tel:+971588544698" className="flex items-center gap-2 hover:text-black dark:hover:text-white transition-colors">
-                                <HiPhone className="text-lg" /> +971 588544698
+                            <a href="tel:+971521352484" className="flex items-center gap-2 hover:text-black dark:hover:text-white transition-colors">
+                                <HiPhone className="text-lg" /> +971 521352484
                             </a>
                         </div>
 
@@ -100,7 +99,7 @@ const AboutHero = () => {
                             <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 ease-out">
                                 <img
                                     src={profileImage}
-                                    alt="Ahammed - Full Stack Developer"
+                                    alt="Ahammed - AI Automation Specialist"
                                     className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
@@ -113,7 +112,7 @@ const AboutHero = () => {
                                 transition={{ delay: 0.5, duration: 0.8 }}
                                 className="absolute -bottom-6 -left-6 bg-white dark:bg-black p-6 rounded-none border border-gray-100 dark:border-gray-800 shadow-2xl flex flex-col items-start gap-1"
                             >
-                                <span className="text-4xl font-bold text-gray-900 dark:text-white font-elegant-heading">3.5+</span>
+                                <span className="text-4xl font-bold text-gray-900 dark:text-white font-elegant-heading">4+</span>
                                 <span className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-[0.2em]">Years Exp.</span>
                             </motion.div>
                         </div>

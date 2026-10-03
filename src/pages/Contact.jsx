@@ -89,8 +89,8 @@ const Contact = () => {
     {
       icon: HiPhone,
       title: 'Phone',
-      value: '+971 588544698',
-      href: 'tel:+971588544698',
+      value: '+971 521352484',
+      href: 'tel:+971521352484',
       description: 'Call me during business hours'
     },
     {
@@ -104,7 +104,7 @@ const Contact = () => {
 
   const socialLinks = [
     { icon: FaGithub, href: 'https://github.com/itzmeahammed', label: 'GitHub', color: 'hover:text-gray-600' },
-    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/ahammed-s-b8a6a2267/', label: 'LinkedIn', color: 'hover:text-gray-700' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/ahammed-s-5161b7288/', label: 'LinkedIn', color: 'hover:text-gray-700' },
     { icon: FaTwitter, href: 'https://twitter.com/yourusername', label: 'Twitter', color: 'hover:text-gray-800' },
   ];
 
@@ -120,10 +120,10 @@ const Contact = () => {
   ];
 
   const quickFacts = [
-    { label: 'Experience', value: '3+ Years' },
+    { label: 'Experience', value: '4+ Years' },
     { label: 'Projects Completed', value: '10+' },
-    { label: 'Current Role', value: 'Full Stack Developer' },
-    { label: 'Specialization', value: 'AI-Integrated Solutions' }
+    { label: 'Current Role', value: 'AI Automation & Full Stack Developer' },
+    { label: 'Specialization', value: 'AI Automation & CRM Workflows' }
   ];
 
   const containerVariants = {
@@ -183,7 +183,7 @@ const Contact = () => {
                 <span>Send Email</span>
               </motion.a>
               <motion.a
-                href="tel:+971588544698"
+                href="tel:+971521352484"
                 className="group px-8 py-4 border-2 border-black dark:border-white text-black dark:text-white rounded-full font-semibold text-lg hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all duration-300 flex items-center space-x-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

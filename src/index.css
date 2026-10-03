@@ -35,15 +35,6 @@
   background: #999;
 }
 
-/* Custom cursor styles */
-html {
-  cursor: none;
-}
-
-*, *::before, *::after {
-  cursor: none !important;
-}
-
 /* Ensure cursor is always visible */
 body {
   overflow-x: hidden;
@@ -554,59 +545,6 @@ body {
   }
 }
 
-/* Custom Cursor Styles */
-.custom-cursor {
-  width: 24px;
-  height: 24px;
-  border: 2px solid #667eea;
-  background: rgba(102, 126, 234, 0.1);
-  backdrop-filter: blur(8px);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  mix-blend-mode: difference;
-}
-
-.custom-cursor.hover {
-  width: 48px;
-  height: 48px;
-  background: rgba(102, 126, 234, 0.2);
-  border-color: #f093fb;
-  transform: scale(1.2);
-}
-
-.custom-cursor-dot {
-  width: 6px;
-  height: 6px;
-  background: #667eea;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 10000;
-  transition: all 0.1s ease;
-  box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
-}
-
-/* Dark mode cursor adjustments */
-@media (prefers-color-scheme: dark) {
-  .custom-cursor {
-    border-color: #f093fb;
-    background: rgba(240, 147, 251, 0.1);
-  }
-  
-  .custom-cursor.hover {
-    border-color: #667eea;
-    background: rgba(240, 147, 251, 0.2);
-  }
-  
-  .custom-cursor-dot {
-    background: #f093fb;
-    box-shadow: 0 0 10px rgba(240, 147, 251, 0.5);
-  }
-}
-
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
   width: 8px;
@@ -642,11 +580,6 @@ body {
 /* Smooth Scroll */
 html {
   scroll-behavior: smooth;
-}
-
-/* Hide cursor on canvas */
-canvas {
-  cursor: none !important;
 }
 
 /* Enhanced Animations */

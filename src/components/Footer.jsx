@@ -63,7 +63,7 @@ const Footer = () => {
           </p>
 
           <div className="flex gap-6">
-            <a href="tel:+971588544698" className="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+            <a href="tel:+971521352484" className="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
               <HiPhone /> +971 588 544 698
             </a>
             <a href="https://github.com/itzmeahammed" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">

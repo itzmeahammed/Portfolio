@@ -46,6 +46,50 @@ const Projects = () => {
 
   const bigProjects = [
     {
+      id: 201,
+      title: "ATTICARCH",
+      category: "Web Development",
+      type: "Client / Interior Design",
+      description: "Live client website for a Bangalore interior design and architecture studio, showcasing luxury interiors, services and project consultation.",
+      technologies: ["Web Design", "Responsive UI", "SEO", "Netlify"],
+      status: "Live",
+      liveUrl: "https://atticarch.com/",
+      featured: true,
+    },
+    {
+      id: 202,
+      title: "OzoBath",
+      category: "Web Development",
+      type: "Client / E-commerce",
+      description: "Live storefront for premium shower enclosures and bathroom fittings in India, with product catalog, cart, wishlist, sign-in and B2B enquiries.",
+      technologies: ["E-commerce", "Product Catalog", "Responsive UI", "SEO"],
+      status: "Live",
+      liveUrl: "https://ozobath.in/",
+      featured: true,
+    },
+    {
+      id: 203,
+      title: "Travnook South Korea",
+      category: "Web Development",
+      type: "Travel / Landing Page",
+      description: "Live Travnook landing page for South Korea appointment assistance from Dubai, built for enquiry capture and WhatsApp lead flow.",
+      technologies: ["Landing Page", "Lead Capture", "WhatsApp Enquiries", "SEO"],
+      status: "Live",
+      liveUrl: "https://travnook.com/southkorea/",
+      featured: true,
+    },
+    {
+      id: 204,
+      title: "Travnook China",
+      category: "Web Development",
+      type: "Travel / Landing Page",
+      description: "Live Travnook landing page for China visa assistance from Dubai, with appointment booking, document review and WhatsApp enquiries.",
+      technologies: ["Landing Page", "Lead Capture", "WhatsApp Enquiries", "SEO"],
+      status: "Live",
+      liveUrl: "https://travnook.com/china/",
+      featured: true,
+    },
+    {
       id: 110,
       title: "Climo Group",
       category: "Web Development",
@@ -674,11 +718,11 @@ const Projects = () => {
                 <span>ahammedmass24@gmail.com</span>
               </a>
               <a
-                href="tel:+971588544698"
+                href="tel:+971521352484"
                 className="flex items-center space-x-2 text-gray-300 dark:text-gray-700 hover:text-white dark:hover:text-black transition-colors duration-200"
               >
                 <HiPhone className="w-5 h-5" />
-                <span>+971 588544698</span>
+                <span>+971 521352484</span>
               </a>
             </div>
 
