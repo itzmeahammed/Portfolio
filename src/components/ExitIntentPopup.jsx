@@ -119,7 +119,7 @@ const ExitIntentPopup = () => {
                 <FaWhatsapp className="w-5 h-5 text-green-600 dark:text-green-400" />
                 <div className="text-left">
                   <p className="font-elegant-caption font-semibold text-gray-900 dark:text-white">WhatsApp</p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">+971 588 544 698</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">+971 521352484</p>
                 </div>
               </motion.a>
 
@@ -157,7 +157,7 @@ const ExitIntentPopup = () => {
                 <HiPhone className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                 <div className="text-left">
                   <p className="font-elegant-caption font-semibold text-gray-900 dark:text-white">Phone</p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">+971 588 544 698</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">+971 521352484</p>
                 </div>
               </motion.a>
             </div>

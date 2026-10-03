@@ -61,7 +61,7 @@ const ProfessionalContact = () => {
     {
       icon: HiPhone,
       label: "Phone",
-      value: "+971 588 544 698",
+      value: "+971 521352484",
       href: "tel:+971521352484",
       color: "from-green-400 to-green-600"
     },
